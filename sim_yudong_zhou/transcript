@@ -1,0 +1,1912 @@
+# Reading D:/SOFTWARE/Modelsim/tcl/vsim/pref.tcl
+# //  ModelSim SE-64 10.4 Dec  3 2014 
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# OpenFile E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/test_UIQ.mpf
+# Loading project test_UIQ
+# Compile of UIQ_tb.v was successful.
+# Compile of Decoder.v was successful.
+# Compile of UIQ.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -novopt work.UIQ_testbench
+# vsim -gui E:\UCLA\Codes\zyd_github\189_OoOcpu_commit\sim_yudong_zhou\test_UIQ.mpf 
+# Start time: 11:11:55 on Nov 16,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.UIQ_testbench
+# Loading work.UIQ_testbench
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Decoder
+# Loading work.Decoder
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Unified_Issue_Queue
+# Loading work.Unified_Issue_Queue
+add wave  \
+sim:/UIQ_testbench/ResetValue \
+sim:/UIQ_testbench/HalfCycle \
+sim:/UIQ_testbench/Cycle \
+sim:/UIQ_testbench/RS_SIZE \
+sim:/UIQ_testbench/AR_SIZE \
+sim:/UIQ_testbench/AR_ARRAY \
+sim:/UIQ_testbench/FU_SIZE \
+sim:/UIQ_testbench/FU_ARRAY \
+sim:/UIQ_testbench/clk \
+sim:/UIQ_testbench/rstn \
+sim:/UIQ_testbench/opcode_in \
+sim:/UIQ_testbench/funct3_in \
+sim:/UIQ_testbench/funct7_in \
+sim:/UIQ_testbench/rs1_in \
+sim:/UIQ_testbench/rs2_in \
+sim:/UIQ_testbench/rd_in \
+sim:/UIQ_testbench/imm_value_in \
+sim:/UIQ_testbench/rs1_value_in \
+sim:/UIQ_testbench/rs2_value_in \
+sim:/UIQ_testbench/rs1_ready_from_ROB_in \
+sim:/UIQ_testbench/rs2_ready_from_ROB_in \
+sim:/UIQ_testbench/fu_ready_from_FU_in \
+sim:/UIQ_testbench/reg_tag_from_FU_in \
+sim:/UIQ_testbench/reg_value_from_FU_in \
+sim:/UIQ_testbench/rs1_out1 \
+sim:/UIQ_testbench/rs2_out1 \
+sim:/UIQ_testbench/rd_out1 \
+sim:/UIQ_testbench/rs1_value_out1 \
+sim:/UIQ_testbench/rs2_value_out1 \
+sim:/UIQ_testbench/imm_value_out1 \
+sim:/UIQ_testbench/fu_number_out1 \
+sim:/UIQ_testbench/rs1_out2 \
+sim:/UIQ_testbench/rs2_out2 \
+sim:/UIQ_testbench/rd_out2 \
+sim:/UIQ_testbench/rs1_value_out2 \
+sim:/UIQ_testbench/rs2_value_out2 \
+sim:/UIQ_testbench/imm_value_out2 \
+sim:/UIQ_testbench/fu_number_out2 \
+sim:/UIQ_testbench/rs1_out3 \
+sim:/UIQ_testbench/rs2_out3 \
+sim:/UIQ_testbench/rd_out3 \
+sim:/UIQ_testbench/rs1_value_out3 \
+sim:/UIQ_testbench/rs2_value_out3 \
+sim:/UIQ_testbench/imm_value_out3 \
+sim:/UIQ_testbench/fu_number_out3 \
+sim:/UIQ_testbench/stall_out \
+sim:/UIQ_testbench/instruction
+run -all
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(160)
+#    Time: 50 ns  Iteration: 0  Instance: /UIQ_testbench
+# Break in Module UIQ_testbench at E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v line 160
+quit -sim
+# Compile of UIQ_tb.v was successful.
+vsim -novopt work.UIQ_testbench
+# vsim 
+# Start time: 11:15:25 on Nov 16,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.UIQ_testbench
+# Loading work.UIQ_testbench
+# Loading work.Decoder
+# Loading work.Unified_Issue_Queue
+add wave -position end  sim:/UIQ_testbench/ResetValue
+add wave -position end  sim:/UIQ_testbench/HalfCycle
+add wave -position end  sim:/UIQ_testbench/Cycle
+add wave -position end  sim:/UIQ_testbench/RS_SIZE
+add wave -position end  sim:/UIQ_testbench/AR_SIZE
+add wave -position end  sim:/UIQ_testbench/AR_ARRAY
+add wave -position end  sim:/UIQ_testbench/FU_SIZE
+add wave -position end  sim:/UIQ_testbench/FU_ARRAY
+add wave -position end  sim:/UIQ_testbench/clk
+add wave -position end  sim:/UIQ_testbench/rstn
+add wave -position end  sim:/UIQ_testbench/opcode_in
+add wave -position end  sim:/UIQ_testbench/funct3_in
+add wave -position end  sim:/UIQ_testbench/funct7_in
+add wave -position end  sim:/UIQ_testbench/rs1_in
+add wave -position end  sim:/UIQ_testbench/rs2_in
+add wave -position end  sim:/UIQ_testbench/rd_in
+add wave -position end  sim:/UIQ_testbench/imm_value_in
+add wave -position end  sim:/UIQ_testbench/rs1_value_in
+add wave -position end  sim:/UIQ_testbench/rs2_value_in
+add wave -position end  sim:/UIQ_testbench/rs1_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/rs2_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/fu_ready_from_FU_in
+add wave -position end  sim:/UIQ_testbench/reg_tag_from_FU_in
+add wave -position end  sim:/UIQ_testbench/reg_value_from_FU_in
+add wave -position end  sim:/UIQ_testbench/rs1_out1
+add wave -position end  sim:/UIQ_testbench/rs2_out1
+add wave -position end  sim:/UIQ_testbench/rd_out1
+add wave -position end  sim:/UIQ_testbench/rs1_value_out1
+add wave -position end  sim:/UIQ_testbench/rs2_value_out1
+add wave -position end  sim:/UIQ_testbench/imm_value_out1
+add wave -position end  sim:/UIQ_testbench/fu_number_out1
+add wave -position end  sim:/UIQ_testbench/rs1_out2
+add wave -position end  sim:/UIQ_testbench/rs2_out2
+add wave -position end  sim:/UIQ_testbench/rd_out2
+add wave -position end  sim:/UIQ_testbench/rs1_value_out2
+add wave -position end  sim:/UIQ_testbench/rs2_value_out2
+add wave -position end  sim:/UIQ_testbench/imm_value_out2
+add wave -position end  sim:/UIQ_testbench/fu_number_out2
+add wave -position end  sim:/UIQ_testbench/rs1_out3
+add wave -position end  sim:/UIQ_testbench/rs2_out3
+add wave -position end  sim:/UIQ_testbench/rd_out3
+add wave -position end  sim:/UIQ_testbench/rs1_value_out3
+add wave -position end  sim:/UIQ_testbench/rs2_value_out3
+add wave -position end  sim:/UIQ_testbench/imm_value_out3
+add wave -position end  sim:/UIQ_testbench/fu_number_out3
+add wave -position end  sim:/UIQ_testbench/stall_out
+add wave -position end  sim:/UIQ_testbench/instruction
+run -all
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(160)
+#    Time: 50 ns  Iteration: 0  Instance: /UIQ_testbench
+# Break in Module UIQ_testbench at E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v line 160
+quit -sim
+# Compile of UIQ_tb.v was successful.
+vsim -novopt work.UIQ_testbench
+# vsim 
+# Start time: 11:17:34 on Nov 16,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.UIQ_testbench
+# Loading work.UIQ_testbench
+# Loading work.Decoder
+# Loading work.Unified_Issue_Queue
+add wave -position end  sim:/UIQ_testbench/ResetValue
+add wave -position end  sim:/UIQ_testbench/HalfCycle
+add wave -position end  sim:/UIQ_testbench/Cycle
+add wave -position end  sim:/UIQ_testbench/RS_SIZE
+add wave -position end  sim:/UIQ_testbench/AR_SIZE
+add wave -position end  sim:/UIQ_testbench/AR_ARRAY
+add wave -position end  sim:/UIQ_testbench/FU_SIZE
+add wave -position end  sim:/UIQ_testbench/FU_ARRAY
+add wave -position end  sim:/UIQ_testbench/clk
+add wave -position end  sim:/UIQ_testbench/rstn
+add wave -position end  sim:/UIQ_testbench/opcode_in
+add wave -position end  sim:/UIQ_testbench/funct3_in
+add wave -position end  sim:/UIQ_testbench/funct7_in
+add wave -position end  sim:/UIQ_testbench/rs1_in
+add wave -position end  sim:/UIQ_testbench/rs2_in
+add wave -position end  sim:/UIQ_testbench/rd_in
+add wave -position end  sim:/UIQ_testbench/imm_value_in
+add wave -position end  sim:/UIQ_testbench/rs1_value_in
+add wave -position end  sim:/UIQ_testbench/rs2_value_in
+add wave -position end  sim:/UIQ_testbench/rs1_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/rs2_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/fu_ready_from_FU_in
+add wave -position end  sim:/UIQ_testbench/reg_tag_from_FU_in
+add wave -position end  sim:/UIQ_testbench/reg_value_from_FU_in
+add wave -position end  sim:/UIQ_testbench/rs1_out1
+add wave -position end  sim:/UIQ_testbench/rs2_out1
+add wave -position end  sim:/UIQ_testbench/rd_out1
+add wave -position end  sim:/UIQ_testbench/rs1_value_out1
+add wave -position end  sim:/UIQ_testbench/rs2_value_out1
+add wave -position end  sim:/UIQ_testbench/imm_value_out1
+add wave -position end  sim:/UIQ_testbench/fu_number_out1
+add wave -position end  sim:/UIQ_testbench/rs1_out2
+add wave -position end  sim:/UIQ_testbench/rs2_out2
+add wave -position end  sim:/UIQ_testbench/rd_out2
+add wave -position end  sim:/UIQ_testbench/rs1_value_out2
+add wave -position end  sim:/UIQ_testbench/rs2_value_out2
+add wave -position end  sim:/UIQ_testbench/imm_value_out2
+add wave -position end  sim:/UIQ_testbench/fu_number_out2
+add wave -position end  sim:/UIQ_testbench/rs1_out3
+add wave -position end  sim:/UIQ_testbench/rs2_out3
+add wave -position end  sim:/UIQ_testbench/rd_out3
+add wave -position end  sim:/UIQ_testbench/rs1_value_out3
+add wave -position end  sim:/UIQ_testbench/rs2_value_out3
+add wave -position end  sim:/UIQ_testbench/imm_value_out3
+add wave -position end  sim:/UIQ_testbench/fu_number_out3
+add wave -position end  sim:/UIQ_testbench/stall_out
+add wave -position end  sim:/UIQ_testbench/instruction
+run -all
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(160)
+#    Time: 50 ns  Iteration: 0  Instance: /UIQ_testbench
+# Break in Module UIQ_testbench at E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v line 160
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/clk
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rstn
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/opcode_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct3_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct7_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_ready_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_tag_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_value_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/stall_out
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/valid
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/operation
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/dest_reg
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number
+restart -f
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+run -all
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(160)
+#    Time: 50 ns  Iteration: 0  Instance: /UIQ_testbench
+# Break in Module UIQ_testbench at E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v line 160
+add wave -position 79  sim:/UIQ_testbench/UIQ_inst/op_type
+restart -f
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+run -all
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(160)
+#    Time: 50 ns  Iteration: 0  Instance: /UIQ_testbench
+# Break in Module UIQ_testbench at E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v line 160
+quit -sim
+# Compile of UIQ_tb.v was successful.
+# Compile of Decoder.v was successful.
+# Compile of UIQ.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -novopt work.UIQ_testbench
+# vsim 
+# Start time: 11:29:26 on Nov 16,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.UIQ_testbench
+# Loading work.UIQ_testbench
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Decoder
+# Loading work.Decoder
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Unified_Issue_Queue
+# Loading work.Unified_Issue_Queue
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/RS_SIZE
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/AR_SIZE
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/AR_ARRAY
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/FU_SIZE
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/FU_ARRAY
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/ISSUE_NUM
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/ADD
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/ADDI
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/LUI
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/ORI
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/XOR
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/SRAI
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/LB
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/LW
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/SB
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/SW
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/clk
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rstn
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/opcode_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct3_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct7_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_ready_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_tag_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_value_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/stall_out
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/valid
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/operation
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/dest_reg
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/i
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_alu_round
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/k
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/j
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/issue_count
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_taken
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/issue_stall_flag
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/op_type
+run -all
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(160)
+#    Time: 50 ns  Iteration: 0  Instance: /UIQ_testbench
+# Break in Module UIQ_testbench at E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v line 160
+quit -sim
+# Compile of UIQ_tb.v failed with 1 errors.
+# Compile of UIQ_tb.v was successful.
+vsim -novopt work.UIQ_testbench
+# vsim 
+# Start time: 11:41:11 on Nov 16,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.UIQ_testbench
+# Loading work.UIQ_testbench
+# Loading work.Decoder
+# Loading work.Unified_Issue_Queue
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/clk
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rstn
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/opcode_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct3_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct7_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_ready_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_tag_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_value_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/stall_out
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/valid
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/operation
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/dest_reg
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number
+run -all
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(180)
+#    Time: 80 ns  Iteration: 0  Instance: /UIQ_testbench
+# Break in Module UIQ_testbench at E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v line 180
+quit -sim
+# Compile of UIQ_tb.v was successful.
+# Compile of Decoder.v was successful.
+# Compile of UIQ.v was successful.
+# 3 compiles, 0 failed with no errors.
+# Compile of UIQ_tb.v was successful.
+vsim -novopt work.UIQ_testbench
+# vsim 
+# Start time: 11:43:19 on Nov 16,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.UIQ_testbench
+# Loading work.UIQ_testbench
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Decoder
+# Loading work.Decoder
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Unified_Issue_Queue
+# Loading work.Unified_Issue_Queue
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/clk
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rstn
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/opcode_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct3_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct7_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_ready_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_tag_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_value_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/stall_out
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/valid
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/operation
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/dest_reg
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number
+run -all
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(181)
+#    Time: 80 ns  Iteration: 0  Instance: /UIQ_testbench
+# Break in Module UIQ_testbench at E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v line 181
+quit -sim
+# Compile of UIQ_tb.v was successful.
+vsim -novopt work.UIQ_testbench
+# vsim 
+# Start time: 12:58:37 on Nov 16,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.UIQ_testbench
+# Loading work.UIQ_testbench
+# Loading work.Decoder
+# Loading work.Unified_Issue_Queue
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/clk
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rstn
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/opcode_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct3_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct7_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_ready_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_tag_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_value_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/stall_out
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/valid
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/operation
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/dest_reg
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number
+run -all
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(181)
+#    Time: 80 ns  Iteration: 0  Instance: /UIQ_testbench
+# Break in Module UIQ_testbench at E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v line 181
+quit -sim
+# Compile of UIQ_tb.v was successful.
+# Compile of UIQ.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -novopt work.UIQ_testbench
+# vsim 
+# Start time: 13:03:03 on Nov 16,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.UIQ_testbench
+# Loading work.UIQ_testbench
+# Loading work.Decoder
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Unified_Issue_Queue
+# Loading work.Unified_Issue_Queue
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/clk
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rstn
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/opcode_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct3_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct7_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_ready_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_tag_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_value_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/stall_out
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/valid
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/operation
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/dest_reg
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number
+# Can't move the Now cursor.
+run -all
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(185)
+#    Time: 80 ns  Iteration: 0  Instance: /UIQ_testbench
+# Break in Module UIQ_testbench at E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v line 185
+quit -sim
+# Compile of UIQ_tb.v was successful.
+# Compile of UIQ.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -novopt work.UIQ_testbench
+# vsim 
+# Start time: 13:13:04 on Nov 16,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.UIQ_testbench
+# Loading work.UIQ_testbench
+# Loading work.Decoder
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Unified_Issue_Queue
+# Loading work.Unified_Issue_Queue
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/clk
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rstn
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/opcode_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct3_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct7_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_ready_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_tag_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_value_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/stall_out
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/valid
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/operation
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/dest_reg
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/op_type
+run -all
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(185)
+#    Time: 80 ns  Iteration: 0  Instance: /UIQ_testbench
+# Break in Module UIQ_testbench at E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v line 185
+quit -sim
+# Compile of UIQ_tb.v was successful.
+# Compile of Decoder.v was successful.
+# Compile of UIQ.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -novopt work.UIQ_testbench
+# vsim 
+# Start time: 13:15:35 on Nov 16,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.UIQ_testbench
+# Loading work.UIQ_testbench
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Decoder
+# Loading work.Decoder
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Unified_Issue_Queue
+# Loading work.Unified_Issue_Queue
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/clk
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rstn
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/opcode_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct3_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct7_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_ready_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_tag_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_value_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/stall_out
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/valid
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/operation
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/dest_reg
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number
+add wave -position 39  sim:/UIQ_testbench/UIQ_inst/op_type
+run -all
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(185)
+#    Time: 80 ns  Iteration: 0  Instance: /UIQ_testbench
+# Break in Module UIQ_testbench at E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v line 185
+quit -sim
+# Compile of UIQ_tb.v was successful.
+# Compile of Decoder.v was successful.
+# Compile of UIQ.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -novopt work.UIQ_testbench
+# vsim 
+# Start time: 13:21:31 on Nov 16,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.UIQ_testbench
+# Loading work.UIQ_testbench
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Decoder
+# Loading work.Decoder
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Unified_Issue_Queue
+# Loading work.Unified_Issue_Queue
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/clk
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rstn
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/opcode_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct3_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct7_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_ready_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_tag_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_value_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/stall_out
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/valid
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/operation
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/dest_reg
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number
+run -all
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(186)
+#    Time: 80 ns  Iteration: 0  Instance: /UIQ_testbench
+# Break in Module UIQ_testbench at E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v line 186
+quit -sim
+# Compile of UIQ_tb.v was successful.
+# Compile of Decoder.v was successful.
+# Compile of UIQ.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -novopt work.UIQ_testbench
+# vsim 
+# Start time: 13:23:25 on Nov 16,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.UIQ_testbench
+# Loading work.UIQ_testbench
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Decoder
+# Loading work.Decoder
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Unified_Issue_Queue
+# Loading work.Unified_Issue_Queue
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/clk
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rstn
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/opcode_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct3_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct7_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_ready_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_tag_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_value_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/stall_out
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/valid
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/operation
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/dest_reg
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number
+run -all
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(185)
+#    Time: 80 ns  Iteration: 0  Instance: /UIQ_testbench
+# Break in Module UIQ_testbench at E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v line 185
+quit -sim
+# Compile of UIQ_tb.v was successful.
+# Compile of Decoder.v was successful.
+# Compile of UIQ.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -novopt work.UIQ_testbench
+# vsim 
+# Start time: 13:28:29 on Nov 16,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.UIQ_testbench
+# Loading work.UIQ_testbench
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Decoder
+# Loading work.Decoder
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Unified_Issue_Queue
+# Loading work.Unified_Issue_Queue
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/clk
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rstn
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/opcode_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct3_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct7_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_ready_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_tag_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_value_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/stall_out
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/valid
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/operation
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/dest_reg
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number
+run -all
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(185)
+#    Time: 80 ns  Iteration: 0  Instance: /UIQ_testbench
+# Break in Module UIQ_testbench at E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v line 185
+quit -sim
+# Compile of UIQ_tb.v was successful.
+# Compile of Decoder.v was successful.
+# Compile of UIQ.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -novopt work.UIQ_testbench
+# vsim 
+# Start time: 13:32:41 on Nov 16,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.UIQ_testbench
+# Loading work.UIQ_testbench
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Decoder
+# Loading work.Decoder
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Unified_Issue_Queue
+# Loading work.Unified_Issue_Queue
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/clk
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rstn
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/opcode_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct3_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct7_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_ready_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_tag_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_value_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/stall_out
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/valid
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/operation
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/dest_reg
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number
+run -all
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(186)
+#    Time: 80 ns  Iteration: 0  Instance: /UIQ_testbench
+# Break in Module UIQ_testbench at E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v line 186
+quit -sim
+# Compile of UIQ_tb.v was successful.
+# Compile of Decoder.v was successful.
+# Compile of UIQ.v was successful.
+# 3 compiles, 0 failed with no errors.
+# Compile of UIQ_tb.v was successful.
+# Compile of Decoder.v was successful.
+# Compile of UIQ.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -novopt work.UIQ_testbench
+# vsim 
+# Start time: 13:35:19 on Nov 16,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.UIQ_testbench
+# Loading work.UIQ_testbench
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Decoder
+# Loading work.Decoder
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Unified_Issue_Queue
+# Loading work.Unified_Issue_Queue
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/clk
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rstn
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/opcode_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct3_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct7_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_ready_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_tag_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_value_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/stall_out
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/valid
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/operation
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/dest_reg
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number
+run -all
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(186)
+#    Time: 80 ns  Iteration: 0  Instance: /UIQ_testbench
+# Break in Module UIQ_testbench at E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v line 186
+quit -sim
+# Compile of UIQ_tb.v was successful.
+# Compile of Decoder.v was successful.
+# Compile of UIQ.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -novopt work.UIQ_testbench
+# vsim 
+# Start time: 13:43:47 on Nov 16,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.UIQ_testbench
+# Loading work.UIQ_testbench
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Decoder
+# Loading work.Decoder
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Unified_Issue_Queue
+# Loading work.Unified_Issue_Queue
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/clk
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rstn
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/opcode_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct3_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct7_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_ready_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_tag_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_value_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/stall_out
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/valid
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/operation
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/dest_reg
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number
+run -all
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(186)
+#    Time: 80 ns  Iteration: 0  Instance: /UIQ_testbench
+# Break in Module UIQ_testbench at E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v line 186
+quit -sim
+# Compile of UIQ_tb.v was successful.
+# Compile of Decoder.v was successful.
+# Compile of UIQ.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -novopt work.UIQ_testbench
+# vsim 
+# Start time: 13:45:57 on Nov 16,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.UIQ_testbench
+# Loading work.UIQ_testbench
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Decoder
+# Loading work.Decoder
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Unified_Issue_Queue
+# Loading work.Unified_Issue_Queue
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/clk
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rstn
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/opcode_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct3_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct7_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_ready_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_tag_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_value_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/stall_out
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/valid
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/operation
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/dest_reg
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number
+run -all
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(186)
+#    Time: 55 ns  Iteration: 0  Instance: /UIQ_testbench
+# Break in Module UIQ_testbench at E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v line 186
+quit -sim
+# Compile of UIQ_tb.v was successful.
+# Compile of Decoder.v was successful.
+# Compile of UIQ.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -novopt work.UIQ_testbench
+# vsim 
+# Start time: 13:59:02 on Nov 16,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.UIQ_testbench
+# Loading work.UIQ_testbench
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Decoder
+# Loading work.Decoder
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Unified_Issue_Queue
+# Loading work.Unified_Issue_Queue
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/clk
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rstn
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/opcode_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct3_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct7_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_ready_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_tag_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_value_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/stall_out
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/valid
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/operation
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/dest_reg
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number
+run -all
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(186)
+#    Time: 55 ns  Iteration: 0  Instance: /UIQ_testbench
+# Break in Module UIQ_testbench at E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v line 186
+quit -sim
+# Compile of UIQ_tb.v was successful.
+# Compile of Decoder.v was successful.
+# Compile of UIQ.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -novopt work.UIQ_testbench
+# vsim 
+# Start time: 14:02:31 on Nov 16,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.UIQ_testbench
+# Loading work.UIQ_testbench
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Decoder
+# Loading work.Decoder
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Unified_Issue_Queue
+# Loading work.Unified_Issue_Queue
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/clk
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rstn
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/opcode_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct3_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct7_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_ready_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_tag_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_value_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/stall_out
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/valid
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/operation
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/dest_reg
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number
+run -all
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(187)
+#    Time: 80 ns  Iteration: 0  Instance: /UIQ_testbench
+# Break in Module UIQ_testbench at E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v line 187
+# Causality operation skipped due to absence of debug database file
+quit -sim
+# Compile of UIQ_tb.v was successful.
+# Compile of Decoder.v was successful.
+# Compile of UIQ.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -novopt work.UIQ_testbench
+# vsim 
+# Start time: 14:12:32 on Nov 16,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.UIQ_testbench
+# Loading work.UIQ_testbench
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Decoder
+# Loading work.Decoder
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Unified_Issue_Queue
+# Loading work.Unified_Issue_Queue
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/clk
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rstn
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/opcode_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct3_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct7_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_ready_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_tag_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_value_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/stall_out
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/valid
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/operation
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/dest_reg
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number
+run -all
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(195)
+#    Time: 80 ns  Iteration: 0  Instance: /UIQ_testbench
+# Break in Module UIQ_testbench at E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v line 195
+quit -sim
+# Compile of UIQ_tb.v was successful.
+# Compile of Decoder.v was successful.
+# Compile of UIQ.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -novopt work.UIQ_testbench
+# vsim 
+# Start time: 14:20:40 on Nov 16,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.UIQ_testbench
+# Loading work.UIQ_testbench
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Decoder
+# Loading work.Decoder
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Unified_Issue_Queue
+# Loading work.Unified_Issue_Queue
+run -all
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(180)
+#    Time: 80 ns  Iteration: 0  Instance: /UIQ_testbench
+# Break in Module UIQ_testbench at E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v line 180
+quit -sim
+vsim -novopt work.UIQ_testbench
+# vsim 
+# Start time: 14:21:11 on Nov 16,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Loading work.UIQ_testbench
+# Loading work.Decoder
+# Loading work.Unified_Issue_Queue
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/clk
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rstn
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/opcode_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct3_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct7_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_ready_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_tag_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_value_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/stall_out
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/valid
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/operation
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/dest_reg
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number
+run -all
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(180)
+#    Time: 80 ns  Iteration: 0  Instance: /UIQ_testbench
+# Break in Module UIQ_testbench at E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v line 180
+quit -sim
+# Compile of UIQ_tb.v was successful.
+# Compile of Decoder.v was successful.
+# Compile of UIQ.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -novopt work.UIQ_testbench
+# vsim 
+# Start time: 14:24:36 on Nov 16,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.UIQ_testbench
+# Loading work.UIQ_testbench
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Decoder
+# Loading work.Decoder
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Unified_Issue_Queue
+# Loading work.Unified_Issue_Queue
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/clk
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rstn
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/opcode_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct3_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct7_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_ready_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_tag_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_value_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/stall_out
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/valid
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/operation
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/dest_reg
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number
+run -all
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(184)
+#    Time: 80 ns  Iteration: 0  Instance: /UIQ_testbench
+# Break in Module UIQ_testbench at E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v line 184
+quit -sim
+# Compile of UIQ_tb.v was successful.
+# Compile of Decoder.v was successful.
+# Compile of UIQ.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -novopt work.UIQ_testbench
+# vsim 
+# Start time: 14:32:28 on Nov 16,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.UIQ_testbench
+# Loading work.UIQ_testbench
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Decoder
+# Loading work.Decoder
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Unified_Issue_Queue
+# Loading work.Unified_Issue_Queue
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/clk
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rstn
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/opcode_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct3_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct7_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_ready_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_tag_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_value_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out3
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/stall_out
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/valid
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/operation
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/dest_reg
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number
+run -all
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(184)
+#    Time: 80 ns  Iteration: 0  Instance: /UIQ_testbench
+# Break in Module UIQ_testbench at E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v line 184
+quit -sim
+# Compile of UIQ_tb.v failed with 1 errors.
+# Compile of Decoder.v was successful.
+# Compile of UIQ.v failed with 2 errors.
+# 3 compiles, 2 failed with 3 errors.
+# Compile of UIQ_tb.v was successful.
+# Compile of Decoder.v was successful.
+# Compile of UIQ.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -novopt work.UIQ_testbench
+# vsim 
+# Start time: 15:10:46 on Nov 16,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.UIQ_testbench
+# Loading work.UIQ_testbench
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Decoder
+# Loading work.Decoder
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Unified_Issue_Queue
+# Loading work.Unified_Issue_Queue
+# ** Warning: (vsim-3017) E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(89): [TFMPC] - Too few port connections. Expected 39, found 38.
+#    Time: 0 ps  Iteration: 0  Instance: /UIQ_testbench/UIQ_inst File: E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ.v
+# ** Warning: (vsim-3722) E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(89): [TFMPC] - Missing connection for port 'tunnel_out'.
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/clk
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rstn
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/opcode_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct3_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct7_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_ready_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_tag_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_value_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out0
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out0
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out0
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out0
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out0
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out0
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out0
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/stall_out
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/tunnel_out
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/valid
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/operation
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/dest_reg
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number
+run -all
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(187)
+#    Time: 80 ns  Iteration: 0  Instance: /UIQ_testbench
+# Break in Module UIQ_testbench at E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v line 187
+quit -sim
+# Compile of UIQ_tb.v was successful.
+# Compile of Decoder.v was successful.
+# Compile of UIQ.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -novopt work.UIQ_testbench
+# vsim 
+# Start time: 15:15:07 on Nov 16,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.UIQ_testbench
+# Loading work.UIQ_testbench
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Decoder
+# Loading work.Decoder
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Unified_Issue_Queue
+# Loading work.Unified_Issue_Queue
+# ** Warning: (vsim-3017) E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(89): [TFMPC] - Too few port connections. Expected 39, found 38.
+#    Time: 0 ps  Iteration: 0  Instance: /UIQ_testbench/UIQ_inst File: E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ.v
+# ** Warning: (vsim-3722) E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(89): [TFMPC] - Missing connection for port 'tunnel_out'.
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/clk
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rstn
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/opcode_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct3_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct7_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_ready_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_tag_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_value_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out0
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out0
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out0
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out0
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out0
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out0
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out0
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/stall_out
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/tunnel_out
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/valid
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/operation
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/dest_reg
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number
+run -all
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(187)
+#    Time: 80 ns  Iteration: 0  Instance: /UIQ_testbench
+# Break in Module UIQ_testbench at E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v line 187
+quit -sim
+# Compile of UIQ_tb.v was successful.
+# Compile of Decoder.v was successful.
+# Compile of UIQ.v failed with 2 errors.
+# 3 compiles, 1 failed with 2 errors.
+# Compile of UIQ_tb.v was successful.
+# Compile of Decoder.v was successful.
+# Compile of UIQ.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -novopt work.UIQ_testbench
+# vsim 
+# Start time: 15:26:11 on Nov 16,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.UIQ_testbench
+# Loading work.UIQ_testbench
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Decoder
+# Loading work.Decoder
+# Refreshing E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou/work.Unified_Issue_Queue
+# Loading work.Unified_Issue_Queue
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/clk
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rstn
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/opcode_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct3_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/funct7_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_ready_from_ROB_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_ready_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_tag_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/reg_value_from_FU_in
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out0
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out0
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out0
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out0
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out0
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out0
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out0
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rd_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs1_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/rs2_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm_value_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number_out2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/no_issue_out
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/stall_out
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/tunnel_out
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/valid
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/operation
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/dest_reg
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg1
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src1_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src_reg2
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_data
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/src2_ready
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/imm
+add wave -position end  sim:/UIQ_testbench/UIQ_inst/fu_number
+run -all
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v(190)
+#    Time: 80 ns  Iteration: 0  Instance: /UIQ_testbench
+# Break in Module UIQ_testbench at E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v line 190
+# End time: 15:38:54 on Nov 16,2024, Elapsed time: 0:12:43
+# Errors: 0, Warnings: 1
