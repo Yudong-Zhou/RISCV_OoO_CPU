@@ -1,122 +1,117 @@
+`timescale 1ns / 1ps
+
 module CPU(
-    input   clk
+    input   clk,
+    input   rstn
 );
+    
+    // IF stage signals
+    wire [31 : 0]   PC;
+    reg [31 : 0]    PC_reg;
+    wire [31 : 0]   instr_IF;
+    wire            stop_IF;
 
-    reg [31:0] PC;
+    // ID stage signals
+    wire [31 : 0]   instr_ID;
+    wire            stop_ID;
 
-    reg [31:0] instr;
-    reg stop;
+    wire [6 : 0]    opcode_ID;
+    wire [2 : 0]    funct3_ID; 
+    wire [6 : 0]    funct7_ID;
+    wire [4 : 0]    srcReg1_ID;
+    wire [4 : 0]    srcReg2_ID;
+    wire [4 : 0]    destReg_ID;
+    wire [31 : 0]   imm_ID;
+    wire [1 : 0]    lwSw_ID;
+    wire [1 : 0]    aluOp_ID; 
+    wire            regWrite_ID;
+    wire            aluSrc_ID;
+    wire            branch_ID;
+    wire            memRead_ID;
+    wire            memWrite_ID;
+    wire            memToReg_ID;
+    
+    reg [5 : 0]     sr1; // Source register 1
+    reg [5 : 0]     sr2; // Source register 2
+    reg [5 : 0]     dr;  // Destination register
+    
+    // Testbench outputs
+    wire [5 : 0]    sr1_p; // Mapped source register 1
+    wire [5 : 0]    sr2_p; // Mapped source register 2
+    wire [5 : 0]    dr_p;  // Mapped destination register
+    wire            s1_ready; // Ready status for source 1
+    wire            s2_ready; // Ready status for source 2
+    
+///////////////////////////////////////////////////////////////////////
+//  Fetch Stage
+    always @(posedge clk or negedge rstn) begin
+        if(~rstn) begin
+            PC_reg = 32'b0;
+        end
+        else begin
+            PC_reg = PC_reg + 4;
+        end
+    end
+    assign PC = PC_reg;
 
-    reg [6:0] opcode;
-    reg [2:0] funct3; 
-    reg [6:0] funct7;
-    reg [4:0] srcReg1;
-    reg [4:0] srcReg2;
-    reg [4:0] destReg;
-    reg [31:0] imm; 
-    reg [1:0] lwSw;
-    reg [1:0] aluOp; 
-    reg regWrite;
-    reg aluSrc;
-    reg branch;
-    reg memRead;
-    reg memWrite;
-    reg memToReg;
-
-    instructionMemory instrMem_mod (
+    instructionMemory instr_mem (
         .clk(clk),
         .PC(PC),
-
-        .instr(instr),
-        .stop(stop)
+        .rstn(rstn),
+        .instr(instr_IF),
+        .stop(stop_IF)
     );
 
-    IF_ID_Reg IF_ID_mod (
+///////////////////////////////////////////////////////////////////////
+//  Pipeline Registers between Fetch and Decode
+    IF_ID_Reg IF_ID_Reg (
         .clk(clk),
-        .rstn(1'b1),
-        .inst_IF_in(instr),
-        .stop_in(stop),
-
-        .inst_ID_out(instr),
-        .stop_out(stop)
+        .rstn(rstn),
+        .inst_IF_in(instr_IF),
+        .stop_in(stop_IF),
+        .inst_ID_out(instr_ID),
+        .stop_out(stop_ID)
     );
-
+    
+///////////////////////////////////////////////////////////////////////
+//  Decode Stage
     decode decode_mod(
-        .instr(instr),
+        .instr(instr_ID),
         .clk(clk),
-
-        .opcode(opcode),
-        .funct3(funct3), 
-        .funct7(funct7), 
-        .srcReg1(srcReg1),
-        .srcReg2(srcReg2),
-        .destReg(destReg),
-        .imm(imm), 
-        .lwSw(lwSw),
-        .aluOp(aluOp),
-        .regWrite(regWrite),
-        .aluSrc(aluSrc),
-        .branch(branch),
-        .memRead(memRead),
-        .memWrite(memWrite),
-        .memToReg(memToReg)
+        .rstn(rstn),
+        .opcode(opcode_ID),
+        .funct3(funct3_ID), 
+        .funct7(funct7_ID), 
+        .srcReg1(srcReg1_ID),
+        .srcReg2(srcReg2_ID),
+        .destReg(destReg_ID),
+        .imm(imm_ID), 
+        .lwSw(lwSw_ID),
+        .aluOp(aluOp_ID),
+        .regWrite(regWrite_ID),
+        .aluSrc(aluSrc_ID),
+        .branch(branch_ID),
+        .memRead(memRead_ID),
+        .memWrite(memWrite_ID),
+        .memToReg(memToReg_ID)
     );
 
-    ID_EX_Reg ID_EX_mod (
-        .clk(clk),
-        .rstn(1'b1),
-        .opcode_in(opcode),
-        .funct3_in(funct3),
-        .funct7_in(funct7),
-        .srcReg1_in(srcReg1),
-        .srcReg2_in(srcReg2),
-        .destReg_in(destReg),
-        .imm_in(imm),
-        .lwSw_in(lwSw),
-        //.aluOp_in(aluOp),
-        .regWrite_in(regWrite),
-        //.aluSrc_in(aluSrc),
-        //.branch_in(branch),
-        .memRead_in(memRead),
-        .memWrite_in(memWrite),
-        .memToReg_in(memToReg),
-
-        .opcode_out(opcode),
-        .funct3_out(funct3),
-        .funct7_out(funct7),
-        .srcReg1_out(srcReg1),
-        .srcReg2_out(srcReg2),
-        .destReg_out(destReg),
-        .imm_out(imm),
-        .lwSw_out(lwSw),
-        //.aluOp_out(aluOp),
-        .regWrite_out(regWrite),
-        //.aluSrc_out(aluSrc),
-        //.branch_out(branch),
-        .memRead_out(memRead),
-        .memWrite_out(memWrite),
-        .memToReg_out(memToReg)
-    );
-
-    rename rename_mod (
+///////////////////////////////////////////////////////////////////////
+//  Execution Stage
+    rename uut (
+        .rstn(rstn),
         .sr1(sr1),
         .sr2(sr2),
         .dr(dr),
         .aluOp(aluOp),
-        .imm(imm),
+        //.imm(imm),
         .sr1_p(sr1_p),
         .sr2_p(sr2_p),
         .dr_p(dr_p),
-        .aluOp_out(aluOp_out),
         .s1_ready(s1_ready),
         .s2_ready(s2_ready),
-        .imm_out(imm_out),
-        .FU(FU),
-        .ROB_num(ROB_num)
+        .FU(),
+        .ROB_num()
     );
-
-    initial begin
-        PC = 32'b0;
-    end
 
 endmodule

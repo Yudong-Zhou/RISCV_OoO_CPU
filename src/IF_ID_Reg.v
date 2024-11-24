@@ -15,8 +15,8 @@ module IF_ID_Reg (
     input [31:0]    inst_IF_in,
     input           stop_in,
 
-    output [31:0]   inst_ID_out,
-    output          stop_out
+    output reg [31:0]   inst_ID_out,
+    output reg          stop_out
 );
 
     always @(posedge clk or negedge rstn) begin

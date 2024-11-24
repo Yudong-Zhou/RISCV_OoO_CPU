@@ -29,7 +29,7 @@ module Unified_Issue_Queue #(
     input [6 : 0]               funct7_in,
 
     // Rename & ARF info
-    input [AR_SIZE - 1 : 0]     rs1_in,
+    input [AR_SIZE - 1 : 0]     rs1_in, // register name after rename
     input [31 : 0]              rs1_value_in,
     input [AR_SIZE - 1 : 0]     rs2_in,
     input [31 : 0]              rs2_value_in,

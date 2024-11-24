@@ -95,7 +95,7 @@ module UIQ_testbench ();
         .funct3_in                  (funct3_in),
         .funct7_in                  (funct7_in),
         .rs1_in                     (rs1_in),
-        .rs2_in                    (rs2_in),
+        .rs2_in                     (rs2_in),
         .rd_in                      (rd_in),
         .imm_value_in               (imm_value_in),
         .rs1_value_in               (rs1_value_in),
