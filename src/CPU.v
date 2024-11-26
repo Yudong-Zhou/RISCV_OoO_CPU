@@ -1,3 +1,13 @@
+///////////////////////////////////////////////////////////////////////
+// Function: RISC-V Out-of-Order Processor
+//
+// Author: Larson Paige, Vathish Vishal, Yudong Zhou
+//
+// Description: This file contains the top-level module for the CPU.
+//
+// Create Date: 11/23/2024
+///////////////////////////////////////////////////////////////////////
+
 `timescale 1ns / 1ps
 
 module CPU(
@@ -7,7 +17,7 @@ module CPU(
     
     // IF stage signals
     wire [31 : 0]   PC;
-    reg [31 : 0]    PC_reg;
+    reg  [31 : 0]   PC_reg;
     wire [31 : 0]   instr_IF;
     wire            stop_IF;
 
