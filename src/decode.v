@@ -14,7 +14,8 @@ module decode(
     output reg [4 : 0]      srcReg1,    // Src registers
     output reg [4 : 0]      srcReg2,
     output reg [4 : 0]      destReg,    // Destination register
-    output reg [31 : 0]     imm, 
+    output reg [31 : 0]     imm,
+    output reg              hasImm, 
     output reg [1 : 0]      lwSw,       // Lw/sw flags: [0: LW, 1: SW]
     output reg [1 : 0]      aluOp,      // Control signals 
     output reg              regWrite,
@@ -29,7 +30,7 @@ module decode(
     // 2. Determine registers and control signals 
     // 3. Immediate Generator 
 
-    wire [5 : 0]    controlSignals;
+    wire [6 : 0]    controlSignals;
     wire [1 : 0]    aluOp_wire;
     wire [1 : 0]    lwsw_wire;
     wire [31 :0]    imm_wire;
@@ -58,6 +59,7 @@ module decode(
             srcReg1     <= 5'b0;
             srcReg2     <= 5'b0;
             imm         <= 32'b0;
+            hasImm      <= 1'b0;
             lwSw        <= 2'b0;
             aluOp       <= 2'b0;
             regWrite    <= 1'b0;
@@ -72,13 +74,23 @@ module decode(
             lwSw        <= lwsw_wire;
             aluOp       <= aluOp_wire;
 
-            opcode      <= instr[6:0];
+            opcode      = instr[6:0];
             funct3      <= instr[14:12];
             funct7      <= instr[31:25];
-            destReg     <= instr[11:7];
+
             srcReg1     <= instr[19:15];
-            srcReg2     <= instr[24:20];
+            if (opcode == 7'b0000011) begin // Load instruction
+                destReg     = instr[11:7];
+                srcReg2     = 5'b0;
+            end else if (opcode == 7'b0100011) begin // Store instruction
+                destReg     = 5'b0;
+                srcReg2     = instr[24:20];
+            end else begin
+                destReg     = instr[11:7];
+                srcReg2     = instr[24:20];
+            end
             
+            hasImm      <= controlSignals[6];
             regWrite    <= controlSignals[5];
             aluSrc      <= controlSignals[4];
             branch      <= controlSignals[3];
@@ -89,6 +101,5 @@ module decode(
     end
 
 endmodule
-
 
 

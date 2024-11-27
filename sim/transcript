@@ -13,5 +13,63 @@
 # //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
 # //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
 # //
-# OpenFile E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/test_UIQ.mpf
-# Loading project test_UIQ
+# OpenFile E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/CPU_tb.mpf
+# Loading project CPU_tb
+# Compile of CPU.v was successful.
+# Compile of CPU_tb.v was successful.
+# Compile of decode.v failed with 1 errors.
+# Compile of IM_fetch.v was successful.
+# Compile of rename.v was successful with warnings.
+# Compile of controller.v was successful.
+# Compile of immGen.v was successful.
+# Compile of IF_ID_Reg.v was successful.
+# Compile of ID_Ex_Reg.v was successful.
+# 9 compiles, 1 failed with 1 error.
+# Compile of CPU.v was successful.
+# Compile of CPU_tb.v was successful.
+# Compile of decode.v was successful.
+# Compile of IM_fetch.v was successful.
+# Compile of rename.v was successful with warnings.
+# Compile of controller.v was successful.
+# Compile of immGen.v was successful.
+# Compile of IF_ID_Reg.v was successful.
+# Compile of ID_Ex_Reg.v was successful.
+# 9 compiles, 0 failed with no errors.
+# Compile of CPU.v was successful.
+# Compile of CPU_tb.v was successful.
+# Compile of decode.v was successful.
+# Compile of IM_fetch.v was successful.
+# Compile of rename.v was successful.
+# Compile of controller.v was successful.
+# Compile of immGen.v was successful.
+# Compile of IF_ID_Reg.v was successful.
+# Compile of ID_Ex_Reg.v was successful.
+# 9 compiles, 0 failed with no errors.
+vsim -novopt work.CPU_tb
+# vsim -gui E:\UCLA\Codes\zyd_github\RISCV_OoO_CPU\sim\CPU_tb.mpf 
+# Start time: 20:33:10 on Nov 26,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.CPU_tb
+# Loading work.CPU_tb
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.CPU
+# Loading work.CPU
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.instructionMemory
+# Loading work.instructionMemory
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.IF_ID_Reg
+# Loading work.IF_ID_Reg
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.decode
+# Loading work.decode
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.controller
+# Loading work.controller
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.immGen
+# Loading work.immGen
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ID_EX_Reg
+# Loading work.ID_EX_Reg
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.rename
+# Loading work.rename
+# ** Warning: (vsim-3015) E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Decode.v(38): [PCDPC] - Port size (6) does not match connection size (7) for port 'controlSignals'. The port definition is at: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Controller.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/cpu/decode_mod/contMod File: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Controller.v
+# ** Warning: (vsim-3017) E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v(151): [TFMPC] - Too few port connections. Expected 13, found 12.
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/cpu/rename_inst File: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Rename.v
+# ** Warning: (vsim-3722) E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v(151): [TFMPC] - Missing connection for port 'old_dr'.

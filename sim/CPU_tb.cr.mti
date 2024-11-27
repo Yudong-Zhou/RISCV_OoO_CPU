@@ -5,7 +5,7 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	CPU_tb
 
-} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/immGen.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/immGen.v
+} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/immGen.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ImmGen.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module immGen
 
@@ -26,19 +26,33 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	instructionMemory
 
-} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/controller.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/controller.v
+} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Unified_Issue_Queue.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Unified_Issue_Queue.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module controller
+-- Compiling module Unified_Issue_Queue
 
 Top level modules:
-	controller
+	Unified_Issue_Queue
 
-} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/decode.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/decode.v
+} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module CPU
+
+Top level modules:
+	CPU
+
+} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/decode.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Decode.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module decode
 
 Top level modules:
 	decode
+
+} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/controller.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Controller.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module controller
+
+Top level modules:
+	controller
 
 } {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/IF_ID_Reg.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/IF_ID_Reg.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
@@ -46,16 +60,5 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 
 Top level modules:
 	IF_ID_Reg
-
-} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/rename.v {2 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/rename.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module rename
-** Warning: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/rename.v(103): (vlog-2182) 'free_pool' might be read before written in always_comb or always @* block.
-
-** Warning: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/rename.v(109): (vlog-2182) 'old_regnum' might be read before written in always_comb or always @* block.
-
-
-Top level modules:
-	rename
 
 } {} {}}

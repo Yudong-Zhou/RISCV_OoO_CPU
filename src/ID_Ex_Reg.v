@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////////
 // Function: module for pipeline register between ID and EX stage
 //
-// Author: Yudong Zhou
+// Author: Yudong Zhou, tested Paige Larson
 //
 // Create date: 11/16/2024
 ///////////////////////////////////////////////////////////////////
@@ -12,28 +12,35 @@ module ID_EX_Reg (
     input           clk,
     input           rstn,
     
-    input [6 : 0]   opcode_in,
-    input [2 : 0]   funct3_in,
-    input [6 : 0]   funct7_in,
-    input [4 : 0]   srcReg1_in,
-    input [4 : 0]   srcReg2_in,
-    input [4 : 0]   destReg_in,
-    input [31 : 0]  imm_in,
-    input [1 : 0]   lwSw_in,
+    input [6:0]     opcode_in,
+    input [2:0]     funct3_in,
+    input [6:0]     funct7_in,
+    input [4:0]     srcReg1_in,
+    input [4:0]     srcReg2_in,
+    input [4:0]     destReg_in,
+    input [31:0]    imm_in,
+    input [1:0]     lwSw_in,
+    //input [1:0]     aluOp_in,
     input           regWrite_in,
+    //input           aluSrc_in,
+    //input           branch_in,
     input           memRead_in,
     input           memWrite_in,
     input           memToReg_in,
-
-    output reg [6 : 0]  opcode_out,
-    output reg [2 : 0]  funct3_out,
-    output reg [6 : 0]  funct7_out,
-    output reg [4 : 0]  srcReg1_out,
-    output reg [4 : 0]  srcReg2_out,
-    output reg [4 : 0]  destReg_out,
-    output reg [31 : 0] imm_out,
-    output reg [1 : 0]  lwSw_out,
+    input           hasImm_in,
+    output reg          hasImm_out,
+    output reg [6:0]    opcode_out,
+    output reg [2:0]    funct3_out,
+    output reg [6:0]    funct7_out,
+    output reg [4:0]    srcReg1_out,
+    output reg [4:0]    srcReg2_out,
+    output reg [4:0]    destReg_out,
+    output reg [31:0]   imm_out,
+    output reg [1:0]    lwSw_out,
+    //output [1:0]    aluOp_out,
     output reg          regWrite_out,
+    //output          aluSrc_out,
+    //output          branch_out,
     output reg          memRead_out,
     output reg          memWrite_out,
     output reg          memToReg_out    
@@ -56,6 +63,7 @@ module ID_EX_Reg (
             memRead_out     <= 1'b0;
             memWrite_out    <= 1'b0;
             memToReg_out    <= 1'b0;
+            hasImm_out      <= 1'b0;
         end
         else begin
             opcode_out      <= opcode_in;
@@ -73,6 +81,7 @@ module ID_EX_Reg (
             memRead_out     <= memRead_in;
             memWrite_out    <= memWrite_in;
             memToReg_out    <= memToReg_in;
+            hasImm_out      <= hasImm_in;
         end
     end
 
