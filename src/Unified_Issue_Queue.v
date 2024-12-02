@@ -126,7 +126,7 @@ module Unified_Issue_Queue #(
     // initializations
     integer                     i               = 0;
     reg [1 : 0]                 fu_alu_round    = 0;
-
+ 
     // update ready signals
     integer                     k               = 0; 
 
@@ -246,7 +246,7 @@ module Unified_Issue_Queue #(
     end
     
     // update source_ready & source_data signals
-    always @(posedge clk) begin
+    always @(*) begin
         for (k = 0; k < RS_SIZE; k = k + 1) begin
             if (valid[k]) begin
                 if ((src_reg1[k] == reg_tag_from_FU0_in) && FU0_flag_in) begin
