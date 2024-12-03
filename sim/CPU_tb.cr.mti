@@ -1,63 +1,16 @@
-E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module CPU_tb
-
-Top level modules:
-	CPU_tb
-
-} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/IM_fetch.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/IM_fetch.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module instructionMemory
-
-Top level modules:
-	instructionMemory
-
-} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module CPU
-
-Top level modules:
-	CPU
-
-} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/rename.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Rename.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module rename
-
-Top level modules:
-	rename
-
-} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ROB.v {0 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ROB.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module reorder_buffer
-** Error: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ROB.v(34): 'Port' must not be declared to be an array: ROB_reg_ready.
-
-} {4.0 5.0} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/controller.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Controller.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module controller
-
-Top level modules:
-	controller
-
-} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/immGen.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ImmGen.v
+E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/immGen.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ImmGen.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module immGen
 
 Top level modules:
 	immGen
 
-} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ID_Ex_Reg.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ID_Ex_Reg.v
+} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module ID_EX_Reg
+-- Compiling module CPU_tb
 
 Top level modules:
-	ID_EX_Reg
-
-} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/IF_ID_Reg.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/IF_ID_Reg.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module IF_ID_Reg
-
-Top level modules:
-	IF_ID_Reg
+	CPU_tb
 
 } {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ALU.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ALU.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
@@ -66,11 +19,58 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	ALU
 
+} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ID_Ex_Reg.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ID_Ex_Reg.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module ID_EX_Reg
+
+Top level modules:
+	ID_EX_Reg
+
+} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ROB.v {0 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ROB.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module reorder_buffer
+** Error: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ROB.v(34): 'Port' must not be declared to be an array: ROB_reg_ready.
+
+} {4.0 5.0} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/IM_fetch.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/IM_fetch.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module instructionMemory
+
+Top level modules:
+	instructionMemory
+
 } {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/decode.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Decode.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module decode
 
 Top level modules:
 	decode
+
+} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/IF_ID_Reg.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/IF_ID_Reg.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module IF_ID_Reg
+
+Top level modules:
+	IF_ID_Reg
+
+} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/controller.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Controller.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module controller
+
+Top level modules:
+	controller
+
+} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/rename.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Rename.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module rename
+
+Top level modules:
+	rename
+
+} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module CPU
+
+Top level modules:
+	CPU
 
 } {} {}}
