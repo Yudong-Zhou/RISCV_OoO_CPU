@@ -11,6 +11,7 @@
 module ID_EX_Reg (
     input           clk,
     input           rstn,
+    input           stall,
     
     input [6:0]     opcode_in,
     input [2:0]     funct3_in,
@@ -28,6 +29,8 @@ module ID_EX_Reg (
     input           memWrite_in,
     input           memToReg_in,
     input           hasImm_in,
+    input [31:0]    PC_in,
+
     output reg          hasImm_out,
     output reg [6:0]    opcode_out,
     output reg [2:0]    funct3_out,
@@ -43,7 +46,10 @@ module ID_EX_Reg (
     //output          branch_out,
     output reg          memRead_out,
     output reg          memWrite_out,
-    output reg          memToReg_out    
+    output reg          memToReg_out,
+    output reg [31:0]   PC_out,
+
+    output reg          is_dispatching    
 );
 
     always @(posedge clk or negedge rstn) begin
@@ -64,6 +70,8 @@ module ID_EX_Reg (
             memWrite_out    <= 1'b0;
             memToReg_out    <= 1'b0;
             hasImm_out      <= 1'b0;
+            PC_out          <= 32'b0;
+            is_dispatching  <= 1'b0;
         end
         else begin
             opcode_out      <= opcode_in;
@@ -82,6 +90,14 @@ module ID_EX_Reg (
             memWrite_out    <= memWrite_in;
             memToReg_out    <= memToReg_in;
             hasImm_out      <= hasImm_in;
+            PC_out          <= PC_in;
+        end
+
+        if (~stall)begin
+            is_dispatching = 1'b1;
+        end
+        else begin
+            is_dispatching = 1'b0;
         end
     end
 

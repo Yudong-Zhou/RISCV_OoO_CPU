@@ -44,7 +44,7 @@ module Unified_Issue_Queue #(
 
     // forwarding logic
     input [FU_ARRAY - 1 : 0]    fu_ready_from_FU_in,     
-                                // if FU NO.i is ready, then fu_ready_from_ROB_in[i-1] = 1
+                                // if FU NO.i is ready, then fu_ready_from_FU_in[i] = 1
     input                       FU0_flag_in, // if FU0 is outputing value, then FU0_flag_in = 1
     input [AR_SIZE - 1 : 0]     reg_tag_from_FU0_in,   
     input [31 : 0]              reg_value_from_FU0_in,
@@ -60,6 +60,7 @@ module Unified_Issue_Queue #(
     
     // output signals
     // issue NO.1
+    output reg [3 : 0]                  op_out0,
     output reg [AR_SIZE - 1 : 0]        rs1_out0,
     output reg [AR_SIZE - 1 : 0]        rs2_out0,
     output reg [AR_SIZE - 1 : 0]        rd_out0,
@@ -70,6 +71,7 @@ module Unified_Issue_Queue #(
     output reg [ROB_SIZE - 1 : 0]       ROB_no_out0,
     output reg [31 : 0]                 PC_info_out0,
     // issue NO.2
+    output reg [3 : 0]                  op_out1,
     output reg [AR_SIZE - 1 : 0]        rs1_out1,
     output reg [AR_SIZE - 1 : 0]        rs2_out1,
     output reg [AR_SIZE - 1 : 0]        rd_out1,
@@ -80,6 +82,7 @@ module Unified_Issue_Queue #(
     output reg [ROB_SIZE - 1 : 0]       ROB_no_out1,
     output reg [31 : 0]                 PC_info_out1,  
     // issue NO.3
+    output reg [3 : 0]                  op_out2,
     output reg [AR_SIZE - 1 : 0]        rs1_out2,
     output reg [AR_SIZE - 1 : 0]        rs2_out2,
     output reg [AR_SIZE - 1 : 0]        rd_out2,
@@ -150,6 +153,8 @@ module Unified_Issue_Queue #(
     reg [1 : 0]                 issue_count     = 0;
     reg                         fu_taken        [FU_ARRAY - 1 : 0];
 
+    // output signals
+    reg [3 : 0]                 op_out          [2 : 0];
     reg [AR_SIZE - 1 : 0]       rs1_out         [2 : 0];
     reg [AR_SIZE - 1 : 0]       rs2_out         [2 : 0];
     reg [AR_SIZE - 1 : 0]       rd_out          [2 : 0];
@@ -234,12 +239,24 @@ module Unified_Issue_Queue #(
                         src1_ready[i]   <= 1'b1;
                         src1_data[i]    <= rs1_value_from_ARF_in;
                     end
+                    else if (op_type == LUI) begin
+                        src1_ready[i]   <= 1'b1;
+                        src1_data[i]    <= 32'b0;
+                    end
 
                     // put src2 data into RS
                     src_reg2[i]     <= rs2_in;
                     if(rs2_ready_from_ROB_in[rs2_in]) begin
                         src2_ready[i]   <= 1'b1;
                         src2_data[i]    <= rs2_value_from_ARF_in;
+                    end
+                    else if (op_type == LUI) begin
+                        src2_ready[i]   <= 1'b1;
+                        src2_data[i]    <= 32'b0;
+                    end
+                    else if (op_type == LW) begin
+                        src2_ready[i]   <= 1'b1;
+                        src2_data[i]    <= 32'b0;
                     end
 
                     // put imm into RS
@@ -310,6 +327,7 @@ module Unified_Issue_Queue #(
     always @(posedge clk or negedge rstn) begin
         if (~rstn) begin
             for (j = 0; j < 3; j = j + 1) begin
+                op_out[j]           <= 'b0;
                 rs1_out[j]          <= 'b0;
                 rs2_out[j]          <= 'b0;
                 rd_out[j]           <= 'b0;
@@ -337,6 +355,7 @@ module Unified_Issue_Queue #(
                 if (valid[j] && src1_ready[j] && src2_ready[j] && fu_ready_from_FU_in[fu_number[j]]
                     && (~fu_taken[fu_number[j]])) begin
                     // output signals
+                    op_out[fu_number[j]]            = operation[j];
                     rs1_out[fu_number[j]]           = src_reg1[j];
                     rs2_out[fu_number[j]]           = src_reg2[j];
                     rd_out[fu_number[j]]            = dest_reg[j];
@@ -363,6 +382,7 @@ module Unified_Issue_Queue #(
             end
         end
 
+        op_out0             <= op_out[0];
         rs1_out0            <= rs1_out[0];
         rs2_out0            <= rs2_out[0];
         rd_out0             <= rd_out[0];
@@ -373,6 +393,7 @@ module Unified_Issue_Queue #(
         ROB_no_out0         <= ROB_no_out[0];
         PC_info_out0        <= PC_info_out[0];
 
+        op_out1             <= op_out[1];
         rs1_out1            <= rs1_out[1];
         rs2_out1            <= rs2_out[1];
         rd_out1             <= rd_out[1];
@@ -383,6 +404,7 @@ module Unified_Issue_Queue #(
         ROB_no_out1         <= ROB_no_out[1];
         PC_info_out1        <= PC_info_out[1];
 
+        op_out2             <= op_out[2];
         rs1_out2            <= rs1_out[2];
         rs2_out2            <= rs2_out[2];
         rd_out2             <= rd_out[2];
