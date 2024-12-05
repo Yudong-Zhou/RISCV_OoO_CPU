@@ -16,7 +16,7 @@ module LSU(
     input [31 : 0]          inst_pc_in,
     input [3 : 0]           op_in,
     input [31 : 0]          lwData_from_LSQ_in,
-    input                   Data_from_LSQ_in,
+    input                   store_data_from_LSQ_in,
     input                   loadstore_from_LSQ_in,
     input                   already_found_from_LSQ_in,
     input                   no_issue_from_LSQ_in,

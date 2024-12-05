@@ -65,7 +65,7 @@ module LSQ(
 
     always @(*) begin
         for (k = 0; k < 16; k = k + 1) begin
-            if((pc_issue == PC[i]) && VAILD[i] && OP[i]) begin
+            if((pc_issue == PC[i]) && VALID[i] && OP[i]) begin
                 LSQ_DATA[i] = swData;
             end 
         end
@@ -110,8 +110,8 @@ module LSQ(
                 if ((PC[i] == pcLsu) && (OP[i] == 0)) begin
                     ADDRESS[i] = addressLsu;
                     j = i - 1;
-                    for (j; j >= 0; j = j - 1) begin
-                        if ((ADDRESS[j] == ADDRESS[i]) && OP[j] && VAILD[j]) begin
+                    for (j = i - 1; j >= 0; j = j - 1) begin
+                        if ((ADDRESS[j] == ADDRESS[i]) && OP[j] && VALID[j]) begin
                             LSQ_DATA[i] = LSQ_DATA[j];
                             FOUND[i]    = 1;
                             // populate LW data with the most recent store to the same address

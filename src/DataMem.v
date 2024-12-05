@@ -143,7 +143,7 @@ module DataMemory(
 
     always @(posedge clk or negedge rstn) begin
         if (~rstn) begin
-            for (i = 0; i < 1024; i++) begin
+            for (i = 0; i < 1024; i = i + 1) begin
                 DATAMEM[i] = 32'b0;
             end
             lwData_out      = 32'b0;

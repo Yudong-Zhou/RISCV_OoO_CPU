@@ -8,7 +8,7 @@
 
 `timescale 1ns/1ps
 
-module EX_MEM_Reg (
+module MEM_Comp_Reg (
     input           clk,
     input           rstn,
     input [31:0]    from_lsq,

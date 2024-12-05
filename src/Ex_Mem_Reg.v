@@ -42,7 +42,7 @@ module EX_MEM_Reg (
             pc_fu1_out          <= 'd0;
             rd_result_fu2_out   <= 'd0;
             pc_fu2_out          <= 'd0;
-            isLS_fu2_out        <= 'd0;
+            //isLS_fu2_out        <= 'd0;
             op_write_out        <= 'd0;
             op_read_out         <= 'd0;
             op_out              <= 'd0;
@@ -55,7 +55,7 @@ module EX_MEM_Reg (
             pc_fu1_out          <= pc_fu1_in;
             rd_result_fu2_out   <= rd_result_fu2_in;
             pc_fu2_out          <= pc_fu2_in;
-            isLS_fu2_out        <= isLS_fu2_in;
+            //isLS_fu2_out        <= isLS_fu2_in;
             op_write_out        <= op_write_in;
             op_read_out         <= op_read_in;
             op_out              <= op_in;

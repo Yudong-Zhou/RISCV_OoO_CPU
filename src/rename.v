@@ -4,6 +4,7 @@
 
 module Rename(
     //inputs: sr1, sr2, dr
+    input           clk,
     input           rstn,
     input [4 : 0]   sr1, 
     input [4 : 0]   sr2,

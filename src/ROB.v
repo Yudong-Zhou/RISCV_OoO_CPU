@@ -43,10 +43,10 @@ module ROB(
     output reg [63:0]   R_ready,
     output reg [63:0]   R_retire,
     output reg          stall,
-    output reg [5:0]    reg_update_ARF_1;
-    output reg [5:0]    reg_update_ARF_2;
-    output reg [31:0]   value_update_ARF_1;
-    output reg [31:0]   value_update_ARF_2;
+    output reg [5:0]    reg_update_ARF_1,
+    output reg [5:0]    reg_update_ARF_2,
+    output reg [31:0]   value_update_ARF_1,
+    output reg [31:0]   value_update_ARF_2
 );
 
     // 1. multiple entries per cycle
@@ -110,7 +110,6 @@ module ROB(
             
             retire_pointer  = 'd0;
             place_pointer   = 'd0;
-            ini_p_pointer   = 'd0;
 
             reg_update_ARF_1 = 6'b0;
             reg_update_ARF_2 = 6'b0;

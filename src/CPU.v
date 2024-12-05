@@ -120,6 +120,7 @@ module CPU #(
 
     wire [2 : 0]                tunnel_from_UIQ;
     wire [31 : 0]               swData_UIQ_LSQ;
+    wire                        stall_out_from_UIQ;
 
     // EX stage signals
     wire [31 : 0]   PC_EX;
@@ -182,6 +183,14 @@ module CPU #(
     wire [31 : 0]   pc_comp_2;
     wire [31 : 0]   rd_result_comp_3;
     wire [31 : 0]   pc_comp_3;
+    reg  [31 : 0]   rd_result_comp_0_reg;
+    reg  [31 : 0]   pc_comp_0_reg;
+    reg  [31 : 0]   rd_result_comp_1_reg;
+    reg  [31 : 0]   pc_comp_1_reg;
+    reg  [31 : 0]   rd_result_comp_2_reg;
+    reg  [31 : 0]   pc_comp_2_reg;
+    reg  [31 : 0]   rd_result_comp_3_reg;
+    reg  [31 : 0]   pc_comp_3_reg;
 
 ///////////////////////////////////////////////////////////////////////
 //  Fetch Stage
@@ -291,6 +300,7 @@ module CPU #(
 ///////////////////////////////////////////////////////////////////////
 //  Rename Process
     Rename Rename_inst (
+        .clk            (clk),
         .rstn           (rstn),
         .sr1            (srcReg1_EX),
         .sr2            (srcReg2_EX),
@@ -544,10 +554,14 @@ module CPU #(
 // MEM stage
     LSU LSU_inst (
         .mem_addr_in                (rd_result_fu2_MEM),
-        .lwData_from_LSQ_in         (data_from_lsq),
         .inst_pc_in                 (pc_fu2_MEM),
         .op_in                      (mem_op),
         .already_load_from_LSQ_in   (complete_from_lsq),
+        .lwData_from_LSQ_in         (data_from_lsq),
+        .store_data_from_LSQ_in     (store_data_from_LSQ), 
+        .loadstore_from_LSQ_in      (ls_from_lsq), 
+        .already_found_from_LSQ_in  (already_found_from_LSQ),
+        .no_issue_from_LSQ_in       (no_issue_from_LSQ),         
 
         .mem_addr_out               (mem_addr_from_LSU),
         .store_data_to_mem_out      (store_data_to_mem_from_LSU),
@@ -577,7 +591,7 @@ module CPU #(
 
 ///////////////////////////////////////////////////////////////////////
 // pipeline register between MEM and COMPLETE stage
-    EX_MEM_Reg EX_MEM_Reg_inst (
+    MEM_Comp_Reg MEM_Comp_Reg_inst (
         .clk                (clk),
         .rstn               (rstn),
         .from_lsq           (load_data_from_lsq),
@@ -595,42 +609,53 @@ module CPU #(
 
 ///////////////////////////////////////////////////////////////////////
 // COMPLETE logic
-    if (~(FU_write_flag || FU_read_flag)) begin
-        if(tunnel_MEM[0]) begin
-            rd_result_comp_0    = rd_result_fu0_MEM;
-            pc_comp_0           = pc_fu0_MEM;
-        end
-        else begin
-            rd_result_comp_0    = 32'd1;
-            pc_comp_0           = 32'd1;
+    always @(*) begin
+        if (~(FU_write_flag || FU_read_flag)) begin
+            if(tunnel_MEM[0]) begin
+                rd_result_comp_0_reg    = rd_result_fu0_MEM;
+                pc_comp_0_reg           = pc_fu0_MEM;
+            end
+            else begin
+                rd_result_comp_0_reg    = 32'd1;
+                pc_comp_0_reg           = 32'd1;
+            end
+
+            if(tunnel_MEM[1]) begin
+                rd_result_comp_1_reg    = rd_result_fu1_MEM;
+                pc_comp_1_reg           = pc_fu1_MEM;
+            end
+            else begin
+                rd_result_comp_1_reg    = 32'd1;
+                pc_comp_1_reg           = 32'd1;
+            end
+
+            if(tunnel_MEM[2]) begin
+                rd_result_comp_2_reg    = rd_result_fu2_MEM;
+                pc_comp_2_reg           = pc_fu2_MEM;
+            end
+            else begin
+                rd_result_comp_2_reg    = 32'd1;
+                pc_comp_2_reg           = 32'd1;
+            end
         end
 
-        if(tunnel_MEM[1]) begin
-            rd_result_comp_1    = rd_result_fu1_MEM;
-            pc_comp_1           = pc_fu1_MEM;
+        if(vaild_comp || lsq_comp) begin
+            rd_result_comp_3_reg    = lwData_comp;
+            pc_comp_3_reg           = pc_ls_comp;
         end
         else begin
-            rd_result_comp_1    = 32'd1;
-            pc_comp_1           = 32'd1;
-        end
-
-        if(tunnel_MEM[2]) begin
-            rd_result_comp_2    = rd_result_fu2_MEM;
-            pc_comp_2           = pc_fu2_MEM;
-        end
-        else begin
-            rd_result_comp_2    = 32'd1;
-            pc_comp_2           = 32'd1;
+            rd_result_comp_3_reg    = 32'd1;
+            pc_comp_3_reg           = 32'd1;
         end
     end
 
-    if(vaild_comp || lsq_comp) begin
-        rd_result_comp_3    = lwData_comp;
-        pc_comp_3           = pc_ls_comp;
-    end
-    else begin
-        rd_result_comp_3    = 32'd1;
-        pc_comp_3           = 32'd1;
-    end
+    assign rd_result_comp_0 = rd_result_comp_0_reg;
+    assign pc_comp_0 = pc_comp_0_reg;
+    assign rd_result_comp_1 = rd_result_comp_1_reg;
+    assign pc_comp_1 = pc_comp_1_reg;
+    assign rd_result_comp_2 = rd_result_comp_2_reg;
+    assign pc_comp_2 = pc_comp_2_reg;
+    assign rd_result_comp_3 = rd_result_comp_3_reg;
+    assign pc_comp_3 = pc_comp_3_reg;    
 
 endmodule

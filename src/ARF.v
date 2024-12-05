@@ -10,7 +10,7 @@
 
 module ARF #(
     parameter   AR_SIZE     =   6,      
-    parameter   AR_ARRAY    =   64,     
+    parameter   AR_ARRAY    =   64   
 )(
     input                       rstn,
     // can read 2 registers at the same time
@@ -25,7 +25,7 @@ module ARF #(
     input                       write_en,
 
     output reg [31 : 0]         read_data1,
-    output reg [31 : 0]         read_data2,
+    output reg [31 : 0]         read_data2
 );
 
     reg [31 : 0]    ar_file [AR_ARRAY - 1 : 0];
