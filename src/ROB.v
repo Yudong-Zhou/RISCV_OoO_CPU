@@ -21,7 +21,7 @@
 module ROB(
     input               clk, 
     input               rstn,
-    input               instr_PC_0, 
+    input [31:0]        instr_PC_0, 
     input               is_dispatching,
     
     input [5:0]         old_dest_reg_0,       //from rename      

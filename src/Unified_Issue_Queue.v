@@ -39,8 +39,8 @@ module Unified_Issue_Queue #(
     input [31 : 0]              imm_value_in,
     input [AR_SIZE - 1 : 0]     rd_in,
 
-    input [AR_ARRAY : 0]        rs1_ready_from_ROB_in,
-    input [AR_ARRAY : 0]        rs2_ready_from_ROB_in,
+    input [AR_ARRAY - 1 : 0]        rs1_ready_from_ROB_in,
+    input [AR_ARRAY - 1 : 0]        rs2_ready_from_ROB_in,
                                 // if reg pi is ready, then rs_ready_from_ROB_in[i] = 1
 
     // forwarding logic

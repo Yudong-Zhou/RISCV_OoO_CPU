@@ -69,3 +69,228 @@
 # Compile of Rename.v was successful.
 # Compile of ROB.v was successful.
 # 18 compiles, 0 failed with no errors.
+vsim -novopt work.CPU_tb
+# vsim -gui E:\UCLA\Codes\zyd_github\RISCV_OoO_CPU\sim\CPU_tb.mpf 
+# Start time: 23:35:31 on Dec 04,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.CPU_tb
+# Loading work.CPU_tb
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.CPU
+# Loading work.CPU
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.instructionMemory
+# Loading work.instructionMemory
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.IF_ID_Reg
+# Loading work.IF_ID_Reg
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.Decode
+# Loading work.Decode
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.controller
+# Loading work.controller
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.immGen
+# Loading work.immGen
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ID_EX_Reg
+# Loading work.ID_EX_Reg
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.Rename
+# Loading work.Rename
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ROB
+# Loading work.ROB
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ARF
+# Loading work.ARF
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.LSQ
+# Loading work.LSQ
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.Unified_Issue_Queue
+# Loading work.Unified_Issue_Queue
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ALU
+# Loading work.ALU
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.EX_MEM_Reg
+# Loading work.EX_MEM_Reg
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.LSU
+# Loading work.LSU
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.DataMemory
+# Loading work.DataMemory
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.MEM_Comp_Reg
+# Loading work.MEM_Comp_Reg
+# ** Warning: (vsim-3015) E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v(324): [PCDPC] - Port size (1) does not match connection size (32) for port 'instr_PC_0'. The port definition is at: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ROB.v(24).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/cpu/ROB_inst File: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ROB.v
+# ** Warning: (vsim-3015) E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v(324): [PCDPC] - Port size (6) does not match connection size (7) for port 'old_dest_reg_0'. The port definition is at: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ROB.v(27).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/cpu/ROB_inst File: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ROB.v
+# ** Warning: (vsim-3015) E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v(396): [PCDPC] - Port size (65) does not match connection size (64) for port 'rs1_ready_from_ROB_in'. The port definition is at: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Unified_Issue_Queue.v(42).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/cpu/UIQ File: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Unified_Issue_Queue.v
+# ** Warning: (vsim-3015) E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v(396): [PCDPC] - Port size (65) does not match connection size (64) for port 'rs2_ready_from_ROB_in'. The port definition is at: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Unified_Issue_Queue.v(43).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/cpu/UIQ File: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Unified_Issue_Queue.v
+# ** Warning: (vsim-3015) E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v(527): [PCDPC] - Port size (1) does not match connection size (4) for port 'op_in'. The port definition is at: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Ex_Mem_Reg.v(23).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/cpu/EX_MEM_Reg_inst File: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Ex_Mem_Reg.v
+# ** Warning: (vsim-3015) E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v(527): [PCDPC] - Port size (32) does not match connection size (1) for port 'rd_result_fu0_out'. The port definition is at: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Ex_Mem_Reg.v(26).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/cpu/EX_MEM_Reg_inst File: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Ex_Mem_Reg.v
+# ** Warning: (vsim-3015) E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v(527): [PCDPC] - Port size (32) does not match connection size (1) for port 'pc_fu0_out'. The port definition is at: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Ex_Mem_Reg.v(27).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/cpu/EX_MEM_Reg_inst File: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Ex_Mem_Reg.v
+# ** Warning: (vsim-3015) E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v(527): [PCDPC] - Port size (1) does not match connection size (4) for port 'op_out'. The port definition is at: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Ex_Mem_Reg.v(34).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/cpu/EX_MEM_Reg_inst File: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Ex_Mem_Reg.v
+# ** Error: (vsim-3389) E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v(555): Port 'already_load_from_LSQ_in' not found in the connected module (4th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/cpu/LSU_inst File: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSU.v
+# ** Fatal: (vsim-3365) E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v(555): Too many port connections. Expected 16, found 17.
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/cpu/LSU_inst File: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSU.v
+# FATAL ERROR while loading design
+# Error loading design
+# Compile of Unified_Issue_Queue.v was successful.
+# Compile of ALU.v was successful.
+# Compile of ARF.v was successful.
+# Compile of Controller.v was successful.
+# Compile of CPU.v was successful.
+# Compile of CPU_tb.v was successful.
+# Compile of DataMem.v was successful.
+# Compile of Decode.v was successful.
+# Compile of Ex_Mem_Reg.v was successful.
+# Compile of ID_Ex_Reg.v was successful.
+# Compile of IF_ID_Reg.v was successful.
+# Compile of IM_fetch.v was successful.
+# Compile of ImmGen.v was successful.
+# Compile of LSQ.v was successful.
+# Compile of LSU.v was successful.
+# Compile of Mem_Comp_Reg.v was successful.
+# Compile of Rename.v was successful.
+# Compile of ROB.v was successful.
+# 18 compiles, 0 failed with no errors.
+vsim -novopt work.CPU_tb
+# vsim 
+# Start time: 23:42:47 on Dec 04,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.CPU_tb
+# Loading work.CPU_tb
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.CPU
+# Loading work.CPU
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.instructionMemory
+# Loading work.instructionMemory
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.IF_ID_Reg
+# Loading work.IF_ID_Reg
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.Decode
+# Loading work.Decode
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.controller
+# Loading work.controller
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.immGen
+# Loading work.immGen
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ID_EX_Reg
+# Loading work.ID_EX_Reg
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.Rename
+# Loading work.Rename
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ROB
+# Loading work.ROB
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ARF
+# Loading work.ARF
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.LSQ
+# Loading work.LSQ
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.Unified_Issue_Queue
+# Loading work.Unified_Issue_Queue
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ALU
+# Loading work.ALU
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.EX_MEM_Reg
+# Loading work.EX_MEM_Reg
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.LSU
+# Loading work.LSU
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.DataMemory
+# Loading work.DataMemory
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.MEM_Comp_Reg
+# Loading work.MEM_Comp_Reg
+# ** Warning: (vsim-3015) E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v(301): [PCDPC] - Port size (7) does not match connection size (6) for port 'old_dr'. The port definition is at: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Rename.v(24).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/cpu/Rename_inst File: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Rename.v
+# ** Warning: (vsim-3015) E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v(574): [PCDPC] - Port size (4) does not match connection size (1) for port 'optype'. The port definition is at: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/DataMem.v(13).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/cpu/DataMem File: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/DataMem.v
+# ** Warning: (vsim-3015) E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v(592): [PCDPC] - Port size (32) does not match connection size (1) for port 'from_lsq'. The port definition is at: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Mem_Comp_Reg.v(14).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/cpu/MEM_Comp_Reg_inst File: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Mem_Comp_Reg.v
+quit -sim
+# Compile of CPU.v was successful.
+# Compile of Mem_Comp_Reg.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -novopt work.CPU_tb
+# vsim 
+# Start time: 23:45:52 on Dec 04,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Loading work.CPU_tb
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.CPU
+# Loading work.CPU
+# Loading work.instructionMemory
+# Loading work.IF_ID_Reg
+# Loading work.Decode
+# Loading work.controller
+# Loading work.immGen
+# Loading work.ID_EX_Reg
+# Loading work.Rename
+# Loading work.ROB
+# Loading work.ARF
+# Loading work.LSQ
+# Loading work.Unified_Issue_Queue
+# Loading work.ALU
+# Loading work.EX_MEM_Reg
+# Loading work.LSU
+# Loading work.DataMemory
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.MEM_Comp_Reg
+# Loading work.MEM_Comp_Reg
+# ** Warning: (vsim-3015) E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v(323): [PCDPC] - Port size (6) does not match connection size (7) for port 'old_dest_reg_0'. The port definition is at: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ROB.v(27).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/cpu/ROB_inst File: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ROB.v
+# ** Warning: (vsim-3015) E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v(554): [PCDPC] - Port size (1) does not match connection size (4) for port 'op_out'. The port definition is at: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSU.v(26).
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/cpu/LSU_inst File: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSU.v
+quit -sim
+# Compile of Unified_Issue_Queue.v was successful.
+# Compile of ALU.v was successful.
+# Compile of ARF.v was successful.
+# Compile of Controller.v was successful.
+# Compile of CPU.v was successful.
+# Compile of CPU_tb.v was successful.
+# Compile of DataMem.v was successful.
+# Compile of Decode.v was successful.
+# Compile of Ex_Mem_Reg.v was successful.
+# Compile of ID_Ex_Reg.v was successful.
+# Compile of IF_ID_Reg.v was successful.
+# Compile of IM_fetch.v was successful.
+# Compile of ImmGen.v was successful.
+# Compile of LSQ.v was successful.
+# Compile of LSU.v was successful.
+# Compile of Mem_Comp_Reg.v was successful.
+# Compile of Rename.v was successful.
+# Compile of ROB.v was successful.
+# 18 compiles, 0 failed with no errors.
+vsim -novopt work.CPU_tb
+# vsim 
+# Start time: 23:53:30 on Dec 04,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.CPU_tb
+# Loading work.CPU_tb
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.CPU
+# Loading work.CPU
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.instructionMemory
+# Loading work.instructionMemory
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.IF_ID_Reg
+# Loading work.IF_ID_Reg
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.Decode
+# Loading work.Decode
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.controller
+# Loading work.controller
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.immGen
+# Loading work.immGen
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ID_EX_Reg
+# Loading work.ID_EX_Reg
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.Rename
+# Loading work.Rename
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ROB
+# Loading work.ROB
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ARF
+# Loading work.ARF
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.LSQ
+# Loading work.LSQ
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.Unified_Issue_Queue
+# Loading work.Unified_Issue_Queue
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ALU
+# Loading work.ALU
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.EX_MEM_Reg
+# Loading work.EX_MEM_Reg
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.LSU
+# Loading work.LSU
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.DataMemory
+# Loading work.DataMemory
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.MEM_Comp_Reg
+# Loading work.MEM_Comp_Reg
+# End time: 23:53:41 on Dec 04,2024, Elapsed time: 0:00:11
+# Errors: 0, Warnings: 1

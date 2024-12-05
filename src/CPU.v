@@ -42,27 +42,26 @@ module CPU #(
     wire            is_dispatching;
 
     // Rename
-    wire [6 : 0]    old_dr_from_rename;
+    wire [5 : 0]    old_dr_from_rename;
 
     // ROB
     wire [63 : 0]   R_ready_from_ROB;
     wire [63 : 0]   R_retire_from_ROB;
     wire            stall_from_ROB;
-    wire [5:0]      reg_update_ARF_1;
-    wire [5:0]      reg_update_ARF_2;
-    wire [31:0]     value_update_ARF_1;
-    wire [31:0]     value_update_ARF_2;
+    wire [5 : 0]    reg_update_ARF_1;
+    wire [5 : 0]    reg_update_ARF_2;
+    wire [31 : 0]   value_update_ARF_1;
+    wire [31 : 0]   value_update_ARF_2;
 
     // ARF
-    wire [31:0]     read_data1_ARF;
-    wire [31:0]     read_data2_ARF;
+    wire [31 : 0]   read_data1_ARF;
+    wire [31 : 0]   read_data2_ARF;
 
     // LSQ
     wire [31 : 0]   pc_from_lsq;
     wire [31 : 0]   adr_from_lsq;
     wire [31 : 0]   data_from_lsq;
     wire            ls_from_lsq;
-    wire            complete_from_lsq;
     wire            FU_write_flag;
     wire            FU_read_flag;
     wire            already_found_from_LSQ;
@@ -144,8 +143,8 @@ module CPU #(
     wire            stall_Rename_EX;
 
     // EX_MEM pipeline register signals
-    wire [31 : 0]   rd_result_fuo_MEM;
-    wire [31 : 0]   pc_fuo_MEM;
+    wire [31 : 0]   rd_result_fu0_MEM;
+    wire [31 : 0]   pc_fu0_MEM;
     wire [31 : 0]   rd_result_fu1_MEM;
     wire [31 : 0]   pc_fu1_MEM;
     wire [31 : 0]   rd_result_fu2_MEM;
@@ -162,15 +161,15 @@ module CPU #(
     wire [31 : 0]   inst_pc_from_LSU;
     wire            write_en_from_LSU;
     wire            read_en_from_LSU;
-    wire            op_from_LSU;
+    wire [3 : 0]    op_from_LSU;
     wire            load_data_from_lsq;
-    wire [31:0]     inst_pc_from_mem;
-    wire [31:0]     lwData_from_mem;
+    wire [31 : 0]   inst_pc_from_mem;
+    wire [31 : 0]   lwData_from_mem;
     wire            data_vaild_from_mem;
 
     // pipeline register between MEM and COMPLETE stage
-    wire [31:0]     lwData_comp;
-    wire [31:0]     pc_ls_comp;
+    wire [31 : 0]   lwData_comp;
+    wire [31 : 0]   pc_ls_comp;
     wire            vaild_comp;
     wire            lsq_comp;
 
@@ -523,7 +522,7 @@ module CPU #(
                             ((op_out2_from_UIQ == 4'd9) || (op_out2_from_UIQ == 4'd10)));
     assign FU_read_flag =  ((tunnel_from_UIQ[2]) && 
                             ((op_out2_from_UIQ == 4'd7) || (op_out2_from_UIQ == 4'd8)));
-    
+
     EX_MEM_Reg EX_MEM_Reg_inst(
         .clk                (clk),
         .rstn               (rstn),
@@ -556,7 +555,6 @@ module CPU #(
         .mem_addr_in                (rd_result_fu2_MEM),
         .inst_pc_in                 (pc_fu2_MEM),
         .op_in                      (mem_op),
-        .already_load_from_LSQ_in   (complete_from_lsq),
         .lwData_from_LSQ_in         (data_from_lsq),
         .store_data_from_LSQ_in     (store_data_from_LSQ), 
         .loadstore_from_LSQ_in      (ls_from_lsq), 

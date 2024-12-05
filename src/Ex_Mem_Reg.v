@@ -20,7 +20,7 @@ module EX_MEM_Reg (
     input [31 : 0]  pc_fu2_in,
     input           op_write_in,
     input           op_read_in,
-    input           op_in,
+    input [3 : 0]   op_in,
 
     output reg [2 : 0]   tunnel_out,
     output reg [31 : 0]  rd_result_fu0_out,
@@ -31,7 +31,7 @@ module EX_MEM_Reg (
     output reg [31 : 0]  pc_fu2_out,
     output reg           op_write_out,
     output reg           op_read_out,
-    output reg           op_out
+    output reg [3 : 0]   op_out
 );
 
     always @(posedge clk or negedge rstn) begin

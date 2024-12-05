@@ -12,19 +12,26 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	instructionMemory
 
-} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSQ.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSQ.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module LSQ
-
-Top level modules:
-	LSQ
-
 } {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Rename.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Rename.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module Rename
 
 Top level modules:
 	Rename
+
+} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module CPU
+
+Top level modules:
+	CPU
+
+} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Ex_Mem_Reg.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Ex_Mem_Reg.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module EX_MEM_Reg
+
+Top level modules:
+	EX_MEM_Reg
 
 } {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Unified_Issue_Queue.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Unified_Issue_Queue.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
@@ -33,33 +40,12 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	Unified_Issue_Queue
 
-} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v {0 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v
+} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSQ.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSQ.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module CPU
-** Error: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v(600): 'EX_MEM_Reg_inst' already declared in this scope.
-** Error: (vlog-13069) E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v(606): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
-
-** Error: (vlog-13069) E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v(610): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
-
-** Error: (vlog-13069) E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v(615): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
-
-** Error: (vlog-13069) E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v(619): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
-
-** Error: (vlog-13069) E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v(624): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
-
-** Error: (vlog-13069) E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v(628): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
-
-** Error: (vlog-13069) E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v(634): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
-
-** Error: (vlog-13069) E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v(638): near "=": syntax error, unexpected '=', expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
-
-
-} {4.0 6.0 7.0 8.0 9.0 10.0 11.0 12.0 13.0 14.0 15.0 16.0 17.0 18.0 19.0 20.0} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Ex_Mem_Reg.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Ex_Mem_Reg.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module EX_MEM_Reg
+-- Compiling module LSQ
 
 Top level modules:
-	EX_MEM_Reg
+	LSQ
 
 } {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ARF.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ARF.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
@@ -116,6 +102,13 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 
 Top level modules:
 	DataMemory
+
+} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Mem_Comp_Reg.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Mem_Comp_Reg.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module MEM_Comp_Reg
+
+Top level modules:
+	MEM_Comp_Reg
 
 } {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ALU.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ALU.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014

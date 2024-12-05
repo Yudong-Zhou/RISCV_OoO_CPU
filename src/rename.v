@@ -21,7 +21,7 @@ module Rename(
     output reg [5 : 0]      sr1_p,
     output reg [5 : 0]      sr2_p,
     output reg [5 : 0]      dr_p,
-    output reg [6 : 0]      old_dr,
+    output reg [5 : 0]      old_dr,
     output reg              stall  
 );
 
@@ -62,7 +62,7 @@ module Rename(
     integer free_var;
     always @(posedge clk) begin
         for (retire_var = 0; retire_var < 64; retire_var = retire_var + 1) begin
-            if (retire_from_ROB[retire_var] == 1) begin
+            if ((retire_from_ROB[retire_var] == 1 ) && (retire_var != 0)) begin // x0 always p0, do not retire
                 for (free_var = 0; free_var < 32; free_var = free_var + 1)begin
                     if (free_pool[free_var][0] == 1'b1) begin // if this p_reg is used
                         free_pool[free_var][1] = retire_var;  // update
@@ -123,8 +123,8 @@ module Rename(
                 end
             end
             else begin // S_type or NOP
-                dr_p=RAT[dr][1];
-                old_dr=64;
+                dr_p = 0;
+                old_dr = 0;
             end
             
             if (j == 32) stall <= 1'b1;         // Stall if no free physical register is found

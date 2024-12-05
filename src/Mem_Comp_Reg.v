@@ -11,7 +11,7 @@
 module MEM_Comp_Reg (
     input           clk,
     input           rstn,
-    input [31:0]    from_lsq,
+    input           from_lsq,
     input           mem_vaild,
 
     input [31:0]    lwData_from_LSQ_in,

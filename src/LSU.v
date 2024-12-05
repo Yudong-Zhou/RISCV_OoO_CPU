@@ -23,7 +23,7 @@ module LSU(
 
     output reg [31 : 0]     mem_addr_out,
     output reg [31 : 0]     inst_pc_out,
-    output reg              op_out,
+    output reg [3 : 0]      op_out,
     output reg [31 : 0]     store_data_to_mem_out,
     output reg [31 : 0]     load_data_to_comp_out,
     output reg              write_en_out,
