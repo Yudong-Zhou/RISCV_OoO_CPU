@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 // Code your design here
-module decode(
+module Decode(
     //Input
     input [31 : 0]          instr,
     input                   clk,

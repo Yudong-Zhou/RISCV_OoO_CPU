@@ -72,19 +72,18 @@ module ALU #(
                     4'd6:
                         //SRAI
                         data_out_dr = data_in_sr1 >> data_in_imm;
-
                     4'd7:
                         //LB
-
+                        data_out_dr = data_in_sr1 + data_in_imm;
                     4'd8:
                         //LW
-                    
+                        data_out_dr = data_in_sr1 + data_in_imm;
                     4'd8:
                         //SB
-                    
+                        data_out_dr = data_in_sr1 + data_in_imm;
                     4'd9:
                         //SW
-
+                        data_out_dr = data_in_sr1 + data_in_imm;
                 endcase                     
 
                 FU_ready = 1'b1;

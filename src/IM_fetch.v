@@ -15,7 +15,7 @@ module instructionMemory (
   	integer i;
 
     always @(posedge clk or negedge rstn) begin
-        if (~rstn)begin
+        if (~rstn) begin
             for (i = 0; i < 1024; i = i + 1) begin
                 instrMem[i] = 8'b0;
             end
@@ -26,7 +26,7 @@ module instructionMemory (
             $readmemh ("demo.txt", instrMem);
             //assumes instructions in hex format; $readmemb for binary
             if (PC < 1024) begin
-                temp[31:0] = {instrMem[PC+3], instrMem[PC+2], instrMem[PC+1],instrMem[PC]};
+                temp[31:0] = {instrMem[PC], instrMem[PC+1], instrMem[PC+2],instrMem[PC+3]};
                 if (temp == 32'b0) begin 
                     instr = 32'b0;
                     stop  = 1;

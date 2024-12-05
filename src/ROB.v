@@ -19,12 +19,16 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module ROB(
+    input               clk, 
+    input               rstn,
+    input               instr_PC_0, 
+    input               is_dispatching,
+    
     input [5:0]         old_dest_reg_0,       //from rename      
     input [5:0]         dest_reg_0,           //from rename
     input [31:0]        dest_data_0,          //from rename    
     input               store_add_0,          //from rename
-    input               store_data_0,         //from rename
-    input               instr_PC_0,           //from rename    
+    input               store_data_0,         //from rename             
 
     input [31:0]        complete_pc_0,
     input [31:0]        complete_pc_1,
@@ -36,14 +40,13 @@ module ROB(
     input [31:0]        new_dr_data_2,
     input [31:0]        new_dr_data_3,
     
-    input               clk, 
-    input [31:0]        PC,
-    input               rstn,
-    input               is_dispatching,
-    
     output reg [63:0]   R_ready,
     output reg [63:0]   R_retire,
-    output reg          stall
+    output reg          stall,
+    output reg [5:0]    reg_update_ARF_1;
+    output reg [5:0]    reg_update_ARF_2;
+    output reg [31:0]   value_update_ARF_1;
+    output reg [31:0]   value_update_ARF_2;
 );
 
     // 1. multiple entries per cycle
@@ -89,8 +92,9 @@ module ROB(
                 ROB[i][6] = 0;       // instr pc
                 ROB[i][7] = 0;       // complete
                 
-                R_retire[i]=1'b0;      //retire buffer
-                R_ready[i]=1'b0;     //ready array
+                R_retire[i]=1'b0;    // retire buffer
+                if(i == 0) R_ready[i]=1'b1;
+                else       R_ready[i]=1'b0; // register ready array
             end
             
             //set up complete and data arrays
@@ -107,6 +111,11 @@ module ROB(
             retire_pointer  = 'd0;
             place_pointer   = 'd0;
             ini_p_pointer   = 'd0;
+
+            reg_update_ARF_1 = 6'b0;
+            reg_update_ARF_2 = 6'b0;
+            value_update_ARF_1 = 32'b0;
+            value_update_ARF_2 = 32'b0;
         end            
         else begin
             stall = 1'b0;
@@ -150,30 +159,31 @@ module ROB(
                 end
             end
             
-            //free retire if in order
-            
-            //if row is first populated row, check if complete
-                //if complete, retire rob row and dr in retire buffer
-                    //see if next populated row is complete
-                        //if so, retire that row too
-                        //if not, exit 
-                //if not complete, exit
+            // free retire if in order
+            // write back to ARF
+            reg_update_ARF_1    = 6'b0;
+            reg_update_ARF_2    = 6'b0;
+            value_update_ARF_1  = 32'b0;
+            value_update_ARF_2  = 32'b0;
 
             for (j = 0; j < 2; j = j + 1) begin //check to retire
                 if (ROB[retire_pointer][0] == 1'b1) begin
                     if((ROB[retire_pointer][7]==1'b1) && (max_retire == 0))begin
                         //retire in ROB and retire buffer
                         R_ready[ROB[retire_pointer][1]]=1'b1;    //set reg as ready
-                        R_retire[ROB[retire_pointer][2]]=1'b1;     //retire old dr
+                        R_retire[ROB[retire_pointer][2]]=1'b1;   //retire old dr
                          
                         ROB[retire_pointer][0] = 1'b0;           //set as invalid
                              
-                        max_retire=1;
+                        max_retire = 1;
 
                         retire_pointer = retire_pointer + 1;
                         if(retire_pointer > 63)begin
                             retire_pointer = 0;
                         end
+
+                        reg_update_ARF_1    = ROB[retire_pointer][1];
+                        value_update_ARF_1  = ROB[retire_pointer][3];
                     end
                     else if((ROB[retire_pointer][7]==1'b1) && (max_retire == 1))begin
                         //retire in ROB and retire buffer
@@ -182,15 +192,19 @@ module ROB(
                          
                         ROB[retire_pointer][0] = 1'b0;           //set as invalid
                              
-                        max_retire=0;
+                        max_retire = 0;
 
                         retire_pointer = retire_pointer + 1;
                         if(retire_pointer > 63)begin
                             retire_pointer = 0;
                         end
+
+                        reg_update_ARF_2    = ROB[retire_pointer][1];
+                        value_update_ARF_2  = ROB[retire_pointer][3];
                     end       
                 end
-            end   
+            end 
+
         end
     end
 

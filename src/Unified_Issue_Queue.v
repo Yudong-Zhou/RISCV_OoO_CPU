@@ -24,6 +24,7 @@ module Unified_Issue_Queue #(
     input                       clk,
     input                       rstn,   // negedge reset
     input [31 : 0]              PC,     // PC value
+    input                       is_dispatching,
 
     // decode info
     input [6 : 0]               opcode_in,
@@ -80,7 +81,7 @@ module Unified_Issue_Queue #(
     output reg [31 : 0]                 imm_value_out1,
     output reg [FU_SIZE - 1 : 0]        fu_number_out1,
     output reg [ROB_SIZE - 1 : 0]       ROB_no_out1,
-    output reg [31 : 0]                 PC_info_out1,  
+    output reg [31 : 0]                 PC_info_out1, 
     // issue NO.3
     output reg [3 : 0]                  op_out2,
     output reg [AR_SIZE - 1 : 0]        rs1_out2,
@@ -91,7 +92,8 @@ module Unified_Issue_Queue #(
     output reg [31 : 0]                 imm_value_out2,
     output reg [FU_SIZE - 1 : 0]        fu_number_out2,
     output reg [ROB_SIZE - 1 : 0]       ROB_no_out2,
-    output reg [31 : 0]                 PC_info_out2, 
+    output reg [31 : 0]                 PC_info_out2,
+    output reg [31 : 0]                 swdata_to_LSQ_out2, 
 
     // control signals for next stage
     output reg                          no_issue_out, 
@@ -133,6 +135,7 @@ module Unified_Issue_Queue #(
     
     // FU info
     reg [FU_SIZE - 1 : 0]       fu_number   [RS_SIZE - 1 : 0];
+    reg                         fu_round_flag;
 
     // ROB #
     reg [ROB_SIZE - 1 : 0]      ROB_no      [RS_SIZE - 1 : 0];
@@ -227,66 +230,77 @@ module Unified_Issue_Queue #(
             end
         end
         else begin
-            for (i = 0; i < RS_SIZE; i = i + 1) begin 
-                if (~valid[i]) begin
-                    valid[i]        <= 1'b1;
-                    operation[i]    <= op_type;
-                    dest_reg[i]     <= rd_in;
+            if(is_dispatching) begin
+                for (i = 0; i < RS_SIZE; i = i + 1) begin 
+                    if (~valid[i]) begin
+                        valid[i]        <= 1'b1;
+                        operation[i]    <= op_type;
+                        dest_reg[i]     <= rd_in;
 
-                    // put src1 data into RS
-                    src_reg1[i]     <= rs1_in;
-                    if(rs1_ready_from_ROB_in[rs1_in]) begin
-                        src1_ready[i]   <= 1'b1;
-                        src1_data[i]    <= rs1_value_from_ARF_in;
-                    end
-                    else if (op_type == LUI) begin
-                        src1_ready[i]   <= 1'b1;
-                        src1_data[i]    <= 32'b0;
-                    end
+                        // put src1 data into RS
+                        src_reg1[i]     <= rs1_in;
+                        if(rs1_ready_from_ROB_in[rs1_in]) begin
+                            src1_ready[i]   <= 1'b1;
+                            src1_data[i]    <= rs1_value_from_ARF_in;
+                        end
+                        else if (op_type == LUI) begin
+                            src1_ready[i]   <= 1'b1;
+                            src1_data[i]    <= 32'b0;
+                        end
 
-                    // put src2 data into RS
-                    src_reg2[i]     <= rs2_in;
-                    if(rs2_ready_from_ROB_in[rs2_in]) begin
-                        src2_ready[i]   <= 1'b1;
-                        src2_data[i]    <= rs2_value_from_ARF_in;
-                    end
-                    else if (op_type == LUI) begin
-                        src2_ready[i]   <= 1'b1;
-                        src2_data[i]    <= 32'b0;
-                    end
-                    else if (op_type == LW) begin
-                        src2_ready[i]   <= 1'b1;
-                        src2_data[i]    <= 32'b0;
-                    end
+                        // put src2 data into RS
+                        src_reg2[i]     <= rs2_in;
+                        if(rs2_ready_from_ROB_in[rs2_in]) begin
+                            src2_ready[i]   <= 1'b1;
+                            src2_data[i]    <= rs2_value_from_ARF_in;
+                        end
+                        else if (op_type == LUI) begin
+                            src2_ready[i]   <= 1'b1;
+                            src2_data[i]    <= 32'b0;
+                        end
+                        else if (op_type == LW) begin
+                            src2_ready[i]   <= 1'b1;
+                            src2_data[i]    <= 32'b0;
+                        end
 
-                    // put imm into RS
-                    imm[i]          <= imm_value_in;
+                        // put imm into RS
+                        imm[i]          <= imm_value_in;
 
-                    // ROB #
-                    ROB_no[i]       <= ROB_no_temp;
+                        // ROB #
+                        ROB_no[i]       <= ROB_no_temp;
 
-                    // PC
-                    PC_info[i]      <= PC;   
+                        // PC
+                        PC_info[i]      <= PC;   
 
-                    // round robin
-                    fu_number[i]    <= fu_alu_round;
-
-                    // display
-                    // | valid | Opeartion | Dest Reg | Src Reg1 | Src1 Ready | Src Reg2 | Src2 Ready | imm | FU# | ROB# | PC |
-                    $display("Valid[%d]: %h, Operation[%d]: %h, destP[%d]: %h, Src1[%d]: %h, Src1_r[%d]: %h, Src1_data[%d]: %h, Src2[%d]: %h, Src2_r[%d]: %h, Src2_data[%d]: %h, imm[%d]: %h, FU[%d]: %h, ROB[%d]: %h, PC[%d]: %h", 
-                              i, 1'b1, i, op_type, i, rd_in, i, rs1_in, i, 1'b1, i, rs1_value_from_ARF_in, i, rs2_in, i, 1'b1, i, rs2_value_from_ARF_in, i, imm_value_in, i, fu_alu_round, i, ROB_no_temp, i, PC);
+                        // round robin, and only dispatch Load/Store to FU2
+                        if((op_type == SW) || (op_type == SB) || (op_type == LW) || (op_type == LB)) begin
+                            fu_number[i] <= 2'd2;
+                            fu_round_flag = 1'b0;
+                        end
+                        else begin
+                            fu_number[i]    <= fu_alu_round;
+                            fu_round_flag   = 1'b1;
+                        end
                     
-                    ROB_no_temp = ROB_no_temp + 1;
-                    if (ROB_no_temp == 'd64) ROB_no_temp = 'd0;
+                        // display
+                        // | valid | Opeartion | Dest Reg | Src Reg1 | Src1 Ready | Src Reg2 | Src2 Ready | imm | FU# | ROB# | PC |
+                        $display("Valid[%d]: %h, Operation[%d]: %h, destP[%d]: %h, Src1[%d]: %h, Src1_r[%d]: %h, Src1_data[%d]: %h, Src2[%d]: %h, Src2_r[%d]: %h, Src2_data[%d]: %h, imm[%d]: %h, FU[%d]: %h, ROB[%d]: %h, PC[%d]: %h", 
+                                i, 1'b1, i, op_type, i, rd_in, i, rs1_in, i, 1'b1, i, rs1_value_from_ARF_in, i, rs2_in, i, 1'b1, i, rs2_value_from_ARF_in, i, imm_value_in, i, fu_alu_round, i, ROB_no_temp, i, PC);
+                        
+                        ROB_no_temp = ROB_no_temp + 1;
+                        if (ROB_no_temp == 'd64) ROB_no_temp = 'd0;
 
-                    fu_alu_round = fu_alu_round + 1;
-                    if (fu_alu_round == 2'd3)  fu_alu_round = 2'b0;    // stall if no FU is ready
-
-                    // if already dispatched an instruction, break
-                    i = RS_SIZE + 1; 
+                        if(fu_round_flag) begin
+                            fu_alu_round = fu_alu_round + 1;
+                            if (fu_alu_round == 2'd3)  fu_alu_round = 2'b0;    // stall if no FU is ready
+                        end
+                        
+                        // if already dispatched an instruction, break
+                        i = RS_SIZE + 1; 
+                    end
                 end
+                if (i == RS_SIZE) stall_out <= 1'b1;    // stall if RS is full
             end
-            if (i == RS_SIZE) stall_out <= 1'b1;    // stall if RS is full
         end
     end
     
@@ -380,6 +394,7 @@ module Unified_Issue_Queue #(
                     if (issue_count == 2)           j = RS_SIZE + 1;
                 end
             end
+            if (no_issue_out) stall_out = 1'b1;
         end
 
         op_out0             <= op_out[0];
@@ -414,6 +429,9 @@ module Unified_Issue_Queue #(
         fu_number_out2      <= fu_number_out[2];
         ROB_no_out2         <= ROB_no_out[2];
         PC_info_out2        <= PC_info_out[2];
+        if(op_out[2] == SW) begin
+            swdata_to_LSQ_out2 <= rs2_value_out[2];
+        end
     end
 
 endmodule
