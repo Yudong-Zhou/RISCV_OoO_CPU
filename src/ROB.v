@@ -46,7 +46,14 @@ module ROB(
     output reg [5:0]    reg_update_ARF_1,
     output reg [5:0]    reg_update_ARF_2,
     output reg [31:0]   value_update_ARF_1,
-    output reg [31:0]   value_update_ARF_2
+    output reg [31:0]   value_update_ARF_2,
+
+    output reg          bc_1,       // broadcast enable signal
+    output reg [5:0]    reg_bc_1,   // ROB update and broadcast to UIQ
+    output reg [5:0]    reg_bc_2,
+    output reg          bc_2,
+    output reg [31:0]   value_bc_1,
+    output reg [31:0]   value_bc_2
 );
 
     // 1. multiple entries per cycle
@@ -97,24 +104,18 @@ module ROB(
                 else       R_ready[i]=1'b0; // register ready array
             end
             
-            //set up complete and data arrays
-            new_dr_data[0] = new_dr_data_0;
-            new_dr_data[1] = new_dr_data_1;
-            new_dr_data[2] = new_dr_data_2;
-            new_dr_data[3] = new_dr_data_3;
-            
-            complete_pc[0] = complete_pc_0;
-            complete_pc[1] = complete_pc_1;
-            complete_pc[2] = complete_pc_2;
-            complete_pc[3] = complete_pc_3;
-            
-            retire_pointer  = 'd0;
-            place_pointer   = 'd0;
+            retire_pointer      = 'd0;
+            place_pointer       = 'd0;
 
-            reg_update_ARF_1 = 6'b0;
-            reg_update_ARF_2 = 6'b0;
-            value_update_ARF_1 = 32'b0;
-            value_update_ARF_2 = 32'b0;
+            reg_update_ARF_1    = 6'b0;
+            reg_update_ARF_2    = 6'b0;
+            value_update_ARF_1  = 32'b0;
+            value_update_ARF_2  = 32'b0;
+
+            reg_bc_1            = 6'b0;
+            reg_bc_2            = 6'b0;
+            value_bc_1          = 32'b0;
+            value_bc_2          = 32'b0;
         end            
         else begin
             stall = 1'b0;
@@ -143,68 +144,97 @@ module ROB(
                     stall <= 1'b1;
                 end
             end            
-            
-            //complete and update data
-            for(k=0; k<4; k=k+1)begin
-                if((complete_pc[k]!=0) && (new_dr_data[k]!=0)) begin
-                    for (m = 0; m < 64; m = m + 1) begin
-                        if(ROB[m][0]==1'b1) begin
-                            if(ROB[m][6]==complete_pc[k])begin
-                                ROB[m][7]   <= 1'b1;             //set to complete
-                                ROB[m][3]   <= new_dr_data[k];   //update data
-                            end
-                        end
+        end
+    end
+
+    // complete and retire
+    always @(*) begin
+        //set up complete and data arrays
+        new_dr_data[0] = new_dr_data_0;
+        new_dr_data[1] = new_dr_data_1;
+        new_dr_data[2] = new_dr_data_2;
+        new_dr_data[3] = new_dr_data_3;
+        
+        complete_pc[0] = complete_pc_0;
+        complete_pc[1] = complete_pc_1;
+        complete_pc[2] = complete_pc_2;
+        complete_pc[3] = complete_pc_3;
+
+        bc_1 = 1'b0;
+        bc_2 = 1'b0;
+
+        //complete and update data
+        
+        for (m = 0; m < 64; m = m + 1) begin
+            if (ROB[m][0] == 1'b1) begin
+                for(k = 0; k < 4; k = k + 1)begin
+                    if (ROB[m][6] == complete_pc[k])begin
+                        ROB[m][7]   <= 1'b1;             //set to complete
+                        ROB[m][3]   <= new_dr_data[k];   //update data
                     end
                 end
             end
-            
-            // free retire if in order
-            // write back to ARF
-            reg_update_ARF_1    = 6'b0;
-            reg_update_ARF_2    = 6'b0;
-            value_update_ARF_1  = 32'b0;
-            value_update_ARF_2  = 32'b0;
-
-            for (j = 0; j < 2; j = j + 1) begin //check to retire
-                if (ROB[retire_pointer][0] == 1'b1) begin
-                    if((ROB[retire_pointer][7]==1'b1) && (max_retire == 0))begin
-                        //retire in ROB and retire buffer
-                        R_ready[ROB[retire_pointer][1]]=1'b1;    //set reg as ready
-                        R_retire[ROB[retire_pointer][2]]=1'b1;   //retire old dr
-                         
-                        ROB[retire_pointer][0] = 1'b0;           //set as invalid
-                             
-                        max_retire = 1;
-
-                        retire_pointer = retire_pointer + 1;
-                        if(retire_pointer > 63)begin
-                            retire_pointer = 0;
-                        end
-
-                        reg_update_ARF_1    = ROB[retire_pointer][1];
-                        value_update_ARF_1  = ROB[retire_pointer][3];
-                    end
-                    else if((ROB[retire_pointer][7]==1'b1) && (max_retire == 1))begin
-                        //retire in ROB and retire buffer
-                        R_ready[ROB[retire_pointer][1]]=1'b1;    //set reg as ready
-                        R_retire[ROB[retire_pointer][2]]=1'b1;     //retire old dr
-                         
-                        ROB[retire_pointer][0] = 1'b0;           //set as invalid
-                             
-                        max_retire = 0;
-
-                        retire_pointer = retire_pointer + 1;
-                        if(retire_pointer > 63)begin
-                            retire_pointer = 0;
-                        end
-
-                        reg_update_ARF_2    = ROB[retire_pointer][1];
-                        value_update_ARF_2  = ROB[retire_pointer][3];
-                    end       
-                end
-            end 
-
         end
+
+        // free retire if in order
+        // write back to ARF
+        reg_update_ARF_1    = 6'b0;
+        reg_update_ARF_2    = 6'b0;
+        value_update_ARF_1  = 32'b0;
+        value_update_ARF_2  = 32'b0;
+
+        max_retire = 0;
+
+        for (j = 0; j < 2; j = j + 1) begin //check to retire
+            if (ROB[retire_pointer][0] == 1'b1) begin
+                if((ROB[retire_pointer][7]==1'b1) && (max_retire == 0))begin
+                    //retire in ROB and retire buffer
+                    R_ready[ROB[retire_pointer][1]]=1'b1;    //set reg as ready
+                    R_retire[ROB[retire_pointer][2]]=1'b1;   //retire old dr
+                        
+                    ROB[retire_pointer][0] = 1'b0;           //set as invalid
+                            
+                    max_retire = 1;
+
+                    reg_update_ARF_1    = ROB[retire_pointer][1];
+                    value_update_ARF_1  = ROB[retire_pointer][3];
+                    bc_1                = 1'b1;
+
+                    retire_pointer = retire_pointer + 1;
+                    if(retire_pointer > 63)begin
+                        retire_pointer = 0;
+                    end
+                end
+                else if((ROB[retire_pointer][7]==1'b1) && (max_retire == 1))begin
+                    //retire in ROB and retire buffer
+                    R_ready[ROB[retire_pointer][1]]=1'b1;    //set reg as ready
+                    R_retire[ROB[retire_pointer][2]]=1'b1;     //retire old dr
+                        
+                    ROB[retire_pointer][0] = 1'b0;           //set as invalid
+                            
+                    max_retire = 0;
+
+                    reg_update_ARF_2    = ROB[retire_pointer][1];
+                    value_update_ARF_2  = ROB[retire_pointer][3];
+                    bc_2                = 1'b1;
+
+                    retire_pointer = retire_pointer + 1;
+                    if(retire_pointer > 63)begin
+                        retire_pointer = 0;
+                    end
+                end       
+            end
+        end 
+
+        if (bc_1) begin
+            reg_bc_1    = reg_update_ARF_1;
+            value_bc_1  = value_update_ARF_1;
+        end
+        if (bc_2) begin
+            reg_bc_2    = reg_update_ARF_2;
+            value_bc_2  = value_update_ARF_2;
+        end
+        
     end
 
 endmodule

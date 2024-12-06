@@ -193,23 +193,34 @@ module CPU #(
 
 ///////////////////////////////////////////////////////////////////////
 //  Fetch Stage
+    reg             pc_cnt;
+    reg [31 : 0]    PC_IF;
     always @(posedge clk or negedge rstn) begin
-        if(~rstn) begin
+        if (~rstn) begin
             PC_reg = 32'b0;
+            pc_cnt = 0;
         end
         else if (stall_out_from_UIQ || stall_Rename_EX || stall_from_ROB) begin
             PC_reg = PC_reg;
         end
-        else begin
+        else if (pc_cnt) begin
             PC_reg = PC_reg + 4;
+        end
+        else begin
+            PC_reg = PC_reg;
+            pc_cnt = 1;
         end
     end
     assign PC = PC_reg;
 
+    always @(posedge clk) begin
+        PC_IF <= PC;
+    end
+
     instructionMemory instr_mem (
         .clk            (clk),
-        .PC             (PC),
         .rstn           (rstn),
+        .PC             (PC),
         .instr          (instr_IF),
         .stop           (stop_IF)
     );
@@ -221,7 +232,7 @@ module CPU #(
         .rstn           (rstn),
         .inst_IF_in     (instr_IF),
         .stop_in        (stop_IF),
-        .PC_in          (PC),
+        .PC_in          (PC_IF),
         .inst_ID_out    (instr_ID),
         .stop_out       (stop_ID),
         .PC_out         (PC_ID)
@@ -256,7 +267,7 @@ module CPU #(
     ID_EX_Reg ID_EX_Reg (
         .clk            (clk),
         .rstn           (rstn),
-        .stall          (stall_out_from_UIQ || stall_Rename_EX || stall_from_ROB),
+        .stall          (stall_out_from_UIQ || stall_Rename_EX || stall_from_ROB || stop_ID),
 
         .opcode_in      (opcode_ID),
         .funct3_in      (funct3_ID),
@@ -320,6 +331,13 @@ module CPU #(
 
 ///////////////////////////////////////////////////////////////////////
 // ReOrder Buffer
+    wire          bc_from_ROB_1;    
+    wire [5:0]    reg_bc_from_ROB_1;
+    wire [5:0]    reg_bc_from_ROB_2;
+    wire          bc__from_ROB2;
+    wire [31:0]   value_bc_from_ROB_1;
+    wire [31:0]   value_bc_from_ROB_2;
+
     ROB ROB_inst (
         .clk                (clk),
         .rstn               (rstn),
@@ -347,12 +365,20 @@ module CPU #(
         .reg_update_ARF_1   (reg_update_ARF_1),
         .reg_update_ARF_2   (reg_update_ARF_2),
         .value_update_ARF_1 (value_update_ARF_1),
-        .value_update_ARF_2 (value_update_ARF_2)
+        .value_update_ARF_2 (value_update_ARF_2),
+
+        .bc_1               (bc_from_ROB_1),
+        .reg_bc_1           (reg_bc_from_ROB_1),
+        .value_bc_1         (value_bc_from_ROB_1),
+        .bc_2               (bc_from_ROB_2),
+        .reg_bc_2           (reg_bc_from_ROB_2),
+        .value_bc_2         (value_bc_from_ROB_2)
     );
 
 ///////////////////////////////////////////////////////////////////////
 // ARF
     ARF ARF_inst (
+        .clk            (clk),
         .rstn           (rstn),
         .read_addr1     (p_srcReg1_EX),
         .read_addr2     (p_srcReg2_EX),
@@ -418,6 +444,13 @@ module CPU #(
         .FU2_flag_in            (FU_is_using_alu2),
         .reg_tag_from_FU2_in    (dr_out_alu2),
         .reg_value_from_FU2_in  (data_out_dr_alu2),
+
+        .ROB_bc1                (bc_from_ROB_1),
+        .reg_from_ROB_in1       (reg_bc_from_ROB_1),
+        .value_from_ROB_in1     (value_bc_from_ROB_1),
+        .ROB_bc2                (bc_from_ROB_2),
+        .reg_from_ROB_in2       (reg_bc_from_ROB_2),
+        .value_from_ROB_in2     (value_bc_from_ROB_2),
 
         .op_out0                (op_out0_from_UIQ),
         .rs1_out0               (rs1_out0_from_UIQ),

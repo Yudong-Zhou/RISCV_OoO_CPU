@@ -12,13 +12,6 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	instructionMemory
 
-} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Rename.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Rename.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module Rename
-
-Top level modules:
-	Rename
-
 } {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module CPU
@@ -26,19 +19,26 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	CPU
 
-} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Ex_Mem_Reg.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Ex_Mem_Reg.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module EX_MEM_Reg
-
-Top level modules:
-	EX_MEM_Reg
-
 } {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Unified_Issue_Queue.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Unified_Issue_Queue.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module Unified_Issue_Queue
 
 Top level modules:
 	Unified_Issue_Queue
+
+} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Rename.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Rename.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module Rename
+
+Top level modules:
+	Rename
+
+} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Ex_Mem_Reg.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Ex_Mem_Reg.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module EX_MEM_Reg
+
+Top level modules:
+	EX_MEM_Reg
 
 } {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSQ.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSQ.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
@@ -54,9 +54,13 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	ARF
 
-} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ROB.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ROB.v
+} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ROB.v {2 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ROB.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module ROB
+** Warning: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ROB.v(169): (vlog-2182) 'ROB' might be read before written in always_comb or always @* block.
+
+** Warning: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ROB.v(189): (vlog-2182) 'retire_pointer' might be read before written in always_comb or always @* block.
+
 
 Top level modules:
 	ROB
@@ -103,19 +107,19 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	DataMemory
 
-} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Mem_Comp_Reg.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Mem_Comp_Reg.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module MEM_Comp_Reg
-
-Top level modules:
-	MEM_Comp_Reg
-
 } {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ALU.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ALU.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module ALU
 
 Top level modules:
 	ALU
+
+} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Mem_Comp_Reg.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Mem_Comp_Reg.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module MEM_Comp_Reg
+
+Top level modules:
+	MEM_Comp_Reg
 
 } {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Decode.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Decode.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014

@@ -93,7 +93,7 @@ module ID_EX_Reg (
             PC_out          <= PC_in;
         end
 
-        if (~stall)begin
+        if (~stall && (opcode_in != 0))begin
             is_dispatching = 1'b1;
         end
         else begin

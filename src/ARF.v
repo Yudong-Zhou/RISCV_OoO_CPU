@@ -12,6 +12,7 @@ module ARF #(
     parameter   AR_SIZE     =   6,      
     parameter   AR_ARRAY    =   64   
 )(
+    input                       clk, 
     input                       rstn,
     // can read 2 registers at the same time
     input [AR_SIZE - 1 : 0]     read_addr1,
@@ -30,7 +31,7 @@ module ARF #(
 
     reg [31 : 0]    ar_file [AR_ARRAY - 1 : 0];
     integer         i;
-    always @(*) begin
+    always @(posedge clk or negedge rstn) begin
         if (~rstn) begin
             read_data1 <= 0;
             read_data2 <= 0;
@@ -38,7 +39,7 @@ module ARF #(
                 ar_file[i] <= 0;
             end
         end
-        else begin // might have problem for simutaneous read and write
+        else begin
             if (write_en) begin
                 if (write_addr1 != 0) begin // p0 is always 0
                     ar_file[write_addr1] = write_data1;

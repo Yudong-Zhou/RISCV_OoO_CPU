@@ -49,9 +49,10 @@ module ALU #(
             FU_is_using = 1'b0;
         end 
         else begin
+            FU_is_using = 1'b0;
             if (alu_number[ALU_NO] == 1) begin
-                dr_out = dr_in;
-                FU_ready = 1'b0;  
+                dr_out      = dr_in;
+                FU_ready    = 1'b0;  
                 FU_is_using = 1'b1;
                 case(optype)
                     4'd1:
@@ -71,7 +72,7 @@ module ALU #(
                         data_out_dr = data_in_sr1 ^ data_in_sr2;
                     4'd6:
                         //SRAI
-                        data_out_dr = data_in_sr1 >> data_in_imm;
+                        data_out_dr = data_in_sr1 >> data_in_imm[4:0];
                     4'd7:
                         //LB
                         data_out_dr = data_in_sr1 + data_in_imm;
@@ -86,7 +87,7 @@ module ALU #(
                         data_out_dr = data_in_sr1 + data_in_imm;
                 endcase                     
 
-                FU_ready = 1'b1;
+                FU_ready    = 1'b1;
             end 
         end
     end

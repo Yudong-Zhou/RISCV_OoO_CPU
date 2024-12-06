@@ -39,8 +39,8 @@ module Unified_Issue_Queue #(
     input [31 : 0]              imm_value_in,
     input [AR_SIZE - 1 : 0]     rd_in,
 
-    input [AR_ARRAY - 1 : 0]        rs1_ready_from_ROB_in,
-    input [AR_ARRAY - 1 : 0]        rs2_ready_from_ROB_in,
+    input [AR_ARRAY - 1 : 0]    rs1_ready_from_ROB_in,
+    input [AR_ARRAY - 1 : 0]    rs2_ready_from_ROB_in,
                                 // if reg pi is ready, then rs_ready_from_ROB_in[i] = 1
 
     // forwarding logic
@@ -56,8 +56,13 @@ module Unified_Issue_Queue #(
     input [AR_SIZE - 1 : 0]     reg_tag_from_FU2_in,   
     input [31 : 0]              reg_value_from_FU2_in,
 
-    // whether dispatch
-    //input                       en_dispatch_in,
+    // ROB data broadcast
+    input                       ROB_bc1,
+    input [5 : 0]               reg_from_ROB_in1,
+    input [31 : 0]              value_from_ROB_in1,
+    input                       ROB_bc2,
+    input [5 : 0]               reg_from_ROB_in2,
+    input [31 : 0]              value_from_ROB_in2,
     
     // output signals
     // issue NO.1
@@ -230,7 +235,7 @@ module Unified_Issue_Queue #(
             end
         end
         else begin
-            if(is_dispatching) begin
+            if(is_dispatching && (op_type != 0)) begin
                 for (i = 0; i < RS_SIZE; i = i + 1) begin 
                     if (~valid[i]) begin
                         valid[i]        <= 1'b1;
@@ -243,7 +248,7 @@ module Unified_Issue_Queue #(
                             src1_ready[i]   <= 1'b1;
                             src1_data[i]    <= rs1_value_from_ARF_in;
                         end
-                        else if (op_type == LUI) begin
+                        if (op_type == LUI) begin
                             src1_ready[i]   <= 1'b1;
                             src1_data[i]    <= 32'b0;
                         end
@@ -254,11 +259,8 @@ module Unified_Issue_Queue #(
                             src2_ready[i]   <= 1'b1;
                             src2_data[i]    <= rs2_value_from_ARF_in;
                         end
-                        else if (op_type == LUI) begin
-                            src2_ready[i]   <= 1'b1;
-                            src2_data[i]    <= 32'b0;
-                        end
-                        else if (op_type == LW) begin
+                        if ((op_type == LUI) || (op_type == ORI) || (op_type == SRAI)
+                            || (op_type == ADDI)|| (op_type == LW) || (op_type == LB)) begin
                             src2_ready[i]   <= 1'b1;
                             src2_data[i]    <= 32'b0;
                         end
@@ -332,6 +334,16 @@ module Unified_Issue_Queue #(
                 else if ((src_reg2[k] == reg_tag_from_FU2_in) && FU2_flag_in) begin
                     src2_ready[k] <= 1'b1;
                     src2_data[k]  <= reg_value_from_FU2_in;
+                end
+
+                if ((src_reg1[k] == reg_from_ROB_in1) && ROB_bc1) begin
+                    src1_ready[k] <= 1'b1;
+                    src1_data[k]  <= value_from_ROB_in1;
+                end
+
+                if ((src_reg2[k] == reg_from_ROB_in2) && ROB_bc2) begin
+                    src2_ready[k] <= 1'b1;
+                    src2_data[k]  <= value_from_ROB_in2;
                 end
             end
         end

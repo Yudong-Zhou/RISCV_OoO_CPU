@@ -7,443 +7,452 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-dE:/UCLA/Codes/zyd_github/RISCV_5pipeline_CPU/sim/CPU_top
+Z0 dE:/UCLA/Codes/zyd_github/RISCV_5pipeline_CPU/sim/CPU_top
+T_opt
+!s110 1733465253
+VmAlY4S2S^iE3b;3JJA7P_2
+04 6 4 work CPU_tb fast 0
+=1-30138b0ffac0-675294a5-12-65cc
+o-quiet -auto_acc_if_foreign -work work
+n@_opt
+OL;O;10.4;61
+R0
 vALU
-Z0 VDg1SIo80bB@j0V0VzS_@n1
+Z1 VDg1SIo80bB@j0V0VzS_@n1
 r1
 !s85 0
 31
 !i10b 1
-!s100 KAhfWSo0KUOT^oL_TXGm73
-IY>Sf>ZU]_fkCJXRN`GAU_1
-Z1 dE:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim
-w1733358769
+!s100 X:2I:S3HFB=U2A]1PLeg72
+I>cmCfSJDHY;P_Cc5zLLSh0
+Z2 dE:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim
+w1733447362
 8E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ALU.v
 FE:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ALU.v
 L0 22
-Z2 OL;L;10.4;61
-!s108 1733385204.753000
+Z3 OL;L;10.4;61
+!s108 1733448823.654000
 !s107 E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ALU.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ALU.v|
 !i113 0
-Z3 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z4 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 n@a@l@u
 vARF
-R0
+R1
 r1
 !s85 0
 31
 !i10b 1
-!s100 4Na2bi2Q3ADeFWa>@Nd?[0
-I51RbFa48L;?ZMiVZZm3JS2
-R1
-w1733383285
+!s100 fO<b7OTR_40DG2IoNTAeb1
+I0Xoe:@I6kElBeb5_;bUNV2
+R2
+w1733448773
 8E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ARF.v
 FE:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ARF.v
-Z4 L0 11
-R2
-!s108 1733385204.924000
+Z5 L0 11
+R3
+!s108 1733448823.853000
 !s107 E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ARF.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ARF.v|
 !i113 0
-R3
+R4
 n@a@r@f
 vcontroller
-R0
+R1
 r1
 !s85 0
 31
 !i10b 1
 !s100 6aF83<o6lD51GAjTKke6:2
 IeDg44BUM@NUFKc7N37[dg2
-R1
+R2
 w1732682263
 8E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Controller.v
 FE:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Controller.v
 L0 1
-R2
-!s108 1733385205.106000
+R3
+!s108 1733448824.033000
 !s107 E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Controller.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Controller.v|
 !i113 0
-R3
+R4
 vCPU
-R0
+R1
 r1
 !s85 0
 31
 !i10b 1
-!s100 hAX1e_a^hNkF_oQ>O5K7j2
-I`WB4^`]8oB4AIdRlL?j_^0
-R1
-w1733384877
+!s100 61bc1>UXcLQKYaNoFb8E:1
+I2W4;:liI5E>h6HiokHGQE1
+R2
+w1733467801
 8E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v
 FE:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v
 L0 3
-R2
-!s108 1733385205.289000
+R3
+!s108 1733467841.904000
 !s107 E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v|
 !i113 0
-R3
+R4
 n@c@p@u
 vCPU_tb
-R0
+R1
 r1
 !s85 0
 31
 !i10b 1
-!s100 7FUd8=d<YNbRcW_zT8_;S0
-I4eZWj3J`K0FiIk6N]9>GE1
-R1
-w1732683290
+!s100 LfPD^3HB1RVW0GVL;klhj0
+In=8IhKBg5?6Eg_H8_Y2OC0
+R2
+w1733449541
 8E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v
 FE:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v
 L0 3
-R2
-!s108 1733385205.473000
+R3
+!s108 1733450369.033000
 !s107 E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v|
 !i113 0
-R3
+R4
 n@c@p@u_tb
 vDataMemory
-R0
+R1
 r1
 !s85 0
 31
 !i10b 1
 !s100 <alUb57R2_IGhB^1D?k>[1
 I_LWTd8DJgiLbaXAUPF[]]3
-R1
+R2
 w1733383323
 8E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/DataMem.v
 FE:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/DataMem.v
 L0 8
-R2
-!s108 1733385205.643000
+R3
+!s108 1733448824.584000
 !s107 E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/DataMem.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/DataMem.v|
 !i113 0
-R3
+R4
 n@data@memory
 vDecode
-R0
+R1
 r1
 !s85 0
 31
 !i10b 1
 !s100 Z>RlNkm]QSO1hLT`iTz`k0
 I91GOQP0IWDme3]<5YR7213
-R1
-w1733361765
-Z5 8E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Decode.v
-Z6 FE:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Decode.v
-L0 4
 R2
-!s108 1733385205.831000
-Z7 !s107 E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Decode.v|
-Z8 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Decode.v|
-!i113 0
+w1733361765
+Z6 8E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Decode.v
+Z7 FE:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Decode.v
+L0 4
 R3
+!s108 1733448824.778000
+Z8 !s107 E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Decode.v|
+Z9 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Decode.v|
+!i113 0
+R4
 n@decode
 vdecode
-Z9 !s110 1733123661
+Z10 !s110 1733123661
 !i10b 1
 !s100 [NzBMQJ<3L7BJ;gf=hj_z0
 I<C03bhY9AVS>Y@OmYNKi[3
-R0
 R1
-w1732688748
-R5
-R6
-L0 4
 R2
+w1732688748
+R6
+R7
+L0 4
+R3
 r1
 !s85 0
 31
 !s108 1733123661.016000
-R7
 R8
+R9
 !i113 0
-R3
+R4
 vDecoder
-R0
+R1
 r1
 !s85 0
 31
 !i10b 1
 !s100 LMQb4?Hdk33k:@YoP]`Z31
 ISGGUDWK==W14Wi9=``hi>0
-Z10 dE:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou
+Z11 dE:/UCLA/Codes/zyd_github/189_OoOcpu_commit/sim_yudong_zhou
 w1731799181
 8E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/Decoder.v
 FE:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/Decoder.v
-Z11 L0 12
-R2
+Z12 L0 12
+R3
 !s108 1731799567.444000
 !s107 E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/Decoder.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/Decoder.v|
 !i113 0
-R3
+R4
 n@decoder
 vEX_MEM_Reg
-R0
+R1
 r1
 !s85 0
 31
 !i10b 1
 !s100 AKB[9]7d8_3dDm3@kN[k23
 Iz:[X3eQGP8K?HRPUjIW7@3
-R1
+R2
 w1733384339
 8E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Ex_Mem_Reg.v
 FE:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Ex_Mem_Reg.v
-R4
-R2
-!s108 1733385206.026000
+R5
+R3
+!s108 1733448824.966000
 !s107 E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Ex_Mem_Reg.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Ex_Mem_Reg.v|
 !i113 0
-R3
+R4
 n@e@x_@m@e@m_@reg
 vID_EX_Reg
-R0
+R1
 r1
 !s85 0
 31
 !i10b 1
-!s100 MX]l]iFo4eO8F^Gj<ZN[72
-I[F5TcKe;hG<zEbz@7ZICh1
-R1
-w1733296718
+!s100 8<4H0aY?>=H`co6IEESlZ1
+I[[SdN2YERE[3aA44zFBBY3
+R2
+w1733463844
 8E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ID_Ex_Reg.v
 FE:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ID_Ex_Reg.v
-R4
-R2
-!s108 1733385206.217000
+R5
+R3
+!s108 1733463859.021000
 !s107 E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ID_Ex_Reg.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ID_Ex_Reg.v|
 !i113 0
-R3
+R4
 n@i@d_@e@x_@reg
 vIF_ID_Reg
-R0
+R1
 r1
 !s85 0
 31
 !i10b 1
 !s100 7oab1QJfI3n^Ng2X>^l721
 I`_733Wb6G:RclDL6Mcb8;2
-R1
+R2
 w1733286598
 8E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/IF_ID_Reg.v
 FE:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/IF_ID_Reg.v
-R4
-R2
-!s108 1733385206.407000
+R5
+R3
+!s108 1733448825.338000
 !s107 E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/IF_ID_Reg.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/IF_ID_Reg.v|
 !i113 0
-R3
+R4
 n@i@f_@i@d_@reg
 vimmGen
-R0
+R1
 r1
 !s85 0
 31
 !i10b 1
 !s100 [UH_TZ_VMbIfYfCN=eODo2
 IQ_odB^SAa=P^W7B5d]gST0
-R1
+R2
 w1732747538
 8E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ImmGen.v
 FE:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ImmGen.v
 L0 1
-R2
-!s108 1733385206.775000
+R3
+!s108 1733448825.708000
 !s107 E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ImmGen.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ImmGen.v|
 !i113 0
-R3
+R4
 nimm@gen
 vinstructionMemory
-R0
+R1
 r1
 !s85 0
 31
 !i10b 1
-!s100 ACdZA6MjHSao5IdOaSV5_2
-IYIbeU1W<:WWYonR4nG6@00
-R1
-w1733382796
+!s100 KIk6V_D=fa:OQVSzB^3Z10
+I^mPGzLYoz?YQhNjbeFLGF3
+R2
+w1733461632
 8E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/IM_fetch.v
 FE:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/IM_fetch.v
 L0 3
-R2
-!s108 1733385206.589000
+R3
+!s108 1733461637.820000
 !s107 E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/IM_fetch.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/IM_fetch.v|
 !i113 0
-R3
+R4
 ninstruction@memory
 vLSQ
-R0
+R1
 r1
 !s85 0
 31
 !i10b 1
 !s100 i^cj:bagg^_7M[g>jKCOH0
 IJXR3c@f_A<B0h=6OJbHRF1
-R1
+R2
 w1733383493
 8E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSQ.v
 FE:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSQ.v
 L0 23
-R2
-!s108 1733385207.025000
+R3
+!s108 1733448825.900000
 !s107 E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSQ.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSQ.v|
 !i113 0
-R3
+R4
 n@l@s@q
 vLSU
-R0
+R1
 r1
 !s85 0
 31
 !i10b 1
 !s100 a_607^C4`7FoVWJMU0_8=3
 I1GWdKLK;`_j2_mXVLDK9D3
-R1
+R2
 w1733385194
 8E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSU.v
 FE:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSU.v
 L0 14
-R2
-!s108 1733385207.213000
+R3
+!s108 1733448826.075000
 !s107 E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSU.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSU.v|
 !i113 0
-R3
+R4
 n@l@s@u
 vMEM_Comp_Reg
-R0
+R1
 r1
 !s85 0
 31
 !i10b 1
 !s100 bLeGkJiVbOzY16f>1JdWB2
 IRPmmQ7<Lz^Q3Ph5V]XDUE2
-R1
+R2
 w1733384732
 8E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Mem_Comp_Reg.v
 FE:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Mem_Comp_Reg.v
-R4
-R2
-!s108 1733385207.403000
+R5
+R3
+!s108 1733448826.253000
 !s107 E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Mem_Comp_Reg.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Mem_Comp_Reg.v|
 !i113 0
-R3
+R4
 n@m@e@m_@comp_@reg
 vrename
-R9
+R10
 !i10b 1
 !s100 `cRcUT<1AbCBMOg=U3Z<n0
 I^aOa?HfbTDC@c<i9H@`1m1
-R0
 R1
-w1732688595
-Z12 8E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Rename.v
-Z13 FE:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Rename.v
-L0 5
 R2
+w1732688595
+Z13 8E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Rename.v
+Z14 FE:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Rename.v
+L0 5
+R3
 r1
 !s85 0
 31
 !s108 1733123661.384000
-Z14 !s107 E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Rename.v|
-Z15 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Rename.v|
+Z15 !s107 E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Rename.v|
+Z16 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Rename.v|
 !i113 0
-R3
+R4
 vRename
-R0
+R1
 r1
 !s85 0
 31
 !i10b 1
-!s100 7<Ml=E__G`GEZkU>XY:Dl2
-IBmz_jR3:5MRHe?gLO5Kok1
-R1
-w1733385149
-R12
-R13
-L0 5
+!s100 SRcVV[;h5Jd^m:1g1mcL>2
+IDfHU2oK8AUPFefDN5I35R2
 R2
-!s108 1733385207.589000
+w1733454328
+R13
 R14
-R15
-!i113 0
+L0 5
 R3
+!s108 1733454329.823000
+R15
+R16
+!i113 0
+R4
 n@rename
 vROB
-R0
+R1
 r1
 !s85 0
 31
 !i10b 1
-!s100 z]Pz74Um[d>jgFbDOcBPR0
-IabiAKV0URcBbMV[Z?nz@23
-R1
-w1733384175
+!s100 6:=4SEKfgLHNhA5G3>F4>2
+INPzSWVBZKVKcach[@a5Bm3
+R2
+w1733467522
 8E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ROB.v
 FE:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ROB.v
 L0 21
-R2
-!s108 1733385207.773000
+R3
+!s108 1733467842.107000
 !s107 E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ROB.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ROB.v|
 !i113 0
-R3
+R4
 n@r@o@b
 vUIQ_testbench
-R0
+R1
 r1
 !s85 0
 31
 !i10b 1
 !s100 ;XH[?4F2mPRkF5bQ8JgRW0
 IPK62M84ZBFjYFhIzkT2<O2
-R10
+R11
 w1731799462
 8E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v
 FE:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v
-R11
-R2
+R12
+R3
 !s108 1731799567.273000
 !s107 E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/189_OoOcpu_commit/src_yudong_zhou/UIQ_tb.v|
 !i113 0
-R3
+R4
 n@u@i@q_testbench
 vUnified_Issue_Queue
-R0
+R1
 r1
 !s85 0
 31
 !i10b 1
-!s100 F7?W=HT7oiA7Li3n?D55H3
-IdOV5F[_VCTNCDJhj]E@Tc1
-R1
-w1733384284
+!s100 5jK28gm;DBe`A@eM8=MO82
+IPAhjc6M:kGzkJz@Ic_N9e2
+R2
+w1733467735
 8E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Unified_Issue_Queue.v
 FE:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Unified_Issue_Queue.v
 L0 15
-R2
-!s108 1733385204.564000
+R3
+!s108 1733467841.718000
 !s107 E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Unified_Issue_Queue.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Unified_Issue_Queue.v|
 !i113 0
-R3
+R4
 n@unified_@issue_@queue
