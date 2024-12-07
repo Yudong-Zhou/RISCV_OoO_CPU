@@ -11,7 +11,10 @@ module CPU #(
     input   clk,
     input   rstn
 );
-    
+    //  Fetch Stage
+    reg             pc_cnt;
+    reg [31 : 0]    PC_IF;
+
     // IF stage signals
     wire [31 : 0]   PC;
     reg  [31 : 0]   PC_reg;
@@ -52,6 +55,16 @@ module CPU #(
     wire [5 : 0]    reg_update_ARF_2;
     wire [31 : 0]   value_update_ARF_1;
     wire [31 : 0]   value_update_ARF_2;
+    wire            bc_from_ROB_1;    
+    wire [5 : 0]    reg_bc_from_ROB_1;
+    wire [5 : 0]    reg_bc_from_ROB_2;
+    wire            bc__from_ROB2;
+    wire [31 : 0]   value_bc_from_ROB_1;
+    wire [31 : 0]   value_bc_from_ROB_2;
+    reg             is_store_reg;
+    wire            is_store;
+    wire [5 : 0]    old_reg_1;
+    wire [5 : 0]    old_reg_2;
 
     // ARF
     wire [31 : 0]   read_data1_ARF;
@@ -66,6 +79,7 @@ module CPU #(
     wire            FU_read_flag;
     wire            already_found_from_LSQ;
     wire            no_issue_from_LSQ;
+    wire [5 : 0]      regout_from_lsq;
 
     // ALU output signals
     wire [31 : 0]   data_out_dr_alu0;
@@ -172,6 +186,8 @@ module CPU #(
     wire [31 : 0]   pc_ls_comp;
     wire            vaild_comp;
     wire            lsq_comp;
+    wire            FU_write_flag_com;
+    wire            FU_read_flag_com;
 
     // COMPLETE stage signals
     wire [31 : 0]   rd_result_comp_0;
@@ -198,8 +214,6 @@ module CPU #(
 
 ///////////////////////////////////////////////////////////////////////
 //  Fetch Stage
-    reg             pc_cnt;
-    reg [31 : 0]    PC_IF;
     always @(posedge clk or negedge rstn) begin
         if (~rstn) begin
             PC_reg = 32'b0;
@@ -336,17 +350,6 @@ module CPU #(
 
 ///////////////////////////////////////////////////////////////////////
 // ReOrder Buffer
-    wire          bc_from_ROB_1;    
-    wire [5:0]    reg_bc_from_ROB_1;
-    wire [5:0]    reg_bc_from_ROB_2;
-    wire          bc__from_ROB2;
-    wire [31:0]   value_bc_from_ROB_1;
-    wire [31:0]   value_bc_from_ROB_2;
-    reg           is_store_reg;
-    wire          is_store;
-    wire [5:0]    old_reg_1;
-    wire [5:0]    old_reg_2;
-
     ROB ROB_inst (
         .clk                (clk),
         .rstn               (rstn),
@@ -410,7 +413,6 @@ module CPU #(
 
 ///////////////////////////////////////////////////////////////////////
 // Load Store Queue
-    wire [5:0] regout_from_lsq;
     LSQ LSQ_inst (
         .clk            (clk),
         .rstn           (rstn),
@@ -651,8 +653,6 @@ module CPU #(
 
 ///////////////////////////////////////////////////////////////////////
 // pipeline register between MEM and COMPLETE stage
-    wire FU_write_flag_com;
-    wire FU_read_flag_com;
     MEM_Comp_Reg MEM_Comp_Reg_inst (
         .clk                (clk),
         .rstn               (rstn),

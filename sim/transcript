@@ -1517,3 +1517,6 @@ run -all
 # Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
 write format wave -window .main_pane.wave.interior.cs.body.pw.wf E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/top_wave.do
 write format wave -window .main_pane.wave.interior.cs.body.pw.wf E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/top_wave.do
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/top_wave.do
+# End time: 20:15:57 on Dec 06,2024, Elapsed time: 0:09:28
+# Errors: 0, Warnings: 2
