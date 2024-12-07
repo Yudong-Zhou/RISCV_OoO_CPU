@@ -191,6 +191,11 @@ module CPU #(
     reg  [31 : 0]   rd_result_comp_3_reg;
     reg  [31 : 0]   pc_comp_3_reg;
 
+    wire [5:0]      set_rob_reg_invaild;
+    wire [5:0]      regout_from_lsu;
+    wire [5:0]      regout_from_lsu2;
+    wire [5:0]      regout_from_dm;
+
 ///////////////////////////////////////////////////////////////////////
 //  Fetch Stage
     reg             pc_cnt;
@@ -308,7 +313,7 @@ module CPU #(
     );
 
 ///////////////////////////////////////////////////////////////////////
-//  Rename Process
+// Rename Process
     Rename Rename_inst (
         .clk            (clk),
         .rstn           (rstn),
@@ -337,6 +342,10 @@ module CPU #(
     wire          bc__from_ROB2;
     wire [31:0]   value_bc_from_ROB_1;
     wire [31:0]   value_bc_from_ROB_2;
+    reg           is_store_reg;
+    wire          is_store;
+    wire [5:0]    old_reg_1;
+    wire [5:0]    old_reg_2;
 
     ROB ROB_inst (
         .clk                (clk),
@@ -358,6 +367,8 @@ module CPU #(
         .new_dr_data_1      (rd_result_comp_1),
         .new_dr_data_2      (rd_result_comp_2),
         .new_dr_data_3      (rd_result_comp_3),
+        .is_store           (is_store),
+        .set_invaild_from_UIQ(set_rob_reg_invaild),
         
         .R_ready            (R_ready_from_ROB),
         .R_retire           (R_retire_from_ROB),
@@ -366,6 +377,8 @@ module CPU #(
         .reg_update_ARF_2   (reg_update_ARF_2),
         .value_update_ARF_1 (value_update_ARF_1),
         .value_update_ARF_2 (value_update_ARF_2),
+        .old_reg_1          (old_reg_1),
+        .old_reg_2          (old_reg_2),
 
         .bc_1               (bc_from_ROB_1),
         .reg_bc_1           (reg_bc_from_ROB_1),
@@ -385,6 +398,8 @@ module CPU #(
         .read_en        (1'b1),
         .write_addr1    (reg_update_ARF_1),
         .write_data1    (value_update_ARF_1),
+        .old_addr1      (old_reg_1),
+        .old_addr2      (old_reg_2),
         .write_addr2    (reg_update_ARF_2),
         .write_data2    (value_update_ARF_2),
         .write_en       (1'b1),
@@ -395,9 +410,11 @@ module CPU #(
 
 ///////////////////////////////////////////////////////////////////////
 // Load Store Queue
+    wire [5:0] regout_from_lsq;
     LSQ LSQ_inst (
         .clk            (clk),
         .rstn           (rstn),
+        .reg_dis        (p_destReg_EX),
         .pcDis          (PC_EX),
         .memRead        (memRead_EX),
         .memWrite       (memWrite_EX),
@@ -409,6 +426,7 @@ module CPU #(
         .retire         (),
 
         .pcOut          (pc_from_lsq),
+        .regout         (regout_from_lsq),
         .addressOut     (adr_from_lsq),
         .Data_out       (data_from_lsq),
         .loadStore      (ls_from_lsq),
@@ -429,7 +447,7 @@ module CPU #(
         .rs1_in                 (p_srcReg1_EX),
         .rs1_value_from_ARF_in  (read_data1_ARF),
         .rs2_in                 (p_srcReg2_EX),
-        .rs2_value_from_ARF_in  (read_data1_ARF),
+        .rs2_value_from_ARF_in  (read_data2_ARF),
         .imm_value_in           (imm_EX),
         .rd_in                  (p_destReg_EX),
         .rs1_ready_from_ROB_in  (R_ready_from_ROB),
@@ -451,6 +469,11 @@ module CPU #(
         .ROB_bc2                (bc_from_ROB_2),
         .reg_from_ROB_in2       (reg_bc_from_ROB_2),
         .value_from_ROB_in2     (value_bc_from_ROB_2),
+
+        .lwData_from_LSU_in     (load_data_to_comp_from_LSU),
+        .reg_from_LSU_in        (regout_from_lsu),
+        .lwdata_from_mem_in     (lwData_from_mem),
+        .reg_from_mem_in        (regout_from_dm),
 
         .op_out0                (op_out0_from_UIQ),
         .rs1_out0               (rs1_out0_from_UIQ),
@@ -488,7 +511,8 @@ module CPU #(
 
         .no_issue_out           (no_issue_out_from_UIQ),
         .stall_out              (stall_out_from_UIQ),
-        .tunnel_out             (tunnel_from_UIQ)
+        .tunnel_out             (tunnel_from_UIQ),
+        .set_rob_reg_invaild    (set_rob_reg_invaild)
     );
 
 ///////////////////////////////////////////////////////////////////////
@@ -586,15 +610,18 @@ module CPU #(
 // MEM stage
     LSU LSU_inst (
         .mem_addr_in                (rd_result_fu2_MEM),
+        .reg_in                     (regout_from_lsq),
         .inst_pc_in                 (pc_fu2_MEM),
         .op_in                      (mem_op),
         .lwData_from_LSQ_in         (data_from_lsq),
-        .store_data_from_LSQ_in     (store_data_from_LSQ), 
+        .store_data_from_LSQ_in     (data_from_lsq), 
         .loadstore_from_LSQ_in      (ls_from_lsq), 
         .already_found_from_LSQ_in  (already_found_from_LSQ),
         .no_issue_from_LSQ_in       (no_issue_from_LSQ),         
 
         .mem_addr_out               (mem_addr_from_LSU),
+        .reg_out1                   (regout_from_lsu),
+        .reg_out2                   (regout_from_lsu2),
         .store_data_to_mem_out      (store_data_to_mem_from_LSU),
         .load_data_to_comp_out      (load_data_to_comp_from_LSU),
         .inst_pc_out                (inst_pc_from_LSU),
@@ -608,7 +635,8 @@ module CPU #(
         .clk            (clk),
         .rstn           (rstn),
         .inst_pc_in     (inst_pc_from_LSU),
-        .address        (mem_addr_from_LSU),
+        .address_in     (mem_addr_from_LSU),
+        .reg_in         (regout_from_lsu2),
         .optype         (op_from_LSU),
         .dataSw_in      (store_data_to_mem_from_LSU),
         .read_en        (read_en_from_LSU),
@@ -616,12 +644,15 @@ module CPU #(
         .cacheMiss      (1'b1),
 
         .inst_pc_out    (inst_pc_from_mem),
+        .reg_out        (regout_from_dm),
         .lwData_out     (lwData_from_mem),
         .data_vaild_out (data_vaild_from_mem)
     );
 
 ///////////////////////////////////////////////////////////////////////
 // pipeline register between MEM and COMPLETE stage
+    wire FU_write_flag_com;
+    wire FU_read_flag_com;
     MEM_Comp_Reg MEM_Comp_Reg_inst (
         .clk                (clk),
         .rstn               (rstn),
@@ -631,17 +662,22 @@ module CPU #(
         .lwData_from_MEM_in (lwData_from_mem),
         .pc_from_LSU_in     (inst_pc_from_LSU),
         .pc_from_MEM_in     (inst_pc_from_mem),
+        .FU_write_flag      (FU_write_flag),
+        .FU_read_flag       (FU_read_flag),
 
         .lwData_out         (lwData_comp),
         .pc_out             (pc_ls_comp),
         .vaild_out          (vaild_comp),
-        .lsq_out            (lsq_comp)
+        .lsq_out            (lsq_comp),
+        .FU_write_flag_com  (FU_write_flag_com),
+        .FU_read_flag_com   (FU_read_flag_com)
     );
 
 ///////////////////////////////////////////////////////////////////////
 // COMPLETE logic
     always @(*) begin
-        if (~(FU_write_flag || FU_read_flag)) begin
+        is_store_reg = 1'b0;
+        if (~FU_read_flag_com) begin
             if(tunnel_MEM[0]) begin
                 rd_result_comp_0_reg    = rd_result_fu0_MEM;
                 pc_comp_0_reg           = pc_fu0_MEM;
@@ -661,8 +697,13 @@ module CPU #(
             end
 
             if(tunnel_MEM[2]) begin
-                rd_result_comp_2_reg    = rd_result_fu2_MEM;
                 pc_comp_2_reg           = pc_fu2_MEM;
+                if (FU_write_flag_com) begin
+                    is_store_reg = 1'b1;
+                end
+                else begin
+                    rd_result_comp_2_reg = rd_result_fu2_MEM;
+                end
             end
             else begin
                 rd_result_comp_2_reg    = 32'd1;
@@ -681,12 +722,13 @@ module CPU #(
     end
 
     assign rd_result_comp_0 = rd_result_comp_0_reg;
-    assign pc_comp_0 = pc_comp_0_reg;
+    assign pc_comp_0        = pc_comp_0_reg;
     assign rd_result_comp_1 = rd_result_comp_1_reg;
-    assign pc_comp_1 = pc_comp_1_reg;
+    assign pc_comp_1        = pc_comp_1_reg;
     assign rd_result_comp_2 = rd_result_comp_2_reg;
-    assign pc_comp_2 = pc_comp_2_reg;
+    assign pc_comp_2        = pc_comp_2_reg;
     assign rd_result_comp_3 = rd_result_comp_3_reg;
-    assign pc_comp_3 = pc_comp_3_reg;    
+    assign pc_comp_3        = pc_comp_3_reg; 
+    assign is_store         = is_store_reg;   
 
 endmodule

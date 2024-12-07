@@ -13,15 +13,18 @@
 
 module LSU(
     input [31 : 0]          mem_addr_in,
+    input [5 : 0]           reg_in,
     input [31 : 0]          inst_pc_in,
     input [3 : 0]           op_in,
     input [31 : 0]          lwData_from_LSQ_in,
-    input                   store_data_from_LSQ_in,
+    input [31 : 0]          store_data_from_LSQ_in,
     input                   loadstore_from_LSQ_in,
     input                   already_found_from_LSQ_in,
     input                   no_issue_from_LSQ_in,
 
     output reg [31 : 0]     mem_addr_out,
+    output reg [5:0]        reg_out1,
+    output reg [5:0]        reg_out2,
     output reg [31 : 0]     inst_pc_out,
     output reg [3 : 0]      op_out,
     output reg [31 : 0]     store_data_to_mem_out,
@@ -64,6 +67,16 @@ module LSU(
                 read_en_out     = 1'b0;
                 from_lsq        = 1'b0;
                 write_en_out    = 1'b0;
+            end
+            if ((op_in == LB || op_in == LW) && (from_lsq)) begin
+                reg_out1 = reg_in;
+            end
+            else if ((op_in == LB || op_in == LW) && read_en_out) begin
+                reg_out2 = reg_in;
+            end
+            else begin 
+                reg_out1 = 6'b0;
+                reg_out2 = 6'b0;
             end
         end
         else begin

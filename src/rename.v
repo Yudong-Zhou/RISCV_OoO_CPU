@@ -72,8 +72,8 @@ module Rename(
             end
         end
     end
-
-    always @(*) begin
+    
+    always @(rstn or is_dispatching or opcode or dr) begin
         if(~rstn) begin
             sr1_p       = 6'd0;
             sr2_p       = 6'd0;
@@ -94,27 +94,21 @@ module Rename(
         end
         else begin
             if(is_dispatching) begin
-                sr1_p = RAT[sr1][1]; //assign to whatever p-reg is in RAT
-        
-                if(hasImm == 1'b0)begin          
-                    sr2_p = RAT[sr2][1]; //assign to whatever p-reg is in RAT             
-                end
-                else begin
-                    sr2_p = imm;
-                end
-
+                sr1_p = RAT[sr1][1]; //assign to whatever p-reg is in RAT        
+                sr2_p = RAT[sr2][1]; //assign to whatever p-reg is in RAT             
+                
                 // Find a free physical register for the destination register
                 if((opcode != 7'b0100011) && (opcode != 7'b0000000))begin
                     for (j = 0; j < 32; j = j + 1) begin
                         if (free_pool[j][0] == 1'b0) begin
-                            if(dr == 5'd0)begin
+                            if(dr == 5'd0) begin
                                 dr_p = 6'd0;
                             end
                             else begin
                                 dr_p = free_pool[j][1];     // Assign free physical register
                                 free_pool[j][0] = 1'b1;     // Mark as used
                             end
-
+                            
                             old_dr = RAT[dr][1];
                             RAT[dr][1] = dr_p;          // find line in rat with a-reg=dr, set p-reg to dr_p 
                             j = 33;          // Stop further looping

@@ -9,7 +9,8 @@ module DataMemory(
     input           clk,
     input           rstn,
     input [31:0]    inst_pc_in,
-    input [31:0]    address, 
+    input [31:0]    address_in, 
+    input [5:0]     reg_in,
     input [3:0]     optype,
     input [31:0]    dataSw_in,
     input           read_en,
@@ -17,6 +18,7 @@ module DataMemory(
     input           cacheMiss,
     
     output reg [31:0]   inst_pc_out,
+    output reg [5:0]    reg_out,
     output reg [31:0]   lwData_out,
     output reg          data_vaild_out
 );
@@ -26,7 +28,29 @@ module DataMemory(
     parameter SB    =  4'd9;
     parameter SW    =  4'd10;
 
-    reg [1023:0]    DATAMEM [0:31]; 
+    reg [31:0]    DATAMEM [0:1024]; 
+
+    reg [5:0]       reg0;
+    reg [5:0]       reg1;
+    reg [5:0]       reg2;
+    reg [5:0]       reg3;
+    reg [5:0]       reg4;
+    reg [5:0]       reg5;
+    reg [5:0]       reg6;
+    reg [5:0]       reg7;
+    reg [5:0]       reg8;
+    reg [5:0]       reg9;
+
+    reg [31:0]      addr1;
+    reg [31:0]      addr2;
+    reg [31:0]      addr3;
+    reg [31:0]      addr4;
+    reg [31:0]      addr5;
+    reg [31:0]      addr6;
+    reg [31:0]      addr7;
+    reg [31:0]      addr8;
+    reg [31:0]      addr9;
+    reg [31:0]      address;
 
     reg             write_en;
     reg             write_en1;
@@ -85,6 +109,28 @@ module DataMemory(
     integer i;
 
     always @(posedge clk) begin // 10cc delay of l/s datas
+        reg1    <= reg0;
+        reg2    <= reg1;
+        reg3    <= reg2;
+        reg4    <= reg3;
+        reg5    <= reg4;
+        reg6    <= reg5;
+        reg7    <= reg6;
+        reg8    <= reg7;
+        reg9    <= reg8;
+        reg_out <= reg9;
+
+        addr1   <= address_in;
+        addr2   <= addr1;
+        addr3   <= addr2;
+        addr4   <= addr3;
+        addr5   <= addr4;
+        addr6   <= addr5;
+        addr7   <= addr6;
+        addr8   <= addr7;
+        addr9   <= addr8;
+        address <= addr9;
+
         write_en1 <= write_en_in;
         write_en2 <= write_en1;
         write_en3 <= write_en2;
@@ -159,6 +205,7 @@ module DataMemory(
                         lwData = DATAMEM[address];
                     end
                     data_vaild = 1'b1;
+                    reg0 = reg_in;
                 end
                 else if (write_en) begin
                     if (optype == SB) begin

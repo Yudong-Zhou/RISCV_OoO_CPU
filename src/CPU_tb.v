@@ -10,7 +10,7 @@ module CPU_tb ();
     reg rstn;
 
     initial begin
-        #(12 * Cycle)   $stop;
+        #(30 * Cycle)   $stop;
     end
 
     // clock source

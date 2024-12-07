@@ -21,8 +21,10 @@ module ARF #(
     // can retire 2 instructions at the same time at max
     input [AR_SIZE - 1 : 0]     write_addr1,
     input [31 : 0]              write_data1,
+    input [5 : 0]               old_addr1,
     input [AR_SIZE - 1 : 0]     write_addr2,
     input [31 : 0]              write_data2,
+    input [5 : 0]               old_addr2,
     input                       write_en,
 
     output reg [31 : 0]         read_data1,
@@ -43,15 +45,22 @@ module ARF #(
             if (write_en) begin
                 if (write_addr1 != 0) begin // p0 is always 0
                     ar_file[write_addr1] = write_data1;
+                    $display("reg p%d = %d, renamed reg is p%d", old_addr1, write_data1, write_addr1);
+                    //$display("Simulation time: %0t", $time);
                 end
                 if (write_addr2 != 0) begin
                     ar_file[write_addr2] = write_data2;
+                    $display("reg p%d = %d, renamed reg is p%d", old_addr2, write_data2, write_addr2);
+                    //$display("Simulation time: %0t", $time);
                 end
             end
-            if (read_en) begin
-                read_data1 = ar_file[read_addr1];
-                read_data2 = ar_file[read_addr2];
-            end
+        end
+    end
+
+    always @(*) begin
+        if (read_en) begin
+            read_data1 = ar_file[read_addr1];
+            read_data2 = ar_file[read_addr2];
         end
     end
 

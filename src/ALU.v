@@ -52,8 +52,13 @@ module ALU #(
             FU_is_using = 1'b0;
             if (alu_number[ALU_NO] == 1) begin
                 dr_out      = dr_in;
-                FU_ready    = 1'b0;  
-                FU_is_using = 1'b1;
+                FU_ready    = 1'b0; 
+                if ((optype != 4'd7) && (optype != 4'd8)) begin
+                    FU_is_using = 1'b1;
+                end
+                else begin
+                    FU_ready = 1'b0;
+                end
                 case(optype)
                     4'd1:
                         //ADD
@@ -79,10 +84,10 @@ module ALU #(
                     4'd8:
                         //LW
                         data_out_dr = data_in_sr1 + data_in_imm;
-                    4'd8:
+                    4'd9:
                         //SB
                         data_out_dr = data_in_sr1 + data_in_imm;
-                    4'd9:
+                    4'd10:
                         //SW
                         data_out_dr = data_in_sr1 + data_in_imm;
                 endcase                     

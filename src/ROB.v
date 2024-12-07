@@ -39,6 +39,8 @@ module ROB(
     input [31:0]        new_dr_data_1,
     input [31:0]        new_dr_data_2,
     input [31:0]        new_dr_data_3,
+    input               is_store,
+    input [5:0]         set_invaild_from_UIQ,
     
     output reg [63:0]   R_ready,
     output reg [63:0]   R_retire,
@@ -47,6 +49,8 @@ module ROB(
     output reg [5:0]    reg_update_ARF_2,
     output reg [31:0]   value_update_ARF_1,
     output reg [31:0]   value_update_ARF_2,
+    output reg [5:0]    old_reg_1,
+    output reg [5:0]    old_reg_2,
 
     output reg          bc_1,       // broadcast enable signal
     output reg [5:0]    reg_bc_1,   // ROB update and broadcast to UIQ
@@ -99,9 +103,8 @@ module ROB(
                 ROB[i][6] = 0;       // instr pc
                 ROB[i][7] = 0;       // complete
                 
-                R_retire[i]=1'b0;    // retire buffer
-                if(i == 0) R_ready[i]=1'b1;
-                else       R_ready[i]=1'b0; // register ready array
+                R_retire[i] = 1'b0;    // retire buffer
+                R_ready[i]  = 1'b1;     // register ready array
             end
             
             retire_pointer      = 'd0;
@@ -111,6 +114,8 @@ module ROB(
             reg_update_ARF_2    = 6'b0;
             value_update_ARF_1  = 32'b0;
             value_update_ARF_2  = 32'b0;
+            old_reg_1           = 6'b0;
+            old_reg_2           = 6'b0;
 
             reg_bc_1            = 6'b0;
             reg_bc_2            = 6'b0;
@@ -160,17 +165,14 @@ module ROB(
         complete_pc[2] = complete_pc_2;
         complete_pc[3] = complete_pc_3;
 
-        bc_1 = 1'b0;
-        bc_2 = 1'b0;
-
         //complete and update data
         
         for (m = 0; m < 64; m = m + 1) begin
             if (ROB[m][0] == 1'b1) begin
                 for(k = 0; k < 4; k = k + 1)begin
-                    if (ROB[m][6] == complete_pc[k])begin
-                        ROB[m][7]   <= 1'b1;             //set to complete
-                        ROB[m][3]   <= new_dr_data[k];   //update data
+                    if ((ROB[m][6] == complete_pc[k]) && (ROB[m][0] == 1'b1))begin
+                        ROB[m][7]  <= 1'b1;             //set to complete
+                        ROB[m][3]  <= new_dr_data[k];   //update data
                     end
                 end
             end
@@ -182,6 +184,8 @@ module ROB(
         reg_update_ARF_2    = 6'b0;
         value_update_ARF_1  = 32'b0;
         value_update_ARF_2  = 32'b0;
+        bc_1 = 1'b0;
+        bc_2 = 1'b0;
 
         max_retire = 0;
 
@@ -195,10 +199,13 @@ module ROB(
                     ROB[retire_pointer][0] = 1'b0;           //set as invalid
                             
                     max_retire = 1;
-
-                    reg_update_ARF_1    = ROB[retire_pointer][1];
-                    value_update_ARF_1  = ROB[retire_pointer][3];
-                    bc_1                = 1'b1;
+                    
+                    if (~is_store) begin
+                        reg_update_ARF_1    = ROB[retire_pointer][1];
+                        value_update_ARF_1  = ROB[retire_pointer][3];
+                        old_reg_1           = ROB[retire_pointer][2];
+                        bc_1                = 1'b1;
+                    end
 
                     retire_pointer = retire_pointer + 1;
                     if(retire_pointer > 63)begin
@@ -214,10 +221,13 @@ module ROB(
                             
                     max_retire = 0;
 
-                    reg_update_ARF_2    = ROB[retire_pointer][1];
-                    value_update_ARF_2  = ROB[retire_pointer][3];
-                    bc_2                = 1'b1;
-
+                    if (~is_store) begin
+                        reg_update_ARF_2    = ROB[retire_pointer][1];
+                        value_update_ARF_2  = ROB[retire_pointer][3];
+                        old_reg_2           = ROB[retire_pointer][2];
+                        bc_2                = 1'b1;
+                    end
+                    
                     retire_pointer = retire_pointer + 1;
                     if(retire_pointer > 63)begin
                         retire_pointer = 0;
@@ -235,6 +245,12 @@ module ROB(
             value_bc_2  = value_update_ARF_2;
         end
         
+    end
+
+    always @(set_invaild_from_UIQ) begin
+        if(set_invaild_from_UIQ != 6'b0) begin
+            R_ready[set_invaild_from_UIQ] = 1'b0;
+        end
     end
 
 endmodule

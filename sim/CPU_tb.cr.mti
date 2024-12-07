@@ -12,19 +12,22 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	instructionMemory
 
-} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v
+} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSQ.v {2 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSQ.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module CPU
+-- Compiling module LSQ
+** Warning: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSQ.v(124): (vlog-2182) 'VALID' might be read before written in always_comb or always @* block.
+
+** Warning: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSQ.v(120): (vlog-2182) 'PC' might be read before written in always_comb or always @* block.
+
+** Warning: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSQ.v(124): (vlog-2182) 'OP' might be read before written in always_comb or always @* block.
+
+** Warning: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSQ.v(137): (vlog-2182) 'ISSUED' might be read before written in always_comb or always @* block.
+
+** Warning: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSQ.v(138): (vlog-2182) 'issue_pointer' might be read before written in always_comb or always @* block.
+
 
 Top level modules:
-	CPU
-
-} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Unified_Issue_Queue.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Unified_Issue_Queue.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module Unified_Issue_Queue
-
-Top level modules:
-	Unified_Issue_Queue
+	LSQ
 
 } {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Rename.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Rename.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
@@ -40,37 +43,16 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	EX_MEM_Reg
 
-} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSQ.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSQ.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module LSQ
-
-Top level modules:
-	LSQ
-
-} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ARF.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ARF.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module ARF
-
-Top level modules:
-	ARF
-
 } {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ROB.v {2 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ROB.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module ROB
-** Warning: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ROB.v(169): (vlog-2182) 'ROB' might be read before written in always_comb or always @* block.
+** Warning: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ROB.v(171): (vlog-2182) 'ROB' might be read before written in always_comb or always @* block.
 
-** Warning: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ROB.v(189): (vlog-2182) 'retire_pointer' might be read before written in always_comb or always @* block.
+** Warning: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ROB.v(193): (vlog-2182) 'retire_pointer' might be read before written in always_comb or always @* block.
 
 
 Top level modules:
 	ROB
-
-} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSU.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSU.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module LSU
-
-Top level modules:
-	LSU
 
 } {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Controller.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Controller.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
@@ -99,13 +81,6 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 
 Top level modules:
 	IF_ID_Reg
-
-} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/DataMem.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/DataMem.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module DataMemory
-
-Top level modules:
-	DataMemory
 
 } {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ALU.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ALU.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
