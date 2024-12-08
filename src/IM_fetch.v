@@ -28,7 +28,7 @@ module instructionMemory (
             $readmemh ("demo.txt", instrMem);
             //assumes instructions in hex format; $readmemb for binary
             if ((PC < 1024) && pc_cnt) begin
-                temp[31:0] = {instrMem[PC], instrMem[PC+1], instrMem[PC+2],instrMem[PC+3]};
+                temp[31:0] = {instrMem[PC+3], instrMem[PC+2], instrMem[PC+1],instrMem[PC]};
                 // pay attention to the concatenation order
                 if (temp == 32'b0) begin 
                     instr = 32'b0;

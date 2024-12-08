@@ -73,7 +73,7 @@ module Rename(
         end
     end
     
-    always @(rstn or is_dispatching or opcode or dr) begin
+    always @(rstn or is_dispatching or opcode or dr or sr1 or sr2) begin
         if(~rstn) begin
             sr1_p       = 6'd0;
             sr2_p       = 6'd0;

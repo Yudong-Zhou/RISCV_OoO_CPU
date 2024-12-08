@@ -68,7 +68,7 @@ module ALU #(
                         data_out_dr = data_in_sr1 + data_in_imm;
                     4'd3:
                         //LUI
-                        data_out_dr = data_in_imm << 12;
+                        data_out_dr = data_in_imm;
                     4'd4:
                         //ORI
                         data_out_dr = data_in_sr1 | data_in_imm;

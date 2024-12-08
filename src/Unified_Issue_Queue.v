@@ -434,6 +434,8 @@ module Unified_Issue_Queue #(
                     rd_out[fu_number[j]]            = dest_reg[j];
                     rs1_value_out[fu_number[j]]     = src1_data[j];
                     rs2_value_out[fu_number[j]]     = src2_data[j];
+                    if (src_reg1[j] == 0) rs1_value_out[fu_number[j]] = 32'b0;
+                    if (src_reg2[j] == 0) rs2_value_out[fu_number[j]] = 32'b0;
                     imm_value_out[fu_number[j]]     = imm[j];
                     fu_number_out[fu_number[j]]     = fu_number[j];
                     ROB_no_out[fu_number[j]]        = ROB_no[j];
