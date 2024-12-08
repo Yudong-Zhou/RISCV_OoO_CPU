@@ -9,10 +9,10 @@ z2
 cModel Technology
 Z0 dE:/UCLA/Codes/zyd_github/RISCV_5pipeline_CPU/sim/CPU_top
 T_opt
-!s110 1733465253
-VmAlY4S2S^iE3b;3JJA7P_2
+!s110 1733636065
+VdBIO;:`Mkb9TX[5:d`Y8Q1
 04 6 4 work CPU_tb fast 0
-=1-30138b0ffac0-675294a5-12-65cc
+=1-30138b0ffac0-67552fe0-2f0-8328
 o-quiet -auto_acc_if_foreign -work work
 n@_opt
 OL;O;10.4;61
@@ -43,15 +43,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 hRA6<a[a1Xf4zDF=mQG1;3
-IFS@nS3NoO[DTIfMG@fFjI0
+!s100 jCEkYHVC4heCHkeI824i?1
+I]g;h^E5d[0WR3dImiZ=DU0
 R2
-w1733543024
+w1733636755
 8E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ARF.v
 FE:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ARF.v
 Z5 L0 11
 R3
-!s108 1733544369.007000
+!s108 1733636762.060000
 !s107 E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ARF.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ARF.v|
 !i113 0
@@ -82,15 +82,15 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 hhDMh9V@zR1_7=Q6]m^_R1
-IZj]>ZD[XdAb?G:]]XOJU43
+!s100 EAcDnSdO_R_:_Bo;3k?;E3
+IU_0Zfa1YmNMUoc7QhJlgH1
 R2
-w1733634562
+w1733636372
 8E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v
 FE:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v
 L0 3
 R3
-!s108 1733634571.681000
+!s108 1733636401.926000
 !s107 E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v|
 !i113 0

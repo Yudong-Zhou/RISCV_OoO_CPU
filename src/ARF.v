@@ -45,13 +45,11 @@ module ARF #(
             if (write_en) begin
                 if (write_addr1 != 0) begin // p0 is always 0
                     ar_file[write_addr1] = write_data1;
-                    $display("reg p%d = %d, renamed reg is p%d", old_addr1, write_data1, write_addr1);
-                    //$display("Simulation time: %0t", $time);
+                    $display("reg p%d = %02d,   renamed reg is p%d,   Cycle NO: %02d", old_addr1, write_data1, write_addr1, ($time-15)/10);
                 end
                 if (write_addr2 != 0) begin
                     ar_file[write_addr2] = write_data2;
-                    $display("reg p%d = %d, renamed reg is p%d", old_addr2, write_data2, write_addr2);
-                    //$display("Simulation time: %0t", $time);
+                    $display("reg p%d = %02d,   renamed reg is p%d,   Cycle NO: %02d", old_addr2, write_data2, write_addr2, ($time-15)/10);
                 end
             end
         end

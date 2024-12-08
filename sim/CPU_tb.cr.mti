@@ -12,6 +12,13 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	instructionMemory
 
+} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module CPU
+
+Top level modules:
+	CPU
+
 } {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSQ.v {2 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSQ.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module LSQ
@@ -103,6 +110,13 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 
 Top level modules:
 	DataMemory
+
+} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Mem_Comp_Reg.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Mem_Comp_Reg.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module MEM_Comp_Reg
+
+Top level modules:
+	MEM_Comp_Reg
 
 } {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ALU.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ALU.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014

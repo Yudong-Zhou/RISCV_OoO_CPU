@@ -249,3 +249,279 @@ run -all
 # ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
 #    Time: 400 ns  Iteration: 0  Instance: /CPU_tb
 # Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/top_wave.do
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/top_wave.do
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/top_wave.do
+quit -sim
+# Compile of ARF.v was successful.
+vsim -novopt work.CPU_tb
+# vsim 
+# Start time: 21:21:13 on Dec 07,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Loading work.CPU_tb
+# Loading work.CPU
+# Loading work.instructionMemory
+# Loading work.IF_ID_Reg
+# Loading work.Decode
+# Loading work.controller
+# Loading work.immGen
+# Loading work.ID_EX_Reg
+# Loading work.Rename
+# Loading work.ROB
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ARF
+# Loading work.ARF
+# Loading work.LSQ
+# Loading work.Unified_Issue_Queue
+# Loading work.ALU
+# Loading work.EX_MEM_Reg
+# Loading work.LSU
+# Loading work.DataMemory
+# Loading work.MEM_Comp_Reg
+do top_wave.do
+run -all
+# reg p 2 =          6, renamed reg is p32, Cycle NO:     1844674407370953
+# reg p 3 =         15, renamed reg is p33, Cycle NO:     1844674407370953
+# reg p 1 =         42, renamed reg is p34, Cycle NO:     1844674407370953
+# reg p 4 =         21, renamed reg is p35, Cycle NO:     1844674407370953
+# reg p32 =          0, renamed reg is p36, Cycle NO:     1844674407370953
+# reg p 6 =         15, renamed reg is p37, Cycle NO:     1844674407370953
+# reg p33 =          0, renamed reg is p38, Cycle NO:     1844674407370953
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
+#    Time: 400 ns  Iteration: 0  Instance: /CPU_tb
+# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
+quit -sim
+# Compile of ARF.v was successful.
+vsim -novopt work.CPU_tb
+# vsim 
+# Start time: 21:22:24 on Dec 07,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Loading work.CPU_tb
+# Loading work.CPU
+# Loading work.instructionMemory
+# Loading work.IF_ID_Reg
+# Loading work.Decode
+# Loading work.controller
+# Loading work.immGen
+# Loading work.ID_EX_Reg
+# Loading work.Rename
+# Loading work.ROB
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ARF
+# Loading work.ARF
+# Loading work.LSQ
+# Loading work.Unified_Issue_Queue
+# Loading work.ALU
+# Loading work.EX_MEM_Reg
+# Loading work.LSU
+# Loading work.DataMemory
+# Loading work.MEM_Comp_Reg
+run -all
+# reg p 2 =          6, renamed reg is p32, Cycle NO:                    6
+# reg p 3 =         15, renamed reg is p33, Cycle NO:                    7
+# reg p 1 =         42, renamed reg is p34, Cycle NO:                    8
+# reg p 4 =         21, renamed reg is p35, Cycle NO:                   10
+# reg p32 =          0, renamed reg is p36, Cycle NO:                   25
+# reg p 6 =         15, renamed reg is p37, Cycle NO:                   27
+# reg p33 =          0, renamed reg is p38, Cycle NO:                   27
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
+#    Time: 400 ns  Iteration: 0  Instance: /CPU_tb
+# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
+do top_wave.do
+restart -f
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+run -all
+# reg p 2 =          6, renamed reg is p32, Cycle NO:                    6
+# reg p 3 =         15, renamed reg is p33, Cycle NO:                    7
+# reg p 1 =         42, renamed reg is p34, Cycle NO:                    8
+# reg p 4 =         21, renamed reg is p35, Cycle NO:                   10
+# reg p32 =          0, renamed reg is p36, Cycle NO:                   25
+# reg p 6 =         15, renamed reg is p37, Cycle NO:                   27
+# reg p33 =          0, renamed reg is p38, Cycle NO:                   27
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
+#    Time: 400 ns  Iteration: 0  Instance: /CPU_tb
+# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
+# Break key hit
+quit -sim
+# Compile of CPU.v was successful.
+vsim -vopt work.CPU_tb
+# vsim 
+# Start time: 21:34:24 on Dec 07,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# 
+# ** Warning: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ROB.v(176): (vopt-2182) 'ROB' might be read before written in always_comb or always @* block.
+# 
+# ** Warning: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/ROB.v(198): (vopt-2182) 'retire_pointer' might be read before written in always_comb or always @* block.
+# 
+# ** Warning: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSQ.v(156): (vopt-2182) 'issue_pointer' might be read before written in always_comb or always @* block.
+# 
+# ** Warning: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSQ.v(123): (vopt-2182) 'LSQ_DATA' might be read before written in always_comb or always @* block.
+# 
+# ** Warning: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v(680): (vopt-2958) Implicit wire 'FU_read_flag_MEM' does not have any driver.
+# 
+# Loading work.CPU_tb(fast)
+quit -sim
+vsim -novopt work.CPU_tb
+# vsim 
+# Start time: 21:34:56 on Dec 07,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Loading work.CPU_tb
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.CPU
+# Loading work.CPU
+# Loading work.instructionMemory
+# Loading work.IF_ID_Reg
+# Loading work.Decode
+# Loading work.controller
+# Loading work.immGen
+# Loading work.ID_EX_Reg
+# Loading work.Rename
+# Loading work.ROB
+# Loading work.ARF
+# Loading work.LSQ
+# Loading work.Unified_Issue_Queue
+# Loading work.ALU
+# Loading work.EX_MEM_Reg
+# Loading work.LSU
+# Loading work.DataMemory
+# Loading work.MEM_Comp_Reg
+do top_wave.do
+run -all
+# reg p 2 =          6, renamed reg is p32, Cycle NO:                    6
+# reg p 3 =         15, renamed reg is p33, Cycle NO:                    7
+# reg p 1 =         42, renamed reg is p34, Cycle NO:                    8
+# reg p 4 =         21, renamed reg is p35, Cycle NO:                   10
+# reg p32 =         15, renamed reg is p36, Cycle NO:                   14
+# reg p 6 =          0, renamed reg is p37, Cycle NO:                   15
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
+#    Time: 400 ns  Iteration: 0  Instance: /CPU_tb
+# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
+quit -sim
+# Compile of CPU.v was successful.
+vsim -novopt work.CPU_tb
+# vsim 
+# Start time: 21:40:03 on Dec 07,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Loading work.CPU_tb
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.CPU
+# Loading work.CPU
+# Loading work.instructionMemory
+# Loading work.IF_ID_Reg
+# Loading work.Decode
+# Loading work.controller
+# Loading work.immGen
+# Loading work.ID_EX_Reg
+# Loading work.Rename
+# Loading work.ROB
+# Loading work.ARF
+# Loading work.LSQ
+# Loading work.Unified_Issue_Queue
+# Loading work.ALU
+# Loading work.EX_MEM_Reg
+# Loading work.LSU
+# Loading work.DataMemory
+# Loading work.MEM_Comp_Reg
+run -all
+# reg p 2 =          6, renamed reg is p32, Cycle NO:                    6
+# reg p 3 =         15, renamed reg is p33, Cycle NO:                    7
+# reg p 1 =         42, renamed reg is p34, Cycle NO:                    8
+# reg p 4 =         21, renamed reg is p35, Cycle NO:                   10
+# reg p32 =         15, renamed reg is p36, Cycle NO:                   14
+# reg p 6 =          0, renamed reg is p37, Cycle NO:                   15
+# reg p33 =         42, renamed reg is p38, Cycle NO:                   16
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
+#    Time: 400 ns  Iteration: 0  Instance: /CPU_tb
+# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
+do top_wave.do
+restart -f
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+run -all
+# reg p 2 =          6, renamed reg is p32, Cycle NO:                    6
+# reg p 3 =         15, renamed reg is p33, Cycle NO:                    7
+# reg p 1 =         42, renamed reg is p34, Cycle NO:                    8
+# reg p 4 =         21, renamed reg is p35, Cycle NO:                   10
+# reg p32 =         15, renamed reg is p36, Cycle NO:                   14
+# reg p 6 =          0, renamed reg is p37, Cycle NO:                   15
+# reg p33 =         42, renamed reg is p38, Cycle NO:                   16
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
+#    Time: 400 ns  Iteration: 0  Instance: /CPU_tb
+# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
+quit -sim
+# Compile of ARF.v was successful.
+vsim -novopt work.CPU_tb
+# vsim 
+# Start time: 21:44:58 on Dec 07,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Loading work.CPU_tb
+# Loading work.CPU
+# Loading work.instructionMemory
+# Loading work.IF_ID_Reg
+# Loading work.Decode
+# Loading work.controller
+# Loading work.immGen
+# Loading work.ID_EX_Reg
+# Loading work.Rename
+# Loading work.ROB
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ARF
+# Loading work.ARF
+# Loading work.LSQ
+# Loading work.Unified_Issue_Queue
+# Loading work.ALU
+# Loading work.EX_MEM_Reg
+# Loading work.LSU
+# Loading work.DataMemory
+# Loading work.MEM_Comp_Reg
+run -all
+# reg p 2 = 006, renamed reg is p32, Cycle NO: 006
+# reg p 3 = 015, renamed reg is p33, Cycle NO: 007
+# reg p 1 = 042, renamed reg is p34, Cycle NO: 008
+# reg p 4 = 021, renamed reg is p35, Cycle NO: 010
+# reg p32 = 015, renamed reg is p36, Cycle NO: 014
+# reg p 6 = 000, renamed reg is p37, Cycle NO: 015
+# reg p33 = 042, renamed reg is p38, Cycle NO: 016
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
+#    Time: 400 ns  Iteration: 0  Instance: /CPU_tb
+# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
+quit -sim
+# Compile of ARF.v was successful.
+vsim -novopt work.CPU_tb
+# vsim 
+# Start time: 21:46:03 on Dec 07,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Loading work.CPU_tb
+# Loading work.CPU
+# Loading work.instructionMemory
+# Loading work.IF_ID_Reg
+# Loading work.Decode
+# Loading work.controller
+# Loading work.immGen
+# Loading work.ID_EX_Reg
+# Loading work.Rename
+# Loading work.ROB
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ARF
+# Loading work.ARF
+# Loading work.LSQ
+# Loading work.Unified_Issue_Queue
+# Loading work.ALU
+# Loading work.EX_MEM_Reg
+# Loading work.LSU
+# Loading work.DataMemory
+# Loading work.MEM_Comp_Reg
+run -all
+# reg p 2 = 06,   renamed reg is p32,   Cycle NO: 06
+# reg p 3 = 15,   renamed reg is p33,   Cycle NO: 07
+# reg p 1 = 42,   renamed reg is p34,   Cycle NO: 08
+# reg p 4 = 21,   renamed reg is p35,   Cycle NO: 10
+# reg p32 = 15,   renamed reg is p36,   Cycle NO: 14
+# reg p 6 = 00,   renamed reg is p37,   Cycle NO: 15
+# reg p33 = 42,   renamed reg is p38,   Cycle NO: 16
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
+#    Time: 400 ns  Iteration: 0  Instance: /CPU_tb
+# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
+# End time: 21:48:13 on Dec 07,2024, Elapsed time: 0:02:10
+# Errors: 0, Warnings: 1

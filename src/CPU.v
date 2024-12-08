@@ -675,9 +675,9 @@ module CPU #(
         .lwData_from_MEM_in (lwData_from_mem),
         .pc_from_LSU_in     (inst_pc_from_LSU),
         .pc_from_MEM_in     (inst_pc_from_mem),
-        .FU_write_flag      (op_write_MEM),
+        .FU_write_flag      (FU_write_flag),
         .FU_read_flag       (FU_read_flag),
-        .FU_read_flag_MEM   (FU_read_flag_MEM),
+        .FU_read_flag_MEM   (op_read_MEM),
 
         .lwData_out         (lwData_comp),
         .pc_out             (pc_ls_comp),
@@ -713,7 +713,7 @@ module CPU #(
         if (~FU_read_flag_com) begin
             if(tunnel_MEM[2]) begin
                 pc_comp_2_reg           = pc_fu2_MEM;
-                if (FU_write_flag_com) begin
+                if (FU_write_flag_com && ~FU_read_flag_MEM_com) begin
                     is_store_reg = 1'b1;
                 end
                 else begin
