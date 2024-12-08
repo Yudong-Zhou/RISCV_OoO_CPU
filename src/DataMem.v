@@ -180,16 +180,18 @@ module DataMemory(
         else begin
             data_vaild_out = 1'b0;
             has_stored     = 1'b0;
-            if ((read_en || write_en) && cacheMiss) begin
-                if (optype == LB) begin
-                    lwData_out      = {24'b0, DATAMEM[address][7:0]};
-                    data_vaild_out  = 1'b1;
-                    reg0            = reg_in;
-                end
-                else if (optype == LW) begin
-                    lwData_out      = DATAMEM[address];
-                    data_vaild_out  = 1'b1;
-                    reg0            = reg_in;
+            if (read_en || write_en) begin
+                if (cacheMiss) begin
+                    if (optype == LB) begin
+                        lwData_out      = {24'b0, DATAMEM[address][7:0]};
+                        data_vaild_out  = 1'b1;
+                        reg0            = reg_in;
+                    end
+                    else if (optype == LW) begin
+                        lwData_out      = DATAMEM[address];
+                        data_vaild_out  = 1'b1;
+                        reg0            = reg_in;
+                    end
                 end
 
                 if (optype == SB) begin
