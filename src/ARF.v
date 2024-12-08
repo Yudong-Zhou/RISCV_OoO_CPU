@@ -51,6 +51,7 @@ module ARF #(
                     ar_file[write_addr2] = write_data2;
                     $display("reg p%d = %02d,   renamed reg is p%d,   Cycle NO: %02d", old_addr2, write_data2, write_addr2, ($time-15)/10);
                 end
+                // every time there is a update to the ARF, print the updated reg and value
             end
         end
     end

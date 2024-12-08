@@ -50,14 +50,14 @@ module ALU #(
         end 
         else begin
             FU_is_using = 1'b0;
-            if (alu_number[ALU_NO] == 1) begin
+            if (alu_number[ALU_NO] == 1) begin // judge if this ALU is the one to use
                 dr_out      = dr_in;
                 FU_ready    = 1'b0; 
                 if ((optype != 4'd7) && (optype != 4'd8)) begin
-                    FU_is_using = 1'b1;
+                    FU_is_using = 1'b1; // use FU to broadcast
                 end
                 else begin
-                    FU_ready = 1'b0;
+                    FU_ready = 1'b0; // reset but would go back to 1, kind of useless
                 end
                 case(optype)
                     4'd1:

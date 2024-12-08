@@ -220,7 +220,7 @@ module ROB(
                 else if((ROB[retire_pointer][7]==1'b1) && (max_retire == 1))begin
                     //retire in ROB and retire buffer
                     R_ready[ROB[retire_pointer][1]]=1'b1;    //set reg as ready
-                    R_retire[ROB[retire_pointer][2]]=1'b1;     //retire old dr
+                    R_retire[ROB[retire_pointer][2]]=1'b1;   //retire old dr
 
                     ROB[retire_pointer][0] = 1'b0;           //set as invalid
                             

@@ -193,7 +193,8 @@ module DataMemory(
                         reg0            = reg_in;
                     end
                 end
-
+                
+                // data_check is for LSQ to match data and retire
                 if (optype == SB) begin
                     DATAMEM[address][7:0] = dataSw[7:0];
                     data_check = dataSw; 

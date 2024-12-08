@@ -221,7 +221,7 @@ module Unified_Issue_Queue #(
         end
     end
 
-    always @(*) begin
+    always @(*) begin // every time there is a new renamed dest reg, set it to invalid
         set_rob_reg_invaild <= 6'b0;
         if(is_dispatching && (op_type != 0)) begin
             if ((op_type != SB) && (op_type != SW)) begin
@@ -303,7 +303,7 @@ module Unified_Issue_Queue #(
                             fu_round_flag   = 1'b1;
                         end
                     
-                        // display
+                        // display 
                         // | valid | Opeartion | Dest Reg | Src Reg1 | Src1 Ready | Src Reg2 | Src2 Ready | imm | FU# | ROB# | PC |
                         //$display("Valid[%d]: %h, Operation[%d]: %h, destP[%d]: %h, Src1[%d]: %h, Src1_r[%d]: %h, Src1_data[%d]: %h, Src2[%d]: %h, Src2_r[%d]: %h, Src2_data[%d]: %h, imm[%d]: %h, FU[%d]: %h, ROB[%d]: %h, PC[%d]: %h", i, 1'b1, i, op_type, i, rd_in, i, rs1_in, i, 1'b1, i, rs1_value_from_ARF_in, i, rs2_in, i, 1'b1, i, rs2_value_from_ARF_in, i, imm_value_in, i, fu_alu_round, i, ROB_no_temp, i, PC);
                         
@@ -324,6 +324,7 @@ module Unified_Issue_Queue #(
         end
     end
     
+    // update the ISSUE QUEUE every time there is a broadcast happen, from FU or ROB or LSU or MEM
     always @(*) begin
         for (k = 0; k < RS_SIZE; k = k + 1) begin
             if (valid[k]) begin
@@ -486,7 +487,7 @@ module Unified_Issue_Queue #(
         fu_number_out2      <= fu_number_out[2];
         ROB_no_out2         <= ROB_no_out[2];
         PC_info_out2        <= PC_info_out[2];
-        if((op_out[2] == SW) || (op_out[2] == SB)) begin
+        if((op_out[2] == SW) || (op_out[2] == SB)) begin // if store, broadcast store data to LSQ
             swdata_to_LSQ_out2 <= rs2_value_out[2];
         end
     end

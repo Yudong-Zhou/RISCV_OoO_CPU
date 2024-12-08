@@ -1,10 +1,5 @@
 `timescale 1ns/1ps
 
-/*
-    * 1 read/write port – can only process one instruction at a time; if another instruction pending, must stall
-    * memoryHierarchy needs to handle calling to cache first (returning in one cycle), if Miss -> call to DataMemory
-*/
-
 module Cache(
     input           clk,
     input           rstn,

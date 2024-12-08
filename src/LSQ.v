@@ -3,16 +3,16 @@
 /*
 Load-Store Queue:
 * Size = 16 instructions
-+ ------------------------------------- +
-| V | PC  | Op |   Address   | Data | I |
-+ - | --- | -- | ----------- | ---- | - |
-| 1 | 0x4 | S  | 0x1...      | .... | 0 |
-| 1 | 0x8 | L  | 0x2...      |      | 0 | 
-| 0 |     |    |             |      | 0 |
-| 0 |     |    |             |      | 0 |
-| 0 |     |    |             |      | 0 |
-| 0 |     |    |             |      | 0 |
-+ ------------------------------------- +
++ --------------------------------------------+
+| V | PC  | Op |   Address   | Data | Reg | I |
++ - | --- | -- | ----------- | ---- | --- | - |
+| 1 | 0x4 | S  | 0x1...      | .... | --- | 0 |
+| 1 | 0x8 | L  | 0x2...      |      | --- | 0 | 
+| 0 |     |    |             |      | --- | 0 |
+| 0 |     |    |             |      | --- | 0 |
+| 0 |     |    |             |      | --- | 0 |
+| 0 |     |    |             |      | --- | 0 |
++ --------------------------------------------+
 
 FUNCTIONALITY:  1. in-order dispatch,
                 2. out-of-order execution,
@@ -48,28 +48,28 @@ module LSQ(
     output reg [5:0]    regout,
     output reg [31:0]   addressOut,
     output reg [31:0]   Data_out,
-    output reg          loadStore, // 0 if load, 1 if store
-    output reg          already_found, // 1 if LW and data is found in LSQ
-    output reg          no_issue   // 1 if no instruction is issued
+    output reg          loadStore,      // 0 if load, 1 if store
+    output reg          already_found,  // 1 if LW and data is found in LSQ
+    output reg          no_issue        // 1 if no instruction is issued
 );
     
     // LSQ fields ...
     reg [15:0] VALID;
     reg [31:0] PC [15:0];
-    reg [15:0] OP; // 0: load, 1: store
-    reg [31:0] ADDRESS [15:0];
-    reg [5:0]  REG [15:0];
-    reg [31:0] LSQ_DATA [15:0];
+    reg [15:0] OP;              // 0: load, 1: store
+    reg [31:0] ADDRESS [15:0];  // address to load/store
+    reg [5:0]  REG [15:0];      // store reg for potential broadcast to LSU then UIQ
+    reg [31:0] LSQ_DATA [15:0]; // loaded and stored data
     reg [15:0] FOUND;
     reg [15:0] ISSUED;
     
     // dispatch pointer of LSQ, in-order dispatch
-    reg [4:0]  dis_pointer;
-    reg [4:0]  issue_pointer;
+    reg [4:0]  dis_pointer;     // in-order dispatch pointer
+    reg [4:0]  issue_pointer;   // in-order issue pointer
     integer i,j;
     integer k;
 
-    always @(*) begin
+    always @(*) begin // if store, update data in LSQ entry
         for (k = 0; k < 16; k = k + 1) begin
             if((pc_issue == PC[k]) && VALID[k] && OP[k]) begin
                 LSQ_DATA[k] = swData;
@@ -133,7 +133,7 @@ module LSQ(
         end
         
         // execution logic ... if update address in LSQ entry; if load, 
-        // scan LSQ to find matching addresses, provide data for latest not issued store
+        // scan LSQ to find matching addresses, provide data for latest relevant store
         for (i = 0; i < 16; i = i + 1) begin
             if (PC[i] == pcLsu) begin
                 ADDRESS[i] = addressLsu;

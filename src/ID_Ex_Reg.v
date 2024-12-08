@@ -21,10 +21,7 @@ module ID_EX_Reg (
     input [4:0]     destReg_in,
     input [31:0]    imm_in,
     input [1:0]     lwSw_in,
-    //input [1:0]     aluOp_in,
     input           regWrite_in,
-    //input           aluSrc_in,
-    //input           branch_in,
     input           memRead_in,
     input           memWrite_in,
     input           memToReg_in,
@@ -40,10 +37,7 @@ module ID_EX_Reg (
     output reg [4:0]    destReg_out,
     output reg [31:0]   imm_out,
     output reg [1:0]    lwSw_out,
-    //output [1:0]    aluOp_out,
     output reg          regWrite_out,
-    //output          aluSrc_out,
-    //output          branch_out,
     output reg          memRead_out,
     output reg          memWrite_out,
     output reg          memToReg_out,
@@ -62,10 +56,7 @@ module ID_EX_Reg (
             destReg_out     <= 5'b0;
             imm_out         <= 32'b0;
             lwSw_out        <= 2'b0;
-            //aluOp_out       <= 2'b0;
             regWrite_out    <= 1'b0;
-            //aluSrc_out      <= 1'b0;
-            //branch_out      <= 1'b0;
             memRead_out     <= 1'b0;
             memWrite_out    <= 1'b0;
             memToReg_out    <= 1'b0;
@@ -82,17 +73,15 @@ module ID_EX_Reg (
             destReg_out     <= destReg_in;
             imm_out         <= imm_in;
             lwSw_out        <= lwSw_in;
-            //aluOp_out       <= aluOp_in;
             regWrite_out    <= regWrite_in;
-            //aluSrc_out      <= aluSrc_in;
-            //branch_out      <= branch_in;
             memRead_out     <= memRead_in;
             memWrite_out    <= memWrite_in;
             memToReg_out    <= memToReg_in;
             hasImm_out      <= hasImm_in;
             PC_out          <= PC_in;
         end
-
+        
+        // if the pipeline is stalled or all instructions have been fetched, stop dispatching
         if (~stall && (opcode_in != 0))begin
             is_dispatching = 1'b1;
         end

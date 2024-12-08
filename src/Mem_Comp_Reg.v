@@ -33,28 +33,28 @@ module MEM_Comp_Reg (
 
     always @(posedge clk or negedge rstn) begin
         if (~rstn) begin
-            lwData_out  <= 32'b0;
-            pc_out      <= 32'b0;
-            vaild_out   <= 1'b0;
-            lsq_out     <= 1'b0;
-            FU_write_flag_com <= 1'b0;
-            FU_read_flag_com  <= 1'b0;
-            FU_read_flag_MEM_com <= 1'b0;
+            lwData_out              <= 32'b0;
+            pc_out                  <= 32'b0;
+            vaild_out               <= 1'b0;
+            lsq_out                 <= 1'b0;
+            FU_write_flag_com       <= 1'b0;
+            FU_read_flag_com        <= 1'b0;
+            FU_read_flag_MEM_com    <= 1'b0;
         end
         else begin
             if (from_lsq) begin
-                lwData_out  <= lwData_from_LSQ_in;
-                pc_out      <= pc_from_LSU_in;
+                lwData_out          <= lwData_from_LSQ_in;
+                pc_out              <= pc_from_LSU_in;
             end
             else if (mem_vaild) begin
-                lwData_out  <= lwData_from_MEM_in;
-                pc_out      <= pc_from_MEM_in;
+                lwData_out          <= lwData_from_MEM_in;
+                pc_out              <= pc_from_MEM_in;
             end
-            vaild_out   <= mem_vaild;
-            lsq_out     <= from_lsq;
-            FU_write_flag_com <= FU_write_flag;
-            FU_read_flag_com  <= FU_read_flag;
-            FU_read_flag_MEM_com <= FU_read_flag_MEM;
+            vaild_out               <= mem_vaild;
+            lsq_out                 <= from_lsq;
+            FU_write_flag_com       <= FU_write_flag;
+            FU_read_flag_com        <= FU_read_flag;
+            FU_read_flag_MEM_com    <= FU_read_flag_MEM;
         end
     end
 
