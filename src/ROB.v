@@ -172,7 +172,6 @@ module ROB(
         complete_pc[3] = complete_pc_3;
 
         //complete and update data
-        
         for (m = 0; m < 64; m = m + 1) begin
             if (ROB[m][0] == 1'b1) begin
                 for(k = 0; k < 4; k = k + 1)begin

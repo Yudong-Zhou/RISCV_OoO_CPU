@@ -216,6 +216,7 @@ module CPU #(
 
     wire            has_stored;   
     wire [31 : 0]   data_check;
+    wire            FU_read_flag_MEM_com;
 
 ///////////////////////////////////////////////////////////////////////
 //  Fetch Stage
@@ -674,40 +675,42 @@ module CPU #(
         .lwData_from_MEM_in (lwData_from_mem),
         .pc_from_LSU_in     (inst_pc_from_LSU),
         .pc_from_MEM_in     (inst_pc_from_mem),
-        .FU_write_flag      (FU_write_flag),
+        .FU_write_flag      (op_write_MEM),
         .FU_read_flag       (FU_read_flag),
+        .FU_read_flag_MEM   (FU_read_flag_MEM),
 
         .lwData_out         (lwData_comp),
         .pc_out             (pc_ls_comp),
         .vaild_out          (vaild_comp),
         .lsq_out            (lsq_comp),
         .FU_write_flag_com  (FU_write_flag_com),
-        .FU_read_flag_com   (FU_read_flag_com)
+        .FU_read_flag_com   (FU_read_flag_com),
+        .FU_read_flag_MEM_com(FU_read_flag_MEM_com)
     );
 
 ///////////////////////////////////////////////////////////////////////
 // COMPLETE logic
     always @(*) begin
         is_store_reg = 1'b0;
+        if(tunnel_MEM[0]) begin
+            rd_result_comp_0_reg    = rd_result_fu0_MEM;
+            pc_comp_0_reg           = pc_fu0_MEM;
+        end
+        else begin
+            rd_result_comp_0_reg    = 32'd1;
+            pc_comp_0_reg           = 32'd1;
+        end
+
+        if(tunnel_MEM[1]) begin
+            rd_result_comp_1_reg    = rd_result_fu1_MEM;
+            pc_comp_1_reg           = pc_fu1_MEM;
+        end
+        else begin
+            rd_result_comp_1_reg    = 32'd1;
+            pc_comp_1_reg           = 32'd1;
+        end
+        
         if (~FU_read_flag_com) begin
-            if(tunnel_MEM[0]) begin
-                rd_result_comp_0_reg    = rd_result_fu0_MEM;
-                pc_comp_0_reg           = pc_fu0_MEM;
-            end
-            else begin
-                rd_result_comp_0_reg    = 32'd1;
-                pc_comp_0_reg           = 32'd1;
-            end
-
-            if(tunnel_MEM[1]) begin
-                rd_result_comp_1_reg    = rd_result_fu1_MEM;
-                pc_comp_1_reg           = pc_fu1_MEM;
-            end
-            else begin
-                rd_result_comp_1_reg    = 32'd1;
-                pc_comp_1_reg           = 32'd1;
-            end
-
             if(tunnel_MEM[2]) begin
                 pc_comp_2_reg           = pc_fu2_MEM;
                 if (FU_write_flag_com) begin

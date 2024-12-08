@@ -20,13 +20,15 @@ module MEM_Comp_Reg (
     input [31:0]    pc_from_MEM_in,
     input           FU_write_flag,
     input           FU_read_flag,
+    input           FU_read_flag_MEM,
 
     output reg [31:0]   lwData_out,
     output reg [31:0]   pc_out,
     output reg          vaild_out,
     output reg          lsq_out,
     output reg          FU_write_flag_com,
-    output reg          FU_read_flag_com
+    output reg          FU_read_flag_com,
+    output reg          FU_read_flag_MEM_com
 );
 
     always @(posedge clk or negedge rstn) begin
@@ -37,6 +39,7 @@ module MEM_Comp_Reg (
             lsq_out     <= 1'b0;
             FU_write_flag_com <= 1'b0;
             FU_read_flag_com  <= 1'b0;
+            FU_read_flag_MEM_com <= 1'b0;
         end
         else begin
             if (from_lsq) begin
@@ -51,6 +54,7 @@ module MEM_Comp_Reg (
             lsq_out     <= from_lsq;
             FU_write_flag_com <= FU_write_flag;
             FU_read_flag_com  <= FU_read_flag;
+            FU_read_flag_MEM_com <= FU_read_flag_MEM;
         end
     end
 

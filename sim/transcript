@@ -15,1508 +15,237 @@
 # //
 # OpenFile E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/CPU_tb.mpf
 # Loading project CPU_tb
-# Compile of Unified_Issue_Queue.v was successful.
-# Compile of ALU.v was successful.
-# Compile of ARF.v was successful.
-# Compile of Controller.v was successful.
-# Compile of CPU.v was successful.
-# Compile of CPU_tb.v was successful.
-# Compile of DataMem.v was successful.
-# Compile of Decode.v was successful.
-# Compile of Ex_Mem_Reg.v was successful.
-# Compile of ID_Ex_Reg.v was successful.
-# Compile of IF_ID_Reg.v was successful.
-# Compile of IM_fetch.v was successful.
-# Compile of ImmGen.v was successful.
-# Compile of LSQ.v was successful with warnings.
-# Compile of LSU.v was successful.
-# Compile of Mem_Comp_Reg.v was successful.
-# Compile of Rename.v was successful.
-# Compile of ROB.v was successful with warnings.
-# 18 compiles, 0 failed with no errors.
 vsim -novopt work.CPU_tb
 # vsim -gui E:\UCLA\Codes\zyd_github\RISCV_OoO_CPU\sim\CPU_tb.mpf 
-# Start time: 14:31:26 on Dec 06,2024
+# Start time: 20:19:14 on Dec 07,2024
 # ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
 # 
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.CPU_tb
+# Loading work.CPU_tb
+# Loading work.CPU
+# Loading work.instructionMemory
+# Loading work.IF_ID_Reg
+# Loading work.Decode
+# Loading work.controller
+# Loading work.immGen
+# Loading work.ID_EX_Reg
+# Loading work.Rename
+# Loading work.ROB
+# Loading work.ARF
+# Loading work.LSQ
+# Loading work.Unified_Issue_Queue
+# Loading work.ALU
+# Loading work.EX_MEM_Reg
+# Loading work.LSU
+# Loading work.DataMemory
+# Loading work.MEM_Comp_Reg
+do top_wave.do
+run -all
+# reg p 2 =          6, renamed reg is p32
+# reg p 3 =         15, renamed reg is p33
+# reg p 1 =         42, renamed reg is p34
+# reg p 4 =         21, renamed reg is p35
+# reg p32 =         15, renamed reg is p36
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
+#    Time: 400 ns  Iteration: 0  Instance: /CPU_tb
+# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
+add wave -position 66  sim:/CPU_tb/cpu/FU_read_flag_com
+add wave -position 67  sim:/CPU_tb/cpu/FU_write_flag_com
+restart -f
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+run -all
+# reg p 2 =          6, renamed reg is p32
+# reg p 3 =         15, renamed reg is p33
+# reg p 1 =         42, renamed reg is p34
+# reg p 4 =         21, renamed reg is p35
+# reg p32 =         15, renamed reg is p36
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
+#    Time: 400 ns  Iteration: 0  Instance: /CPU_tb
+# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
+quit -sim
+# Compile of CPU.v was successful.
+vsim -novopt work.CPU_tb
+# vsim 
+# Start time: 20:32:36 on Dec 07,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
 # Loading work.CPU_tb
 # Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.CPU
 # Loading work.CPU
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.instructionMemory
 # Loading work.instructionMemory
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.IF_ID_Reg
 # Loading work.IF_ID_Reg
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.Decode
 # Loading work.Decode
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.controller
 # Loading work.controller
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.immGen
 # Loading work.immGen
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ID_EX_Reg
 # Loading work.ID_EX_Reg
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.Rename
+# Loading work.Rename
+# Loading work.ROB
+# Loading work.ARF
+# Loading work.LSQ
+# Loading work.Unified_Issue_Queue
+# Loading work.ALU
+# Loading work.EX_MEM_Reg
+# Loading work.LSU
+# Loading work.DataMemory
+# Loading work.MEM_Comp_Reg
+do top_wave.do
+run -all
+# reg p 2 =          6, renamed reg is p32
+# reg p 3 =         15, renamed reg is p33
+# reg p 1 =         42, renamed reg is p34
+# reg p 4 =         21, renamed reg is p35
+# reg p32 =         15, renamed reg is p36
+# reg p 6 =          0, renamed reg is p37
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
+#    Time: 400 ns  Iteration: 0  Instance: /CPU_tb
+# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
+add wave -position 30  sim:/CPU_tb/cpu/reg_update_ARF_1
+add wave -position 31  sim:/CPU_tb/cpu/reg_update_ARF_2
+add wave -position 32  sim:/CPU_tb/cpu/value_update_ARF_1
+add wave -position 33  sim:/CPU_tb/cpu/value_update_ARF_2
+restart -f
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+run -all
+# reg p 2 =          6, renamed reg is p32
+# reg p 3 =         15, renamed reg is p33
+# reg p 1 =         42, renamed reg is p34
+# reg p 4 =         21, renamed reg is p35
+# reg p32 =         15, renamed reg is p36
+# reg p 6 =          0, renamed reg is p37
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
+#    Time: 400 ns  Iteration: 0  Instance: /CPU_tb
+# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
+add wave -position 29  sim:/CPU_tb/cpu/FU_write_flag_com
+add wave -position 30  sim:/CPU_tb/cpu/FU_read_flag_com
+restart -f
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+run -all
+# reg p 2 =          6, renamed reg is p32
+# reg p 3 =         15, renamed reg is p33
+# reg p 1 =         42, renamed reg is p34
+# reg p 4 =         21, renamed reg is p35
+# reg p32 =         15, renamed reg is p36
+# reg p 6 =          0, renamed reg is p37
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
+#    Time: 400 ns  Iteration: 0  Instance: /CPU_tb
+# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
+quit -sim
+# Compile of CPU.v was successful.
+# Compile of ROB.v was successful with warnings.
+# 2 compiles, 0 failed with no errors.
+vsim -novopt work.CPU_tb
+# vsim 
+# Start time: 20:51:16 on Dec 07,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Loading work.CPU_tb
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.CPU
+# Loading work.CPU
+# Loading work.instructionMemory
+# Loading work.IF_ID_Reg
+# Loading work.Decode
+# Loading work.controller
+# Loading work.immGen
+# Loading work.ID_EX_Reg
 # Loading work.Rename
 # Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ROB
 # Loading work.ROB
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ARF
 # Loading work.ARF
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.LSQ
 # Loading work.LSQ
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.Unified_Issue_Queue
 # Loading work.Unified_Issue_Queue
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ALU
 # Loading work.ALU
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.EX_MEM_Reg
 # Loading work.EX_MEM_Reg
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.LSU
 # Loading work.LSU
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.DataMemory
+# Loading work.DataMemory
+# Loading work.MEM_Comp_Reg
+do top_wave.do
+run -all
+# reg p 2 =          6, renamed reg is p32
+# reg p 3 =         15, renamed reg is p33
+# reg p 1 =         42, renamed reg is p34
+# reg p 4 =         21, renamed reg is p35
+# ** Error (suppressible): (vsim-3601) Iteration limit reached at time 165 ns.
+# 
+quit -sim
+# Compile of CPU.v was successful.
+vsim -novopt work.CPU_tb
+# vsim 
+# Start time: 20:54:37 on Dec 07,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Loading work.CPU_tb
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.CPU
+# Loading work.CPU
+# Loading work.instructionMemory
+# Loading work.IF_ID_Reg
+# Loading work.Decode
+# Loading work.controller
+# Loading work.immGen
+# Loading work.ID_EX_Reg
+# Loading work.Rename
+# Loading work.ROB
+# Loading work.ARF
+# Loading work.LSQ
+# Loading work.Unified_Issue_Queue
+# Loading work.ALU
+# Loading work.EX_MEM_Reg
+# Loading work.LSU
+# Loading work.DataMemory
+# Loading work.MEM_Comp_Reg
+do top_wave.do
+run -all
+# reg p 2 =          6, renamed reg is p32
+# reg p 3 =         15, renamed reg is p33
+# reg p 1 =         42, renamed reg is p34
+# reg p 4 =         21, renamed reg is p35
+# reg p32 =         15, renamed reg is p36
+# reg p 6 =          0, renamed reg is p37
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
+#    Time: 400 ns  Iteration: 0  Instance: /CPU_tb
+# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
+add wave -position 29  sim:/CPU_tb/cpu/FU_write_flag
+add wave -position 30  sim:/CPU_tb/cpu/FU_write_flag_com
+quit -sim
+# Compile of CPU.v was successful.
+# Compile of Mem_Comp_Reg.v failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+# Compile of Mem_Comp_Reg.v was successful.
+vsim -novopt work.CPU_tb
+# vsim 
+# Start time: 21:09:50 on Dec 07,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Loading work.CPU_tb
+# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.CPU
+# Loading work.CPU
+# Loading work.instructionMemory
+# Loading work.IF_ID_Reg
+# Loading work.Decode
+# Loading work.controller
+# Loading work.immGen
+# Loading work.ID_EX_Reg
+# Loading work.Rename
+# Loading work.ROB
+# Loading work.ARF
+# Loading work.LSQ
+# Loading work.Unified_Issue_Queue
+# Loading work.ALU
+# Loading work.EX_MEM_Reg
+# Loading work.LSU
 # Loading work.DataMemory
 # Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.MEM_Comp_Reg
 # Loading work.MEM_Comp_Reg
-do RAT_wave.do
-run -all
-# Valid[          0]: 1, Operation[          0]: 2, destP[          0]: 20, Src1[          0]: 00, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 06, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000006, FU[          0]: 0, ROB[          0]: 00, PC[          0]: 00000000
-# Valid[          1]: 1, Operation[          1]: 2, destP[          1]: 20, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 06, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 0000000f, FU[          1]: 1, ROB[          1]: 01, PC[          1]: 00000004
-# Valid[          0]: 1, Operation[          0]: 2, destP[          0]: 20, Src1[          0]: 00, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 06, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000024, FU[          0]: 2, ROB[          0]: 02, PC[          0]: 00000008
-# Valid[          1]: 1, Operation[          1]: a, destP[          1]: 00, Src1[          1]: 03, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 03, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000009, FU[          1]: 0, ROB[          1]: 03, PC[          1]: 0000000c
-# Valid[          0]: 1, Operation[          0]: 1, destP[          0]: 21, Src1[          0]: 03, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 20, Src2_r[          0]: 1, Src2_data[          0]: 00000006, imm[          0]: 00000000, FU[          0]: 0, ROB[          0]: 04, PC[          0]: 00000010
-# Valid[          1]: 1, Operation[          1]: 1, destP[          1]: 21, Src1[          1]: 03, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 20, Src2_r[          1]: 1, Src2_data[          1]: 0000000f, imm[          1]: 00000000, FU[          1]: 1, ROB[          1]: 05, PC[          1]: 00000014
-# Valid[          0]: 1, Operation[          0]: a, destP[          0]: 00, Src1[          0]: 00, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 01, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000000, FU[          0]: 2, ROB[          0]: 06, PC[          0]: 00000018
-# Valid[          1]: 1, Operation[          1]: 8, destP[          1]: 22, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 00, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000018, FU[          1]: 2, ROB[          1]: 07, PC[          1]: 0000001c
-# Valid[          0]: 1, Operation[          0]: 5, destP[          0]: 23, Src1[          0]: 22, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 03, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000000, FU[          0]: 2, ROB[          0]: 08, PC[          0]: 00000020
-# Valid[          1]: 1, Operation[          1]: 8, destP[          1]: 24, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 00, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000000, FU[          1]: 0, ROB[          1]: 09, PC[          1]: 00000024
-# Valid[          0]: 1, Operation[          0]: 1, destP[          0]: 25, Src1[          0]: 24, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 21, Src2_r[          0]: 1, Src2_data[          0]: 00000024, imm[          0]: 00000000, FU[          0]: 0, ROB[          0]: 0a, PC[          0]: 00000028
-# Valid[          0]: 1, Operation[          0]: a, destP[          0]: 00, Src1[          0]: 07, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 25, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000001, FU[          0]: 1, ROB[          0]: 0b, PC[          0]: 00000034
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-# invalid command name ""
-quit -sim
-# Compile of Rename.v was successful.
-vsim -novopt work.CPU_tb
-# vsim 
-# Start time: 14:34:59 on Dec 06,2024
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Loading work.CPU_tb
-# Loading work.CPU
-# Loading work.instructionMemory
-# Loading work.IF_ID_Reg
-# Loading work.Decode
-# Loading work.controller
-# Loading work.immGen
-# Loading work.ID_EX_Reg
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.Rename
-# Loading work.Rename
-# Loading work.ROB
-# Loading work.ARF
-# Loading work.LSQ
-# Loading work.Unified_Issue_Queue
-# Loading work.ALU
-# Loading work.EX_MEM_Reg
-# Loading work.LSU
-# Loading work.DataMemory
-# Loading work.MEM_Comp_Reg
-do RAT_wave.do
-run -all
-# Valid[          0]: 1, Operation[          0]: 2, destP[          0]: 20, Src1[          0]: 00, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 06, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000006, FU[          0]: 0, ROB[          0]: 00, PC[          0]: 00000000
-# Valid[          1]: 1, Operation[          1]: 2, destP[          1]: 20, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 06, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 0000000f, FU[          1]: 1, ROB[          1]: 01, PC[          1]: 00000004
-# Valid[          0]: 1, Operation[          0]: 2, destP[          0]: 20, Src1[          0]: 00, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 06, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000024, FU[          0]: 2, ROB[          0]: 02, PC[          0]: 00000008
-# Valid[          1]: 1, Operation[          1]: a, destP[          1]: 00, Src1[          1]: 03, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 03, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000009, FU[          1]: 0, ROB[          1]: 03, PC[          1]: 0000000c
-# Valid[          0]: 1, Operation[          0]: 1, destP[          0]: 21, Src1[          0]: 03, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 20, Src2_r[          0]: 1, Src2_data[          0]: 00000006, imm[          0]: 00000000, FU[          0]: 0, ROB[          0]: 04, PC[          0]: 00000010
-# Valid[          1]: 1, Operation[          1]: 1, destP[          1]: 21, Src1[          1]: 03, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 20, Src2_r[          1]: 1, Src2_data[          1]: 0000000f, imm[          1]: 00000000, FU[          1]: 1, ROB[          1]: 05, PC[          1]: 00000014
-# Valid[          0]: 1, Operation[          0]: a, destP[          0]: 00, Src1[          0]: 00, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 01, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000000, FU[          0]: 2, ROB[          0]: 06, PC[          0]: 00000018
-# Valid[          1]: 1, Operation[          1]: 8, destP[          1]: 22, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 00, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000018, FU[          1]: 2, ROB[          1]: 07, PC[          1]: 0000001c
-# Valid[          0]: 1, Operation[          0]: 5, destP[          0]: 23, Src1[          0]: 22, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 03, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000000, FU[          0]: 2, ROB[          0]: 08, PC[          0]: 00000020
-# Valid[          1]: 1, Operation[          1]: 8, destP[          1]: 24, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 00, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000000, FU[          1]: 0, ROB[          1]: 09, PC[          1]: 00000024
-# Valid[          0]: 1, Operation[          0]: 1, destP[          0]: 25, Src1[          0]: 24, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 21, Src2_r[          0]: 1, Src2_data[          0]: 00000024, imm[          0]: 00000000, FU[          0]: 0, ROB[          0]: 0a, PC[          0]: 00000028
-# Valid[          0]: 1, Operation[          0]: a, destP[          0]: 00, Src1[          0]: 07, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 25, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000001, FU[          0]: 1, ROB[          0]: 0b, PC[          0]: 00000034
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-quit -sim
-# Compile of Rename.v failed with 1 errors.
-# Compile of Rename.v was successful.
-vsim -novopt work.CPU_tb
-# vsim 
-# Start time: 14:36:19 on Dec 06,2024
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Loading work.CPU_tb
-# Loading work.CPU
-# Loading work.instructionMemory
-# Loading work.IF_ID_Reg
-# Loading work.Decode
-# Loading work.controller
-# Loading work.immGen
-# Loading work.ID_EX_Reg
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.Rename
-# Loading work.Rename
-# Loading work.ROB
-# Loading work.ARF
-# Loading work.LSQ
-# Loading work.Unified_Issue_Queue
-# Loading work.ALU
-# Loading work.EX_MEM_Reg
-# Loading work.LSU
-# Loading work.DataMemory
-# Loading work.MEM_Comp_Reg
-do RAT_wave.do
-run -all
-# Valid[          0]: 1, Operation[          0]: 2, destP[          0]: 20, Src1[          0]: 00, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 06, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000006, FU[          0]: 0, ROB[          0]: 00, PC[          0]: 00000000
-# Valid[          1]: 1, Operation[          1]: 2, destP[          1]: 21, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 0f, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 0000000f, FU[          1]: 1, ROB[          1]: 01, PC[          1]: 00000004
-# Valid[          0]: 1, Operation[          0]: 2, destP[          0]: 22, Src1[          0]: 20, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 04, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000024, FU[          0]: 2, ROB[          0]: 02, PC[          0]: 00000008
-# Valid[          1]: 1, Operation[          1]: a, destP[          1]: 00, Src1[          1]: 21, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 21, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000009, FU[          1]: 0, ROB[          1]: 03, PC[          1]: 0000000c
-# Valid[          0]: 1, Operation[          0]: 1, destP[          0]: 23, Src1[          0]: 21, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 20, Src2_r[          0]: 1, Src2_data[          0]: 00000006, imm[          0]: 00000000, FU[          0]: 0, ROB[          0]: 04, PC[          0]: 00000010
-# Valid[          1]: 1, Operation[          1]: 1, destP[          1]: 00, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 00, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000000, FU[          1]: 1, ROB[          1]: 05, PC[          1]: 00000014
-# Valid[          0]: 1, Operation[          0]: a, destP[          0]: 00, Src1[          0]: 00, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 22, Src2_r[          0]: 1, Src2_data[          0]: 0000002a, imm[          0]: 00000000, FU[          0]: 2, ROB[          0]: 06, PC[          0]: 00000018
-# Valid[          1]: 1, Operation[          1]: 8, destP[          1]: 24, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 00, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000018, FU[          1]: 2, ROB[          1]: 07, PC[          1]: 0000001c
-# Valid[          0]: 1, Operation[          0]: 5, destP[          0]: 25, Src1[          0]: 24, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 21, Src2_r[          0]: 1, Src2_data[          0]: 0000000f, imm[          0]: 00000000, FU[          0]: 2, ROB[          0]: 08, PC[          0]: 00000020
-# Valid[          1]: 1, Operation[          1]: 8, destP[          1]: 26, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 00, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000000, FU[          1]: 0, ROB[          1]: 09, PC[          1]: 00000024
-# Valid[          0]: 1, Operation[          0]: 1, destP[          0]: 27, Src1[          0]: 26, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 23, Src2_r[          0]: 1, Src2_data[          0]: 00000015, imm[          0]: 00000000, FU[          0]: 0, ROB[          0]: 0a, PC[          0]: 00000028
-# Valid[          0]: 1, Operation[          0]: a, destP[          0]: 00, Src1[          0]: 28, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 27, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000001, FU[          0]: 1, ROB[          0]: 0b, PC[          0]: 00000034
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-do top_wave.do
-run -all
-# Break key hit
-# Break in Module Unified_Issue_Queue at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Unified_Issue_Queue.v line 388
-quit -sim
-vsim -novopt work.CPU_tb
-# vsim 
-# Start time: 14:37:10 on Dec 06,2024
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Loading work.CPU_tb
-# Loading work.CPU
-# Loading work.instructionMemory
-# Loading work.IF_ID_Reg
-# Loading work.Decode
-# Loading work.controller
-# Loading work.immGen
-# Loading work.ID_EX_Reg
-# Loading work.Rename
-# Loading work.ROB
-# Loading work.ARF
-# Loading work.LSQ
-# Loading work.Unified_Issue_Queue
-# Loading work.ALU
-# Loading work.EX_MEM_Reg
-# Loading work.LSU
-# Loading work.DataMemory
-# Loading work.MEM_Comp_Reg
-do top_wave.do
-run -all
-# Valid[          0]: 1, Operation[          0]: 2, destP[          0]: 20, Src1[          0]: 00, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 06, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000006, FU[          0]: 0, ROB[          0]: 00, PC[          0]: 00000000
-# Valid[          1]: 1, Operation[          1]: 2, destP[          1]: 21, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 0f, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 0000000f, FU[          1]: 1, ROB[          1]: 01, PC[          1]: 00000004
-# Valid[          0]: 1, Operation[          0]: 2, destP[          0]: 22, Src1[          0]: 20, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 04, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000024, FU[          0]: 2, ROB[          0]: 02, PC[          0]: 00000008
-# Valid[          1]: 1, Operation[          1]: a, destP[          1]: 00, Src1[          1]: 21, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 21, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000009, FU[          1]: 0, ROB[          1]: 03, PC[          1]: 0000000c
-# Valid[          0]: 1, Operation[          0]: 1, destP[          0]: 23, Src1[          0]: 21, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 20, Src2_r[          0]: 1, Src2_data[          0]: 00000006, imm[          0]: 00000000, FU[          0]: 0, ROB[          0]: 04, PC[          0]: 00000010
-# Valid[          1]: 1, Operation[          1]: 1, destP[          1]: 00, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 00, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000000, FU[          1]: 1, ROB[          1]: 05, PC[          1]: 00000014
-# Valid[          0]: 1, Operation[          0]: a, destP[          0]: 00, Src1[          0]: 00, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 22, Src2_r[          0]: 1, Src2_data[          0]: 0000002a, imm[          0]: 00000000, FU[          0]: 2, ROB[          0]: 06, PC[          0]: 00000018
-# Valid[          1]: 1, Operation[          1]: 8, destP[          1]: 24, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 00, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000018, FU[          1]: 2, ROB[          1]: 07, PC[          1]: 0000001c
-# Valid[          0]: 1, Operation[          0]: 5, destP[          0]: 25, Src1[          0]: 24, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 21, Src2_r[          0]: 1, Src2_data[          0]: 0000000f, imm[          0]: 00000000, FU[          0]: 2, ROB[          0]: 08, PC[          0]: 00000020
-# Valid[          1]: 1, Operation[          1]: 8, destP[          1]: 26, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 00, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000000, FU[          1]: 0, ROB[          1]: 09, PC[          1]: 00000024
-# Valid[          0]: 1, Operation[          0]: 1, destP[          0]: 27, Src1[          0]: 26, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 23, Src2_r[          0]: 1, Src2_data[          0]: 00000015, imm[          0]: 00000000, FU[          0]: 0, ROB[          0]: 0a, PC[          0]: 00000028
-# Valid[          0]: 1, Operation[          0]: a, destP[          0]: 00, Src1[          0]: 28, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 27, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000001, FU[          0]: 1, ROB[          0]: 0b, PC[          0]: 00000034
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-quit -sim
-# Compile of ARF.v was successful.
-# Compile of CPU.v was successful.
-# Compile of ROB.v was successful with warnings.
-# 3 compiles, 0 failed with no errors.
-vsim -novopt work.CPU_tb
-# vsim 
-# Start time: 14:45:29 on Dec 06,2024
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Loading work.CPU_tb
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.CPU
-# Loading work.CPU
-# Loading work.instructionMemory
-# Loading work.IF_ID_Reg
-# Loading work.Decode
-# Loading work.controller
-# Loading work.immGen
-# Loading work.ID_EX_Reg
-# Loading work.Rename
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ROB
-# Loading work.ROB
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ARF
-# Loading work.ARF
-# Loading work.LSQ
-# Loading work.Unified_Issue_Queue
-# Loading work.ALU
-# Loading work.EX_MEM_Reg
-# Loading work.LSU
-# Loading work.DataMemory
-# Loading work.MEM_Comp_Reg
-do top_wave.do
-run-all
-# invalid command name "run-all"
-run -all
-# Valid[          0]: 1, Operation[          0]: 2, destP[          0]: 20, Src1[          0]: 00, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 06, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000006, FU[          0]: 0, ROB[          0]: 00, PC[          0]: 00000000
-# Valid[          1]: 1, Operation[          1]: 2, destP[          1]: 21, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 0f, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 0000000f, FU[          1]: 1, ROB[          1]: 01, PC[          1]: 00000004
-# Valid[          0]: 1, Operation[          0]: 2, destP[          0]: 22, Src1[          0]: 20, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 04, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000024, FU[          0]: 2, ROB[          0]: 02, PC[          0]: 00000008
-# reg  2 =          6
-# Valid[          1]: 1, Operation[          1]: a, destP[          1]: 00, Src1[          1]: 21, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 21, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000009, FU[          1]: 0, ROB[          1]: 03, PC[          1]: 0000000c
-# reg  3 =         15
-# Valid[          0]: 1, Operation[          0]: 1, destP[          0]: 23, Src1[          0]: 21, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 20, Src2_r[          0]: 1, Src2_data[          0]: 00000006, imm[          0]: 00000000, FU[          0]: 0, ROB[          0]: 04, PC[          0]: 00000010
-# reg  1 =         42
-# Valid[          1]: 1, Operation[          1]: 1, destP[          1]: 00, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 00, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000000, FU[          1]: 1, ROB[          1]: 05, PC[          1]: 00000014
-# Valid[          0]: 1, Operation[          0]: a, destP[          0]: 00, Src1[          0]: 00, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 22, Src2_r[          0]: 1, Src2_data[          0]: 0000002a, imm[          0]: 00000000, FU[          0]: 2, ROB[          0]: 06, PC[          0]: 00000018
-# reg  4 =         21
-# Valid[          1]: 1, Operation[          1]: 8, destP[          1]: 24, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 00, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000018, FU[          1]: 2, ROB[          1]: 07, PC[          1]: 0000001c
-# Valid[          0]: 1, Operation[          0]: 5, destP[          0]: 25, Src1[          0]: 24, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 21, Src2_r[          0]: 1, Src2_data[          0]: 0000000f, imm[          0]: 00000000, FU[          0]: 2, ROB[          0]: 08, PC[          0]: 00000020
-# Valid[          1]: 1, Operation[          1]: 8, destP[          1]: 26, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 00, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000000, FU[          1]: 0, ROB[          1]: 09, PC[          1]: 00000024
-# Valid[          0]: 1, Operation[          0]: 1, destP[          0]: 27, Src1[          0]: 26, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 23, Src2_r[          0]: 1, Src2_data[          0]: 00000015, imm[          0]: 00000000, FU[          0]: 0, ROB[          0]: 0a, PC[          0]: 00000028
-# reg 32 =         15
-# reg  6 =         23
-# reg 33 =         42
-# reg  5 =         21
-# Valid[          0]: 1, Operation[          0]: a, destP[          0]: 00, Src1[          0]: 28, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 27, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000001, FU[          0]: 1, ROB[          0]: 0b, PC[          0]: 00000034
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-quit -sim
-# Compile of Unified_Issue_Queue.v was successful.
-vsim -novopt work.CPU_tb
-# vsim 
-# Start time: 14:47:34 on Dec 06,2024
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Loading work.CPU_tb
-# Loading work.CPU
-# Loading work.instructionMemory
-# Loading work.IF_ID_Reg
-# Loading work.Decode
-# Loading work.controller
-# Loading work.immGen
-# Loading work.ID_EX_Reg
-# Loading work.Rename
-# Loading work.ROB
-# Loading work.ARF
-# Loading work.LSQ
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.Unified_Issue_Queue
-# Loading work.Unified_Issue_Queue
-# Loading work.ALU
-# Loading work.EX_MEM_Reg
-# Loading work.LSU
-# Loading work.DataMemory
-# Loading work.MEM_Comp_Reg
-do top_wave.do
-run -all
-# reg  2 =          6
-# reg  3 =         15
-# reg  1 =         42
-# reg  4 =         21
-# reg 32 =         15
-# reg  6 =         23
-# reg 33 =         42
-# reg  5 =         21
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-quit -sim
-# Compile of ARF.v was successful.
-vsim -novopt work.CPU_tb
-# vsim 
-# Start time: 14:48:54 on Dec 06,2024
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Loading work.CPU_tb
-# Loading work.CPU
-# Loading work.instructionMemory
-# Loading work.IF_ID_Reg
-# Loading work.Decode
-# Loading work.controller
-# Loading work.immGen
-# Loading work.ID_EX_Reg
-# Loading work.Rename
-# Loading work.ROB
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ARF
-# Loading work.ARF
-# Loading work.LSQ
-# Loading work.Unified_Issue_Queue
-# Loading work.ALU
-# Loading work.EX_MEM_Reg
-# Loading work.LSU
-# Loading work.DataMemory
-# Loading work.MEM_Comp_Reg
-do top_wave.do
-run -all
-# reg p 2 =          6, new reg is p32
-# reg p 3 =         15, new reg is p33
-# reg p 1 =         42, new reg is p34
-# reg p 4 =         21, new reg is p35
-# reg p32 =         15, new reg is p36
-# reg p 6 =         23, new reg is p37
-# reg p33 =         42, new reg is p38
-# reg p 5 =         21, new reg is p39
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-quit -sim
-# Compile of Unified_Issue_Queue.v was successful.
-vsim -novopt work.CPU_tb
-# vsim 
-# Start time: 14:55:56 on Dec 06,2024
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Loading work.CPU_tb
-# Loading work.CPU
-# Loading work.instructionMemory
-# Loading work.IF_ID_Reg
-# Loading work.Decode
-# Loading work.controller
-# Loading work.immGen
-# Loading work.ID_EX_Reg
-# Loading work.Rename
-# Loading work.ROB
-# Loading work.ARF
-# Loading work.LSQ
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.Unified_Issue_Queue
-# Loading work.Unified_Issue_Queue
-# Loading work.ALU
-# Loading work.EX_MEM_Reg
-# Loading work.LSU
-# Loading work.DataMemory
-# Loading work.MEM_Comp_Reg
-do top_wave.do
-run -all
-# reg p 2 =          6, new reg is p32
-# reg p 3 =         15, new reg is p33
-# reg p 1 =         42, new reg is p34
-# reg p 4 =         21, new reg is p35
-# reg p32 =         15, new reg is p36
-# reg p 6 =         23, new reg is p37
-# reg p33 =         42, new reg is p38
-# reg p 5 =         21, new reg is p39
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-quit -sim
-# Compile of Unified_Issue_Queue.v was successful.
-# Compile of CPU.v failed with 2 errors.
-# Compile of LSQ.v failed with 2 errors.
-# Compile of LSU.v was successful.
-# Compile of ROB.v was successful with warnings.
-# 5 compiles, 2 failed with 4 errors.
-# Compile of CPU.v failed with 0 errors.
-# Compile of LSQ.v failed with 2 errors.
-# 2 compiles, 2 failed with 2 errors.
-# Compile of CPU.v was successful.
-# Compile of LSQ.v failed with 2 errors.
-# 2 compiles, 1 failed with 2 errors.
-# Compile of LSQ.v was successful with warnings.
-vsim -novopt work.CPU_tb
-# vsim 
-# Start time: 15:38:03 on Dec 06,2024
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Loading work.CPU_tb
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.CPU
-# Loading work.CPU
-# Loading work.instructionMemory
-# Loading work.IF_ID_Reg
-# Loading work.Decode
-# Loading work.controller
-# Loading work.immGen
-# Loading work.ID_EX_Reg
-# Loading work.Rename
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ROB
-# Loading work.ROB
-# Loading work.ARF
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.LSQ
-# Loading work.LSQ
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.Unified_Issue_Queue
-# Loading work.Unified_Issue_Queue
-# Loading work.ALU
-# Loading work.EX_MEM_Reg
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.LSU
-# Loading work.LSU
-# Loading work.DataMemory
-# Loading work.MEM_Comp_Reg
-do top_wave.do
-run -all
-# reg p 2 =          6, new reg is p32
-# reg p 3 =         15, new reg is p33
-# reg p 1 =         42, new reg is p34
-# reg p 4 =         21, new reg is p35
-# reg p32 =         15, new reg is p36
-# reg p 6 =         23, new reg is p37
-# reg p33 =         42, new reg is p38
-# reg p 5 =         21, new reg is p39
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-quit -sim
-# Compile of Unified_Issue_Queue.v was successful.
-# Compile of ARF.v was successful.
-# 2 compiles, 0 failed with no errors.
-vsim -novopt work.CPU_tb
-# vsim 
-# Start time: 17:07:02 on Dec 06,2024
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Loading work.CPU_tb
-# Loading work.CPU
-# Loading work.instructionMemory
-# Loading work.IF_ID_Reg
-# Loading work.Decode
-# Loading work.controller
-# Loading work.immGen
-# Loading work.ID_EX_Reg
-# Loading work.Rename
-# Loading work.ROB
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ARF
-# Loading work.ARF
-# Loading work.LSQ
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.Unified_Issue_Queue
-# Loading work.Unified_Issue_Queue
-# Loading work.ALU
-# Loading work.EX_MEM_Reg
-# Loading work.LSU
-# Loading work.DataMemory
-# Loading work.MEM_Comp_Reg
-do top_wave.do
-run -all
-# Valid[          0]: 1, Operation[          0]: 2, destP[          0]: 20, Src1[          0]: 00, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 06, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000006, FU[          0]: 0, ROB[          0]: 00, PC[          0]: 00000000
-# Valid[          1]: 1, Operation[          1]: 2, destP[          1]: 21, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 0f, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 0000000f, FU[          1]: 1, ROB[          1]: 01, PC[          1]: 00000004
-# Valid[          0]: 1, Operation[          0]: 2, destP[          0]: 22, Src1[          0]: 20, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 04, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000024, FU[          0]: 2, ROB[          0]: 02, PC[          0]: 00000008
-# Valid[          1]: 1, Operation[          1]: a, destP[          1]: 00, Src1[          1]: 21, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 21, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000009, FU[          1]: 0, ROB[          1]: 03, PC[          1]: 0000000c
-# Valid[          0]: 1, Operation[          0]: 1, destP[          0]: 23, Src1[          0]: 21, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 20, Src2_r[          0]: 1, Src2_data[          0]: 00000006, imm[          0]: 00000000, FU[          0]: 0, ROB[          0]: 04, PC[          0]: 00000010
-# Valid[          1]: 1, Operation[          1]: 1, destP[          1]: 00, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 00, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000000, FU[          1]: 1, ROB[          1]: 05, PC[          1]: 00000014
-# Valid[          0]: 1, Operation[          0]: a, destP[          0]: 00, Src1[          0]: 00, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 22, Src2_r[          0]: 1, Src2_data[          0]: 0000002a, imm[          0]: 00000000, FU[          0]: 0, ROB[          0]: 06, PC[          0]: 00000018
-# Valid[          1]: 1, Operation[          1]: 8, destP[          1]: 24, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 00, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000018, FU[          1]: 0, ROB[          1]: 07, PC[          1]: 0000001c
-# Valid[          0]: 1, Operation[          0]: 5, destP[          0]: 25, Src1[          0]: 24, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 21, Src2_r[          0]: 1, Src2_data[          0]: 0000000f, imm[          0]: 00000000, FU[          0]: 0, ROB[          0]: 08, PC[          0]: 00000020
-# Valid[          1]: 1, Operation[          1]: 8, destP[          1]: 26, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 00, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000000, FU[          1]: 1, ROB[          1]: 09, PC[          1]: 00000024
-# Valid[          0]: 1, Operation[          0]: 1, destP[          0]: 27, Src1[          0]: 26, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 23, Src2_r[          0]: 1, Src2_data[          0]: 00000015, imm[          0]: 00000000, FU[          0]: 1, ROB[          0]: 0a, PC[          0]: 00000028
-# Valid[          0]: 1, Operation[          0]: a, destP[          0]: 00, Src1[          0]: 28, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 27, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000001, FU[          0]: 0, ROB[          0]: 0b, PC[          0]: 00000034
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-add wave -position insertpoint sim:/CPU_tb/cpu/*
-add wave -position 22  sim:/CPU_tb/cpu/set_rob_reg_invaild
-restart -f
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-run -all
-# Valid[          0]: 1, Operation[          0]: 2, destP[          0]: 20, Src1[          0]: 00, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 06, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000006, FU[          0]: 0, ROB[          0]: 00, PC[          0]: 00000000
-# Valid[          1]: 1, Operation[          1]: 2, destP[          1]: 21, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 0f, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 0000000f, FU[          1]: 1, ROB[          1]: 01, PC[          1]: 00000004
-# Valid[          0]: 1, Operation[          0]: 2, destP[          0]: 22, Src1[          0]: 20, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 04, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000024, FU[          0]: 2, ROB[          0]: 02, PC[          0]: 00000008
-# Valid[          1]: 1, Operation[          1]: a, destP[          1]: 00, Src1[          1]: 21, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 21, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000009, FU[          1]: 0, ROB[          1]: 03, PC[          1]: 0000000c
-# Valid[          0]: 1, Operation[          0]: 1, destP[          0]: 23, Src1[          0]: 21, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 20, Src2_r[          0]: 1, Src2_data[          0]: 00000006, imm[          0]: 00000000, FU[          0]: 0, ROB[          0]: 04, PC[          0]: 00000010
-# Valid[          1]: 1, Operation[          1]: 1, destP[          1]: 00, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 00, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000000, FU[          1]: 1, ROB[          1]: 05, PC[          1]: 00000014
-# Valid[          0]: 1, Operation[          0]: a, destP[          0]: 00, Src1[          0]: 00, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 22, Src2_r[          0]: 1, Src2_data[          0]: 0000002a, imm[          0]: 00000000, FU[          0]: 0, ROB[          0]: 06, PC[          0]: 00000018
-# Valid[          1]: 1, Operation[          1]: 8, destP[          1]: 24, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 00, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000018, FU[          1]: 0, ROB[          1]: 07, PC[          1]: 0000001c
-# Valid[          0]: 1, Operation[          0]: 5, destP[          0]: 25, Src1[          0]: 24, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 21, Src2_r[          0]: 1, Src2_data[          0]: 0000000f, imm[          0]: 00000000, FU[          0]: 0, ROB[          0]: 08, PC[          0]: 00000020
-# Valid[          1]: 1, Operation[          1]: 8, destP[          1]: 26, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 00, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000000, FU[          1]: 1, ROB[          1]: 09, PC[          1]: 00000024
-# Valid[          0]: 1, Operation[          0]: 1, destP[          0]: 27, Src1[          0]: 26, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 23, Src2_r[          0]: 1, Src2_data[          0]: 00000015, imm[          0]: 00000000, FU[          0]: 1, ROB[          0]: 0a, PC[          0]: 00000028
-# Valid[          0]: 1, Operation[          0]: a, destP[          0]: 00, Src1[          0]: 28, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 27, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000001, FU[          0]: 0, ROB[          0]: 0b, PC[          0]: 00000034
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/top_wave.do
-quit -sim
-# Compile of CPU.v was successful.
-# Compile of ROB.v was successful with warnings.
-# 2 compiles, 0 failed with no errors.
-vsim -novopt work.CPU_tb
-# vsim 
-# Start time: 17:19:57 on Dec 06,2024
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Loading work.CPU_tb
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.CPU
-# Loading work.CPU
-# Loading work.instructionMemory
-# Loading work.IF_ID_Reg
-# Loading work.Decode
-# Loading work.controller
-# Loading work.immGen
-# Loading work.ID_EX_Reg
-# Loading work.Rename
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ROB
-# Loading work.ROB
-# Loading work.ARF
-# Loading work.LSQ
-# Loading work.Unified_Issue_Queue
-# Loading work.ALU
-# Loading work.EX_MEM_Reg
-# Loading work.LSU
-# Loading work.DataMemory
-# Loading work.MEM_Comp_Reg
-do top_wave.do
-run -all
-# Valid[          0]: 1, Operation[          0]: 2, destP[          0]: 20, Src1[          0]: 00, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 06, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000006, FU[          0]: 0, ROB[          0]: 00, PC[          0]: 00000000
-# Valid[          1]: 1, Operation[          1]: 2, destP[          1]: 21, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 0f, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 0000000f, FU[          1]: 1, ROB[          1]: 01, PC[          1]: 00000004
-# Valid[          0]: 1, Operation[          0]: 2, destP[          0]: 22, Src1[          0]: 20, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 04, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000024, FU[          0]: 2, ROB[          0]: 02, PC[          0]: 00000008
-# Valid[          1]: 1, Operation[          1]: a, destP[          1]: 00, Src1[          1]: 21, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 21, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000009, FU[          1]: 0, ROB[          1]: 03, PC[          1]: 0000000c
-# Valid[          0]: 1, Operation[          0]: 1, destP[          0]: 23, Src1[          0]: 21, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 20, Src2_r[          0]: 1, Src2_data[          0]: 00000006, imm[          0]: 00000000, FU[          0]: 0, ROB[          0]: 04, PC[          0]: 00000010
-# Valid[          1]: 1, Operation[          1]: 1, destP[          1]: 00, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 00, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000000, FU[          1]: 1, ROB[          1]: 05, PC[          1]: 00000014
-# Valid[          0]: 1, Operation[          0]: a, destP[          0]: 00, Src1[          0]: 00, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 22, Src2_r[          0]: 1, Src2_data[          0]: 0000002a, imm[          0]: 00000000, FU[          0]: 0, ROB[          0]: 06, PC[          0]: 00000018
-# Valid[          1]: 1, Operation[          1]: 8, destP[          1]: 24, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 00, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000018, FU[          1]: 0, ROB[          1]: 07, PC[          1]: 0000001c
-# Valid[          0]: 1, Operation[          0]: 5, destP[          0]: 25, Src1[          0]: 24, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 21, Src2_r[          0]: 1, Src2_data[          0]: 0000000f, imm[          0]: 00000000, FU[          0]: 0, ROB[          0]: 08, PC[          0]: 00000020
-# Valid[          1]: 1, Operation[          1]: 8, destP[          1]: 26, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 00, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000000, FU[          1]: 1, ROB[          1]: 09, PC[          1]: 00000024
-# Valid[          0]: 1, Operation[          0]: 1, destP[          0]: 27, Src1[          0]: 26, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 23, Src2_r[          0]: 1, Src2_data[          0]: 00000015, imm[          0]: 00000000, FU[          0]: 1, ROB[          0]: 0a, PC[          0]: 00000028
-# Valid[          0]: 1, Operation[          0]: a, destP[          0]: 00, Src1[          0]: 28, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 27, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000001, FU[          0]: 0, ROB[          0]: 0b, PC[          0]: 00000034
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-quit -sim
-# Compile of Unified_Issue_Queue.v was successful.
-vsim -novopt work.CPU_tb
-# vsim 
-# Start time: 17:24:32 on Dec 06,2024
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Loading work.CPU_tb
-# Loading work.CPU
-# Loading work.instructionMemory
-# Loading work.IF_ID_Reg
-# Loading work.Decode
-# Loading work.controller
-# Loading work.immGen
-# Loading work.ID_EX_Reg
-# Loading work.Rename
-# Loading work.ROB
-# Loading work.ARF
-# Loading work.LSQ
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.Unified_Issue_Queue
-# Loading work.Unified_Issue_Queue
-# Loading work.ALU
-# Loading work.EX_MEM_Reg
-# Loading work.LSU
-# Loading work.DataMemory
-# Loading work.MEM_Comp_Reg
-do top_wave.do
-run -all
-# Valid[          0]: 1, Operation[          0]: 2, destP[          0]: 20, Src1[          0]: 00, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 06, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000006, FU[          0]: 0, ROB[          0]: 00, PC[          0]: 00000000
-# Valid[          1]: 1, Operation[          1]: 2, destP[          1]: 21, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 0f, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 0000000f, FU[          1]: 1, ROB[          1]: 01, PC[          1]: 00000004
-# Valid[          0]: 1, Operation[          0]: 2, destP[          0]: 22, Src1[          0]: 20, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 04, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000024, FU[          0]: 2, ROB[          0]: 02, PC[          0]: 00000008
-# Valid[          1]: 1, Operation[          1]: a, destP[          1]: 00, Src1[          1]: 21, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 21, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000009, FU[          1]: 0, ROB[          1]: 03, PC[          1]: 0000000c
-# Valid[          0]: 1, Operation[          0]: 1, destP[          0]: 23, Src1[          0]: 21, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 20, Src2_r[          0]: 1, Src2_data[          0]: 00000006, imm[          0]: 00000000, FU[          0]: 0, ROB[          0]: 04, PC[          0]: 00000010
-# Valid[          1]: 1, Operation[          1]: 1, destP[          1]: 00, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 00, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000000, FU[          1]: 1, ROB[          1]: 05, PC[          1]: 00000014
-# Valid[          0]: 1, Operation[          0]: a, destP[          0]: 00, Src1[          0]: 00, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 22, Src2_r[          0]: 1, Src2_data[          0]: 0000002a, imm[          0]: 00000000, FU[          0]: 0, ROB[          0]: 06, PC[          0]: 00000018
-# Valid[          1]: 1, Operation[          1]: 8, destP[          1]: 24, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 00, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000018, FU[          1]: 0, ROB[          1]: 07, PC[          1]: 0000001c
-# Valid[          0]: 1, Operation[          0]: 5, destP[          0]: 25, Src1[          0]: 24, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 21, Src2_r[          0]: 1, Src2_data[          0]: 0000000f, imm[          0]: 00000000, FU[          0]: 0, ROB[          0]: 08, PC[          0]: 00000020
-# Valid[          1]: 1, Operation[          1]: 8, destP[          1]: 26, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 00, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000000, FU[          1]: 1, ROB[          1]: 09, PC[          1]: 00000024
-# Valid[          0]: 1, Operation[          0]: 1, destP[          0]: 27, Src1[          0]: 26, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 23, Src2_r[          0]: 1, Src2_data[          0]: 00000015, imm[          0]: 00000000, FU[          0]: 1, ROB[          0]: 0a, PC[          0]: 00000028
-# Valid[          0]: 1, Operation[          0]: a, destP[          0]: 00, Src1[          0]: 28, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 27, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000001, FU[          0]: 0, ROB[          0]: 0b, PC[          0]: 00000034
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-quit -sim
-vsim -novopt work.CPU_tb
-# vsim 
-# Start time: 17:30:34 on Dec 06,2024
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Loading work.CPU_tb
-# Loading work.CPU
-# Loading work.instructionMemory
-# Loading work.IF_ID_Reg
-# Loading work.Decode
-# Loading work.controller
-# Loading work.immGen
-# Loading work.ID_EX_Reg
-# Loading work.Rename
-# Loading work.ROB
-# Loading work.ARF
-# Loading work.LSQ
-# Loading work.Unified_Issue_Queue
-# Loading work.ALU
-# Loading work.EX_MEM_Reg
-# Loading work.LSU
-# Loading work.DataMemory
-# Loading work.MEM_Comp_Reg
-add wave -position end  sim:/CPU_tb/cpu/UIQ/clk
-add wave -position end  sim:/CPU_tb/cpu/UIQ/rstn
-add wave -position end  sim:/CPU_tb/cpu/UIQ/PC
-add wave -position end  sim:/CPU_tb/cpu/UIQ/rs1_ready_from_ROB_in
-add wave -position end  sim:/CPU_tb/cpu/UIQ/rs2_ready_from_ROB_in
-add wave -position end  sim:/CPU_tb/cpu/UIQ/fu_ready_from_FU_in
-add wave -position end  sim:/CPU_tb/cpu/UIQ/FU0_flag_in
-add wave -position end  sim:/CPU_tb/cpu/UIQ/reg_tag_from_FU0_in
-add wave -position end  sim:/CPU_tb/cpu/UIQ/reg_value_from_FU0_in
-add wave -position end  sim:/CPU_tb/cpu/UIQ/FU1_flag_in
-add wave -position end  sim:/CPU_tb/cpu/UIQ/reg_tag_from_FU1_in
-add wave -position end  sim:/CPU_tb/cpu/UIQ/reg_value_from_FU1_in
-add wave -position end  sim:/CPU_tb/cpu/UIQ/FU2_flag_in
-add wave -position end  sim:/CPU_tb/cpu/UIQ/reg_tag_from_FU2_in
-add wave -position end  sim:/CPU_tb/cpu/UIQ/reg_value_from_FU2_in
-add wave -position end  sim:/CPU_tb/cpu/UIQ/ROB_bc1
-add wave -position end  sim:/CPU_tb/cpu/UIQ/reg_from_ROB_in1
-add wave -position end  sim:/CPU_tb/cpu/UIQ/value_from_ROB_in1
-add wave -position end  sim:/CPU_tb/cpu/UIQ/ROB_bc2
-add wave -position end  sim:/CPU_tb/cpu/UIQ/reg_from_ROB_in2
-add wave -position end  sim:/CPU_tb/cpu/UIQ/value_from_ROB_in2
-add wave -position end  sim:/CPU_tb/cpu/UIQ/lwData_from_LSU_in
-add wave -position end  sim:/CPU_tb/cpu/UIQ/reg_from_LSU_in
-add wave -position end  sim:/CPU_tb/cpu/UIQ/set_rob_reg_invaild
-add wave -position end  sim:/CPU_tb/cpu/UIQ/src1_ready
-run -all
-# Valid[          0]: 1, Operation[          0]: 2, destP[          0]: 20, Src1[          0]: 00, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 06, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000006, FU[          0]: 0, ROB[          0]: 00, PC[          0]: 00000000
-# Valid[          1]: 1, Operation[          1]: 2, destP[          1]: 21, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 0f, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 0000000f, FU[          1]: 1, ROB[          1]: 01, PC[          1]: 00000004
-# Valid[          0]: 1, Operation[          0]: 2, destP[          0]: 22, Src1[          0]: 20, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 04, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000024, FU[          0]: 2, ROB[          0]: 02, PC[          0]: 00000008
-# Valid[          1]: 1, Operation[          1]: a, destP[          1]: 00, Src1[          1]: 21, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 21, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000009, FU[          1]: 0, ROB[          1]: 03, PC[          1]: 0000000c
-# Valid[          0]: 1, Operation[          0]: 1, destP[          0]: 23, Src1[          0]: 21, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 20, Src2_r[          0]: 1, Src2_data[          0]: 00000006, imm[          0]: 00000000, FU[          0]: 0, ROB[          0]: 04, PC[          0]: 00000010
-# Valid[          1]: 1, Operation[          1]: 1, destP[          1]: 00, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 00, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000000, FU[          1]: 1, ROB[          1]: 05, PC[          1]: 00000014
-# Valid[          0]: 1, Operation[          0]: a, destP[          0]: 00, Src1[          0]: 00, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 22, Src2_r[          0]: 1, Src2_data[          0]: 0000002a, imm[          0]: 00000000, FU[          0]: 0, ROB[          0]: 06, PC[          0]: 00000018
-# Valid[          1]: 1, Operation[          1]: 8, destP[          1]: 24, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 00, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000018, FU[          1]: 0, ROB[          1]: 07, PC[          1]: 0000001c
-# Valid[          0]: 1, Operation[          0]: 5, destP[          0]: 25, Src1[          0]: 24, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 21, Src2_r[          0]: 1, Src2_data[          0]: 0000000f, imm[          0]: 00000000, FU[          0]: 0, ROB[          0]: 08, PC[          0]: 00000020
-# Valid[          1]: 1, Operation[          1]: 8, destP[          1]: 26, Src1[          1]: 00, Src1_r[          1]: 1, Src1_data[          1]: 00000000, Src2[          1]: 00, Src2_r[          1]: 1, Src2_data[          1]: 00000000, imm[          1]: 00000000, FU[          1]: 1, ROB[          1]: 09, PC[          1]: 00000024
-# Valid[          0]: 1, Operation[          0]: 1, destP[          0]: 27, Src1[          0]: 26, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 23, Src2_r[          0]: 1, Src2_data[          0]: 00000015, imm[          0]: 00000000, FU[          0]: 1, ROB[          0]: 0a, PC[          0]: 00000028
-# Valid[          0]: 1, Operation[          0]: a, destP[          0]: 00, Src1[          0]: 28, Src1_r[          0]: 1, Src1_data[          0]: 00000000, Src2[          0]: 27, Src2_r[          0]: 1, Src2_data[          0]: 00000000, imm[          0]: 00000001, FU[          0]: 0, ROB[          0]: 0b, PC[          0]: 00000034
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/UIQ_wave.do
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/UIQ_wave.do
-quit -sim
-# Compile of Unified_Issue_Queue.v was successful.
-vsim -novopt work.CPU_tb
-# vsim 
-# Start time: 17:41:57 on Dec 06,2024
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Loading work.CPU_tb
-# Loading work.CPU
-# Loading work.instructionMemory
-# Loading work.IF_ID_Reg
-# Loading work.Decode
-# Loading work.controller
-# Loading work.immGen
-# Loading work.ID_EX_Reg
-# Loading work.Rename
-# Loading work.ROB
-# Loading work.ARF
-# Loading work.LSQ
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.Unified_Issue_Queue
-# Loading work.Unified_Issue_Queue
-# Loading work.ALU
-# Loading work.EX_MEM_Reg
-# Loading work.LSU
-# Loading work.DataMemory
-# Loading work.MEM_Comp_Reg
-do UIQ_wave.do
-run -all
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-add wave -position 22  sim:/CPU_tb/cpu/UIQ/rs1_in
-add wave -position 23  sim:/CPU_tb/cpu/UIQ/rs2_in
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/UIQ_wave.do
-restart -f
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-run -all
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-quit -sim
-# Compile of Unified_Issue_Queue.v was successful.
-vsim -novopt work.CPU_tb
-# vsim 
-# Start time: 17:50:37 on Dec 06,2024
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Loading work.CPU_tb
-# Loading work.CPU
-# Loading work.instructionMemory
-# Loading work.IF_ID_Reg
-# Loading work.Decode
-# Loading work.controller
-# Loading work.immGen
-# Loading work.ID_EX_Reg
-# Loading work.Rename
-# Loading work.ROB
-# Loading work.ARF
-# Loading work.LSQ
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.Unified_Issue_Queue
-# Loading work.Unified_Issue_Queue
-# Loading work.ALU
-# Loading work.EX_MEM_Reg
-# Loading work.LSU
-# Loading work.DataMemory
-# Loading work.MEM_Comp_Reg
-do UIQ_wave.do
-run -all
-# reg1:  0, src1_ready: 1
-# reg1:  0, src1_ready: 1
-# reg1: 32, src1_ready: 1
-# reg1: 32, src1_ready: 1
-# reg1: 32, src1_ready: 1
-# reg1: 33, src1_ready: 1
-# reg1: 32, src1_ready: 1
-# reg1: 33, src1_ready: 1
-# reg1: 33, src1_ready: 1
-# reg1: 33, src1_ready: 1
-# reg1: 33, src1_ready: 1
-# reg1: 33, src1_ready: 1
-# reg1:  0, src1_ready: 1
-# reg1:  0, src1_ready: 1
-# reg1:  0, src1_ready: 1
-# reg1:  0, src1_ready: 1
-# reg1:  0, src1_ready: 1
-# reg1:  0, src1_ready: 1
-# reg1:  0, src1_ready: 1
-# reg1:  0, src1_ready: 1
-# reg1:  0, src1_ready: 1
-# reg1:  0, src1_ready: 1
-# reg1: 36, src1_ready: 1
-# reg1:  0, src1_ready: 1
-# reg1: 36, src1_ready: 1
-# reg1: 38, src1_ready: 1
-# reg1: 38, src1_ready: 1
-# reg1: 38, src1_ready: 1
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-quit -sim
-# Compile of Unified_Issue_Queue.v was successful.
-vsim -novopt work.CPU_tb
-# vsim 
-# Start time: 17:54:24 on Dec 06,2024
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Loading work.CPU_tb
-# Loading work.CPU
-# Loading work.instructionMemory
-# Loading work.IF_ID_Reg
-# Loading work.Decode
-# Loading work.controller
-# Loading work.immGen
-# Loading work.ID_EX_Reg
-# Loading work.Rename
-# Loading work.ROB
-# Loading work.ARF
-# Loading work.LSQ
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.Unified_Issue_Queue
-# Loading work.Unified_Issue_Queue
-# Loading work.ALU
-# Loading work.EX_MEM_Reg
-# Loading work.LSU
-# Loading work.DataMemory
-# Loading work.MEM_Comp_Reg
-do UIQ_wave.do
-run -all
-# le
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-quit -sim
-# Compile of Unified_Issue_Queue.v was successful.
-# Compile of ALU.v was successful.
-# 2 compiles, 0 failed with no errors.
-vsim -novopt work.CPU_tb
-# vsim 
-# Start time: 18:03:18 on Dec 06,2024
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Loading work.CPU_tb
-# Loading work.CPU
-# Loading work.instructionMemory
-# Loading work.IF_ID_Reg
-# Loading work.Decode
-# Loading work.controller
-# Loading work.immGen
-# Loading work.ID_EX_Reg
-# Loading work.Rename
-# Loading work.ROB
-# Loading work.ARF
-# Loading work.LSQ
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.Unified_Issue_Queue
-# Loading work.Unified_Issue_Queue
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ALU
-# Loading work.ALU
-# Loading work.EX_MEM_Reg
-# Loading work.LSU
-# Loading work.DataMemory
-# Loading work.MEM_Comp_Reg
-do UIQ_wave.do
-run -all
-# bi
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-quit -sim
-# Compile of Unified_Issue_Queue.v was successful.
-vsim -novopt work.CPU_tb
-# vsim 
-# Start time: 18:24:47 on Dec 06,2024
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Loading work.CPU_tb
-# Loading work.CPU
-# Loading work.instructionMemory
-# Loading work.IF_ID_Reg
-# Loading work.Decode
-# Loading work.controller
-# Loading work.immGen
-# Loading work.ID_EX_Reg
-# Loading work.Rename
-# Loading work.ROB
-# Loading work.ARF
-# Loading work.LSQ
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.Unified_Issue_Queue
-# Loading work.Unified_Issue_Queue
-# Loading work.ALU
-# Loading work.EX_MEM_Reg
-# Loading work.LSU
-# Loading work.DataMemory
-# Loading work.MEM_Comp_Reg
-do UIQ_wave.do
-run -all
-# bi
-# Simulation time: 135000
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-add wave -position end  sim:/CPU_tb/cpu/UIQ/valid
-restart -f
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-run -all
-# bi
-# Simulation time: 135000
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/UIQ_wave.do
-add wave -position 27  sim:/CPU_tb/cpu/UIQ/src_reg1
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/UIQ_wave.do
-restart -f
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-run -all
-# bi
-# Simulation time: 135000
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-add wave -position 22  sim:/CPU_tb/cpu/p_srcReg1_EX
-add wave -position 23  sim:/CPU_tb/cpu/p_srcReg2_EX
-add wave -position 24  sim:/CPU_tb/cpu/p_destReg_EX
-restart -f
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-run -all
-# bi
-# Simulation time: 135000
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/UIQ_wave.do
-quit -sim
-# Compile of Unified_Issue_Queue.v was successful.
-vsim -novopt work.CPU_tb
-# vsim 
-# Start time: 18:47:30 on Dec 06,2024
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Loading work.CPU_tb
-# Loading work.CPU
-# Loading work.instructionMemory
-# Loading work.IF_ID_Reg
-# Loading work.Decode
-# Loading work.controller
-# Loading work.immGen
-# Loading work.ID_EX_Reg
-# Loading work.Rename
-# Loading work.ROB
-# Loading work.ARF
-# Loading work.LSQ
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.Unified_Issue_Queue
-# Loading work.Unified_Issue_Queue
-# Loading work.ALU
-# Loading work.EX_MEM_Reg
-# Loading work.LSU
-# Loading work.DataMemory
-# Loading work.MEM_Comp_Reg
-quit -sim
-# Compile of ARF.v was successful.
-vsim -novopt work.CPU_tb
-# vsim 
-# Start time: 18:47:49 on Dec 06,2024
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Loading work.CPU_tb
-# Loading work.CPU
-# Loading work.instructionMemory
-# Loading work.IF_ID_Reg
-# Loading work.Decode
-# Loading work.controller
-# Loading work.immGen
-# Loading work.ID_EX_Reg
-# Loading work.Rename
-# Loading work.ROB
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ARF
-# Loading work.ARF
-# Loading work.LSQ
-# Loading work.Unified_Issue_Queue
-# Loading work.ALU
-# Loading work.EX_MEM_Reg
-# Loading work.LSU
-# Loading work.DataMemory
-# Loading work.MEM_Comp_Reg
 do top_wave.do
 run -all
 # reg p 2 =          6, renamed reg is p32
 # reg p 3 =         15, renamed reg is p33
 # reg p 1 =         42, renamed reg is p34
 # reg p 4 =         21, renamed reg is p35
-# reg p32 =         15, renamed reg is p36
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-quit -sim
-vsim -novopt work.CPU_tb
-# vsim 
-# Start time: 18:50:50 on Dec 06,2024
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Loading work.CPU_tb
-# Loading work.CPU
-# Loading work.instructionMemory
-# Loading work.IF_ID_Reg
-# Loading work.Decode
-# Loading work.controller
-# Loading work.immGen
-# Loading work.ID_EX_Reg
-# Loading work.Rename
-# Loading work.ROB
-# Loading work.ARF
-# Loading work.LSQ
-# Loading work.Unified_Issue_Queue
-# Loading work.ALU
-# Loading work.EX_MEM_Reg
-# Loading work.LSU
-# Loading work.DataMemory
-# Loading work.MEM_Comp_Reg
-do top_wave.do
-run -all
-# reg p 2 =          6, renamed reg is p32
-# reg p 3 =         15, renamed reg is p33
-# reg p 1 =         42, renamed reg is p34
-# reg p 4 =         21, renamed reg is p35
-# reg p32 =         15, renamed reg is p36
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/top_wave.do
-restart -f
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-run -all
-# reg p 2 =          6, renamed reg is p32
-# reg p 3 =         15, renamed reg is p33
-# reg p 1 =         42, renamed reg is p34
-# reg p 4 =         21, renamed reg is p35
-# reg p32 =         15, renamed reg is p36
-# reg p32 =         15, renamed reg is p36
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-add wave -position 73  sim:/CPU_tb/cpu/swData_UIQ_LSQ
-restart -f
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-run -all
-# reg p 2 =          6, renamed reg is p32
-# reg p 3 =         15, renamed reg is p33
-# reg p 1 =         42, renamed reg is p34
-# reg p 4 =         21, renamed reg is p35
-# reg p32 =         15, renamed reg is p36
-# reg p32 =         15, renamed reg is p36
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-quit -sim
-# Compile of Unified_Issue_Queue.v was successful.
-# Compile of LSQ.v was successful with warnings.
-# 2 compiles, 0 failed with no errors.
-vsim -novopt work.CPU_tb
-# vsim 
-# Start time: 19:15:04 on Dec 06,2024
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Loading work.CPU_tb
-# Loading work.CPU
-# Loading work.instructionMemory
-# Loading work.IF_ID_Reg
-# Loading work.Decode
-# Loading work.controller
-# Loading work.immGen
-# Loading work.ID_EX_Reg
-# Loading work.Rename
-# Loading work.ROB
-# Loading work.ARF
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.LSQ
-# Loading work.LSQ
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.Unified_Issue_Queue
-# Loading work.Unified_Issue_Queue
-# Loading work.ALU
-# Loading work.EX_MEM_Reg
-# Loading work.LSU
-# Loading work.DataMemory
-# Loading work.MEM_Comp_Reg
-do top_wave.do
-run -all
-# reg p 2 =          6, renamed reg is p32
-# reg p 3 =         15, renamed reg is p33
-# reg p 1 =         42, renamed reg is p34
-# reg p 4 =         21, renamed reg is p35
-# reg p32 =         15, renamed reg is p36
-# reg p32 =         15, renamed reg is p36
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-quit -sim
-# Compile of ARF.v was successful.
-vsim -novopt work.CPU_tb
-# vsim 
-# Start time: 19:24:39 on Dec 06,2024
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Loading work.CPU_tb
-# Loading work.CPU
-# Loading work.instructionMemory
-# Loading work.IF_ID_Reg
-# Loading work.Decode
-# Loading work.controller
-# Loading work.immGen
-# Loading work.ID_EX_Reg
-# Loading work.Rename
-# Loading work.ROB
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ARF
-# Loading work.ARF
-# Loading work.LSQ
-# Loading work.Unified_Issue_Queue
-# Loading work.ALU
-# Loading work.EX_MEM_Reg
-# Loading work.LSU
-# Loading work.DataMemory
-# Loading work.MEM_Comp_Reg
-do top_wave.do
-run -all
-# reg p 2 =          6, renamed reg is p32
-# Simulation time: 75000
-# reg p 3 =         15, renamed reg is p33
-# Simulation time: 85000
-# reg p 1 =         42, renamed reg is p34
-# Simulation time: 95000
-# reg p 4 =         21, renamed reg is p35
-# Simulation time: 115000
-# reg p32 =         15, renamed reg is p36
-# Simulation time: 155000
-# reg p32 =         15, renamed reg is p36
-# Simulation time: 165000
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-add wave -position 74  sim:/CPU_tb/cpu/vaild_comp
-add wave -position 75  sim:/CPU_tb/cpu/lsq_comp
-restart -f
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-run -all
-# reg p 2 =          6, renamed reg is p32
-# Simulation time: 75000
-# reg p 3 =         15, renamed reg is p33
-# Simulation time: 85000
-# reg p 1 =         42, renamed reg is p34
-# Simulation time: 95000
-# reg p 4 =         21, renamed reg is p35
-# Simulation time: 115000
-# reg p32 =         15, renamed reg is p36
-# Simulation time: 155000
-# reg p32 =         15, renamed reg is p36
-# Simulation time: 165000
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/top_wave.do
-restart -f
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Break key hit
-quit -sim
-# Compile of LSU.v was successful.
-vsim -novopt work.CPU_tb
-# vsim 
-# Start time: 19:33:08 on Dec 06,2024
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Loading work.CPU_tb
-# Loading work.CPU
-# Loading work.instructionMemory
-# Loading work.IF_ID_Reg
-# Loading work.Decode
-# Loading work.controller
-# Loading work.immGen
-# Loading work.ID_EX_Reg
-# Loading work.Rename
-# Loading work.ROB
-# Loading work.ARF
-# Loading work.LSQ
-# Loading work.Unified_Issue_Queue
-# Loading work.ALU
-# Loading work.EX_MEM_Reg
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.LSU
-# Loading work.LSU
-# Loading work.DataMemory
-# Loading work.MEM_Comp_Reg
-do top_wave.do
-run -all
-# reg p 2 =          6, renamed reg is p32
-# Simulation time: 75000
-# reg p 3 =         15, renamed reg is p33
-# Simulation time: 85000
-# reg p 1 =         42, renamed reg is p34
-# Simulation time: 95000
-# reg p 4 =         21, renamed reg is p35
-# Simulation time: 115000
-# reg p32 =          x, renamed reg is p36
-# Simulation time: 255000
-# reg p 6 =          x, renamed reg is p37
-# Simulation time: 275000
+# reg p32 =          0, renamed reg is p36
+# reg p 6 =         15, renamed reg is p37
 # reg p33 =          0, renamed reg is p38
-# Simulation time: 275000
 # ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
+#    Time: 400 ns  Iteration: 0  Instance: /CPU_tb
 # Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-quit -sim
-# Compile of LSU.v was successful.
-vsim -novopt work.CPU_tb
-# vsim 
-# Start time: 19:33:57 on Dec 06,2024
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Loading work.CPU_tb
-# Loading work.CPU
-# Loading work.instructionMemory
-# Loading work.IF_ID_Reg
-# Loading work.Decode
-# Loading work.controller
-# Loading work.immGen
-# Loading work.ID_EX_Reg
-# Loading work.Rename
-# Loading work.ROB
-# Loading work.ARF
-# Loading work.LSQ
-# Loading work.Unified_Issue_Queue
-# Loading work.ALU
-# Loading work.EX_MEM_Reg
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.LSU
-# Loading work.LSU
-# Loading work.DataMemory
-# Loading work.MEM_Comp_Reg
-do top_wave.do
-run -all
-# reg p 2 =          6, renamed reg is p32
-# Simulation time: 75000
-# reg p 3 =         15, renamed reg is p33
-# Simulation time: 85000
-# reg p 1 =         42, renamed reg is p34
-# Simulation time: 95000
-# reg p 4 =         21, renamed reg is p35
-# Simulation time: 115000
-# reg p32 =         15, renamed reg is p36
-# Simulation time: 155000
-# reg p32 =         15, renamed reg is p36
-# Simulation time: 165000
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-add wave -position 75  sim:/CPU_tb/cpu/LSU_inst/no_issue_from_LSQ_in
-add wave -position 75  sim:/CPU_tb/cpu/LSU_inst/already_found_from_LSQ_in
-restart -f
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-run -all
-# reg p 2 =          6, renamed reg is p32
-# Simulation time: 75000
-# reg p 3 =         15, renamed reg is p33
-# Simulation time: 85000
-# reg p 1 =         42, renamed reg is p34
-# Simulation time: 95000
-# reg p 4 =         21, renamed reg is p35
-# Simulation time: 115000
-# reg p32 =         15, renamed reg is p36
-# Simulation time: 155000
-# reg p32 =         15, renamed reg is p36
-# Simulation time: 165000
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/top_wave.do
-quit -sim
-# Compile of LSQ.v was successful with warnings.
-# Compile of LSU.v was successful.
-# 2 compiles, 0 failed with no errors.
-vsim -novopt work.CPU_tb
-# vsim 
-# Start time: 19:38:18 on Dec 06,2024
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Loading work.CPU_tb
-# Loading work.CPU
-# Loading work.instructionMemory
-# Loading work.IF_ID_Reg
-# Loading work.Decode
-# Loading work.controller
-# Loading work.immGen
-# Loading work.ID_EX_Reg
-# Loading work.Rename
-# Loading work.ROB
-# Loading work.ARF
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.LSQ
-# Loading work.LSQ
-# Loading work.Unified_Issue_Queue
-# Loading work.ALU
-# Loading work.EX_MEM_Reg
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.LSU
-# Loading work.LSU
-# Loading work.DataMemory
-# Loading work.MEM_Comp_Reg
-do top_wave.do
-run -all
-# reg p 2 =          6, renamed reg is p32
-# Simulation time: 75000
-# reg p 3 =         15, renamed reg is p33
-# Simulation time: 85000
-# reg p 1 =         42, renamed reg is p34
-# Simulation time: 95000
-# reg p 4 =         21, renamed reg is p35
-# Simulation time: 115000
-# reg p32 =         15, renamed reg is p36
-# Simulation time: 155000
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-quit -sim
-# Compile of LSQ.v was successful with warnings.
-vsim -novopt work.CPU_tb
-# vsim 
-# Start time: 19:39:58 on Dec 06,2024
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Loading work.CPU_tb
-# Loading work.CPU
-# Loading work.instructionMemory
-# Loading work.IF_ID_Reg
-# Loading work.Decode
-# Loading work.controller
-# Loading work.immGen
-# Loading work.ID_EX_Reg
-# Loading work.Rename
-# Loading work.ROB
-# Loading work.ARF
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.LSQ
-# Loading work.LSQ
-# Loading work.Unified_Issue_Queue
-# Loading work.ALU
-# Loading work.EX_MEM_Reg
-# Loading work.LSU
-# Loading work.DataMemory
-# Loading work.MEM_Comp_Reg
-do top_wave.do
-run -all
-# reg p 2 =          6, renamed reg is p32
-# Simulation time: 75000
-# reg p 3 =         15, renamed reg is p33
-# Simulation time: 85000
-# reg p 1 =         42, renamed reg is p34
-# Simulation time: 95000
-# reg p 4 =         21, renamed reg is p35
-# Simulation time: 115000
-# reg p32 =         15, renamed reg is p36
-# Simulation time: 155000
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-quit -sim
-# Compile of LSQ.v was successful with warnings.
-vsim -novopt work.CPU_tb
-# vsim 
-# Start time: 19:41:08 on Dec 06,2024
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Loading work.CPU_tb
-# Loading work.CPU
-# Loading work.instructionMemory
-# Loading work.IF_ID_Reg
-# Loading work.Decode
-# Loading work.controller
-# Loading work.immGen
-# Loading work.ID_EX_Reg
-# Loading work.Rename
-# Loading work.ROB
-# Loading work.ARF
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.LSQ
-# Loading work.LSQ
-# Loading work.Unified_Issue_Queue
-# Loading work.ALU
-# Loading work.EX_MEM_Reg
-# Loading work.LSU
-# Loading work.DataMemory
-# Loading work.MEM_Comp_Reg
-do top_wave.do
-run -all
-# reg p 2 =          6, renamed reg is p32
-# Simulation time: 75000
-# reg p 3 =         15, renamed reg is p33
-# Simulation time: 85000
-# reg p 1 =         42, renamed reg is p34
-# Simulation time: 95000
-# reg p 4 =         21, renamed reg is p35
-# Simulation time: 115000
-# reg p32 =         15, renamed reg is p36
-# Simulation time: 155000
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-quit -sim
-# Compile of LSQ.v was successful with warnings.
-vsim -novopt work.CPU_tb
-# vsim 
-# Start time: 19:43:13 on Dec 06,2024
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Loading work.CPU_tb
-# Loading work.CPU
-# Loading work.instructionMemory
-# Loading work.IF_ID_Reg
-# Loading work.Decode
-# Loading work.controller
-# Loading work.immGen
-# Loading work.ID_EX_Reg
-# Loading work.Rename
-# Loading work.ROB
-# Loading work.ARF
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.LSQ
-# Loading work.LSQ
-# Loading work.Unified_Issue_Queue
-# Loading work.ALU
-# Loading work.EX_MEM_Reg
-# Loading work.LSU
-# Loading work.DataMemory
-# Loading work.MEM_Comp_Reg
-DO TOP_wave.do
-# invalid command name "DO"
-do top_wave.do
-run -all
-# reg p 2 =          6, renamed reg is p32
-# Simulation time: 75000
-# reg p 3 =         15, renamed reg is p33
-# Simulation time: 85000
-# reg p 1 =         42, renamed reg is p34
-# Simulation time: 95000
-# reg p 4 =         21, renamed reg is p35
-# Simulation time: 115000
-# reg p32 =         15, renamed reg is p36
-# Simulation time: 155000
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-quit -sim
-# Compile of Unified_Issue_Queue.v failed with 1 errors.
-# Compile of ARF.v was successful.
-# Compile of CPU.v was successful.
-# Compile of DataMem.v was successful.
-# Compile of LSU.v was successful.
-# 5 compiles, 1 failed with 1 error.
-vsim -novopt work.CPU_tb
-# vsim 
-# Start time: 20:06:10 on Dec 06,2024
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Loading work.CPU_tb
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.CPU
-# Loading work.CPU
-# Loading work.instructionMemory
-# Loading work.IF_ID_Reg
-# Loading work.Decode
-# Loading work.controller
-# Loading work.immGen
-# Loading work.ID_EX_Reg
-# Loading work.Rename
-# Loading work.ROB
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.ARF
-# Loading work.ARF
-# Loading work.LSQ
-# Loading work.Unified_Issue_Queue
-# Loading work.ALU
-# Loading work.EX_MEM_Reg
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.LSU
-# Loading work.LSU
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.DataMemory
-# Loading work.DataMemory
-# Loading work.MEM_Comp_Reg
-# ** Error: (vsim-3389) E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v(439): Port 'lwdata_from_mem_in' not found in the connected module (34th connection).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/cpu/UIQ File: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Unified_Issue_Queue.v
-# ** Error: (vsim-3389) E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v(439): Port 'reg_from_mem_in' not found in the connected module (35th connection).
-#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/cpu/UIQ File: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Unified_Issue_Queue.v
-# ** Fatal: (vsim-3365) E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU.v(439): Too many port connections. Expected 68, found 70.
-#    Time: 0 ps  Iteration: 0  Instance: /CPU_tb/cpu/UIQ File: E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Unified_Issue_Queue.v
-# FATAL ERROR while loading design
-# Error loading design
-# Compile of Unified_Issue_Queue.v was successful.
-vsim -novopt work.CPU_tb
-# vsim 
-# Start time: 20:06:29 on Dec 06,2024
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-# Loading work.CPU_tb
-# Loading work.CPU
-# Loading work.instructionMemory
-# Loading work.IF_ID_Reg
-# Loading work.Decode
-# Loading work.controller
-# Loading work.immGen
-# Loading work.ID_EX_Reg
-# Loading work.Rename
-# Loading work.ROB
-# Loading work.ARF
-# Loading work.LSQ
-# Refreshing E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/work.Unified_Issue_Queue
-# Loading work.Unified_Issue_Queue
-# Loading work.ALU
-# Loading work.EX_MEM_Reg
-# Loading work.LSU
-# Loading work.DataMemory
-# Loading work.MEM_Comp_Reg
-run -all
-# reg p 2 =          6, renamed reg is p32
-# reg p 3 =         15, renamed reg is p33
-# reg p 1 =         42, renamed reg is p34
-# reg p 4 =         21, renamed reg is p35
-# reg p32 =         15, renamed reg is p36
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-do top_wave.do
-restart -f
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# 
-run -all
-# reg p 2 =          6, renamed reg is p32
-# reg p 3 =         15, renamed reg is p33
-# reg p 1 =         42, renamed reg is p34
-# reg p 4 =         21, renamed reg is p35
-# reg p32 =         15, renamed reg is p36
-# ** Note: $stop    : E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v(13)
-#    Time: 300 ns  Iteration: 0  Instance: /CPU_tb
-# Break in Module CPU_tb at E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/CPU_tb.v line 13
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/top_wave.do
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/top_wave.do
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/sim/top_wave.do
-# End time: 20:15:57 on Dec 06,2024, Elapsed time: 0:09:28
-# Errors: 0, Warnings: 2
