@@ -11,7 +11,7 @@ module DataMemory(
     input [31:0]    inst_pc_in,
     input [31:0]    address_in, 
     input [5:0]     reg_in,
-    input [3:0]     optype,
+    input [3:0]     optype_in,
     input [31:0]    dataSw_in,
     input           read_en,
     input           write_en_in,
@@ -20,7 +20,9 @@ module DataMemory(
     output reg [31:0]   inst_pc_out,
     output reg [5:0]    reg_out,
     output reg [31:0]   lwData_out,
-    output reg          data_vaild_out
+    output reg          data_vaild_out,
+    output reg          has_stored,
+    output reg [31:0]   data_check
 );
 
     parameter LB    =  4'd7;
@@ -29,6 +31,17 @@ module DataMemory(
     parameter SW    =  4'd10;
 
     reg [31:0]    DATAMEM [0:1024]; 
+
+    reg [3:0]       optype;
+    reg [3:0]       optype1;
+    reg [3:0]       optype2;
+    reg [3:0]       optype3;
+    reg [3:0]       optype4;
+    reg [3:0]       optype5;
+    reg [3:0]       optype6;
+    reg [3:0]       optype7;
+    reg [3:0]       optype8;
+    reg [3:0]       optype9;
 
     reg [5:0]       reg0;
     reg [5:0]       reg1;
@@ -74,28 +87,6 @@ module DataMemory(
     reg [31:0]      dataSw8;
     reg [31:0]      dataSw9;
 
-    reg [31:0]      lwData;
-    reg [31:0]      lwData1; 
-    reg [31:0]      lwData2;
-    reg [31:0]      lwData3;
-    reg [31:0]      lwData4;
-    reg [31:0]      lwData5;
-    reg [31:0]      lwData6;
-    reg [31:0]      lwData7;
-    reg [31:0]      lwData8;
-    reg [31:0]      lwData9;
-
-    reg             data_vaild;
-    reg             data_vaild1;
-    reg             data_vaild2;
-    reg             data_vaild3;
-    reg             data_vaild4;
-    reg             data_vaild5;
-    reg             data_vaild6;
-    reg             data_vaild7;
-    reg             data_vaild8;
-    reg             data_vaild9;
-
     reg [31:0]      inst_pc1;
     reg [31:0]      inst_pc2;
     reg [31:0]      inst_pc3;
@@ -109,6 +100,17 @@ module DataMemory(
     integer i;
 
     always @(posedge clk) begin // 10cc delay of l/s datas
+        optype1 <= optype_in;
+        optype2 <= optype1;
+        optype3 <= optype2;
+        optype4 <= optype3;
+        optype5 <= optype4;
+        optype6 <= optype5;
+        optype7 <= optype6;
+        optype8 <= optype7;
+        optype9 <= optype8;
+        optype  <= optype9;
+
         reg1    <= reg0;
         reg2    <= reg1;
         reg3    <= reg2;
@@ -153,28 +155,6 @@ module DataMemory(
         dataSw9   <= dataSw8;
         dataSw    <= dataSw9;
 
-        lwData1         <= lwData;
-        lwData2         <= lwData1;
-        lwData3         <= lwData2;
-        lwData4         <= lwData3;
-        lwData5         <= lwData4;
-        lwData6         <= lwData5;
-        lwData7         <= lwData6;
-        lwData8         <= lwData7;
-        lwData9         <= lwData8;
-        lwData_out      <= lwData9;
-
-        data_vaild1     <= data_vaild;
-        data_vaild2     <= data_vaild1;
-        data_vaild3     <= data_vaild2;
-        data_vaild4     <= data_vaild3;
-        data_vaild5     <= data_vaild4;
-        data_vaild6     <= data_vaild5;
-        data_vaild7     <= data_vaild6;
-        data_vaild8     <= data_vaild7;
-        data_vaild9     <= data_vaild8;
-        data_vaild_out  <= data_vaild9;
-
         inst_pc1        <= inst_pc_in;
         inst_pc2        <= inst_pc1;
         inst_pc3        <= inst_pc2;
@@ -194,30 +174,34 @@ module DataMemory(
             end
             lwData_out      = 32'b0;
             data_vaild_out  = 1'b0;
+            has_stored      = 1'b0;
+            data_check      = 32'b0;
         end 
         else begin
+            data_vaild_out = 1'b0;
+            has_stored     = 1'b0;
             if ((read_en || write_en) && cacheMiss) begin
-                if (read_en) begin
-                    if (optype == LB) begin
-                        lwData = {24'b0, DATAMEM[address][7:0]};
-                    end
-                    else if (optype == LW) begin
-                        lwData = DATAMEM[address];
-                    end
-                    data_vaild = 1'b1;
-                    reg0 = reg_in;
+                if (optype == LB) begin
+                    lwData_out      = {24'b0, DATAMEM[address][7:0]};
+                    data_vaild_out  = 1'b1;
+                    reg0            = reg_in;
                 end
-                else if (write_en) begin
-                    if (optype == SB) begin
-                        DATAMEM[address][7:0] = dataSw[7:0];
-                    end 
-                    else if (optype == SW) begin
-                        DATAMEM[address]      = dataSw;
-                    end
+                else if (optype == LW) begin
+                    lwData_out      = DATAMEM[address];
+                    data_vaild_out  = 1'b1;
+                    reg0            = reg_in;
                 end
-            end
-            else begin
-                data_vaild = 1'b0;
+
+                if (optype == SB) begin
+                    DATAMEM[address][7:0] = dataSw[7:0];
+                    data_check = dataSw; 
+                    has_stored = 1'b1;
+                end 
+                else if (optype == SW) begin
+                    DATAMEM[address]      = dataSw;
+                    data_check = dataSw; 
+                    has_stored = 1'b1;
+                end
             end
         end
     end

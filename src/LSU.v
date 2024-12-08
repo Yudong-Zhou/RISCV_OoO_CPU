@@ -68,6 +68,7 @@ module LSU(
                 from_lsq        = 1'b0;
                 write_en_out    = 1'b0;
             end
+
             if ((op_in == LB || op_in == LW) && (from_lsq)) begin
                 reg_out1 = reg_in;
             end
@@ -79,6 +80,7 @@ module LSU(
                 reg_out2 = 6'b0;
             end
         end
+        
         else begin
                 read_en_out     = 1'b0;
                 from_lsq        = 1'b0;

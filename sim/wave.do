@@ -66,17 +66,15 @@ add wave -noupdate -color Cyan /CPU_tb/cpu/rd_result_comp_1
 add wave -noupdate -color Cyan /CPU_tb/cpu/pc_comp_1
 add wave -noupdate -color Gray90 /CPU_tb/cpu/rd_result_comp_2
 add wave -noupdate -color Gray90 /CPU_tb/cpu/pc_comp_2
-add wave -noupdate /CPU_tb/cpu/vaild_comp
-add wave -noupdate /CPU_tb/cpu/lsq_comp
 add wave -noupdate /CPU_tb/cpu/rd_result_comp_3
 add wave -noupdate /CPU_tb/cpu/pc_comp_3
-add wave -noupdate -color Yellow /CPU_tb/cpu/DataMem/optype_in
+add wave -noupdate /CPU_tb/cpu/DataMem/optype
 add wave -noupdate -color Yellow /CPU_tb/cpu/DataMem/address_in
 add wave -noupdate -color Yellow /CPU_tb/cpu/DataMem/dataSw_in
 add wave -noupdate -color Yellow /CPU_tb/cpu/DataMem/lwData_out
 add wave -noupdate -color Yellow /CPU_tb/cpu/DataMem/DATAMEM
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {355972 ps} 0}
+WaveRestoreCursors {{Cursor 1} {137621 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 453
 configure wave -valuecolwidth 195
@@ -92,4 +90,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {96346 ps} {195722 ps}
+WaveRestoreZoom {203038 ps} {302414 ps}

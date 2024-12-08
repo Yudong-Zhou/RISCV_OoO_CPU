@@ -65,6 +65,8 @@ module CPU #(
     wire            is_store;
     wire [5 : 0]    old_reg_1;
     wire [5 : 0]    old_reg_2;
+    wire [31 : 0]   pc_retire_1_from_ROB;
+    wire [31 : 0]   pc_retire_2_from_ROB;
 
     // ARF
     wire [31 : 0]   read_data1_ARF;
@@ -211,6 +213,9 @@ module CPU #(
     wire [5:0]      regout_from_lsu;
     wire [5:0]      regout_from_lsu2;
     wire [5:0]      regout_from_dm;
+
+    wire            has_stored;   
+    wire [31 : 0]   data_check;
 
 ///////////////////////////////////////////////////////////////////////
 //  Fetch Stage
@@ -388,7 +393,10 @@ module CPU #(
         .value_bc_1         (value_bc_from_ROB_1),
         .bc_2               (bc_from_ROB_2),
         .reg_bc_2           (reg_bc_from_ROB_2),
-        .value_bc_2         (value_bc_from_ROB_2)
+        .value_bc_2         (value_bc_from_ROB_2),
+
+        .pc_retire_1        (pc_retire_1_from_ROB),
+        .pc_retire_2        (pc_retire_2_from_ROB)
     );
 
 ///////////////////////////////////////////////////////////////////////
@@ -424,9 +432,11 @@ module CPU #(
         .swData         (swData_UIQ_LSQ),
         .pcLsu          (inst_pc_from_LSU),
         .addressLsu     (mem_addr_from_LSU),
-        .pcRet          (),
-        .retire         (),
-
+        .data_check     (data_check),
+        .has_stored     (has_stored),
+        .pcRet1         (pc_retire_1_from_ROB),
+        .pcRet2         (pc_retire_1_from_ROB),
+        
         .pcOut          (pc_from_lsq),
         .regout         (regout_from_lsq),
         .addressOut     (adr_from_lsq),
@@ -639,16 +649,18 @@ module CPU #(
         .inst_pc_in     (inst_pc_from_LSU),
         .address_in     (mem_addr_from_LSU),
         .reg_in         (regout_from_lsu2),
-        .optype         (op_from_LSU),
+        .optype_in      (op_from_LSU),
         .dataSw_in      (store_data_to_mem_from_LSU),
-        .read_en        (read_en_from_LSU),
-        .write_en_in    (write_en_from_LSU),
+        .read_en        (1'b1),
+        .write_en_in    (1'b1),
         .cacheMiss      (1'b1),
 
         .inst_pc_out    (inst_pc_from_mem),
         .reg_out        (regout_from_dm),
         .lwData_out     (lwData_from_mem),
-        .data_vaild_out (data_vaild_from_mem)
+        .data_vaild_out (data_vaild_from_mem),
+        .has_stored     (has_stored),
+        .data_check     (data_check)
     );
 
 ///////////////////////////////////////////////////////////////////////

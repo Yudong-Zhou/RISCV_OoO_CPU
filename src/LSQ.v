@@ -37,8 +37,11 @@ module LSQ(
     input [31:0]    addressLsu,
 
     // from retirement ... deallocate space in LSQ
-    input [31:0]    pcRet,
-    input           retire,
+    input [31:0]    pcRet1,
+    input [31:0]    pcRet2,
+
+    input           has_stored,
+    input [31:0]    data_check,
 
     // outputs ... issues instruction; completes LW instruction if store seen in LSQ
     output reg [31:0]   pcOut,
@@ -114,6 +117,21 @@ module LSQ(
     end
 
     always @(*) begin
+        // retirement logic ... deallocate LSQ entry
+        if (has_stored) begin
+            for (i = 0; i < 16; i = i + 1) begin
+                if (LSQ_DATA[i] == data_check) begin
+                    VALID[i]    = 0;
+                    PC[i]       = 0;
+                    OP[i]       = 0;
+                    ADDRESS[i]  = 32'b0;
+                    LSQ_DATA[i] = 32'b0;
+                    ISSUED[i]   = 0;
+                    i = 16;
+                end
+            end
+        end
+        
         // execution logic ... if update address in LSQ entry; if load, 
         // scan LSQ to find matching addresses, provide data for latest not issued store
         for (i = 0; i < 16; i = i + 1) begin
@@ -165,20 +183,6 @@ module LSQ(
             end
         end
 
-        // retirement logic ... deallocate LSQ entry
-        if (retire) begin
-            for (i = 0; i < 16; i = i + 1) begin
-                if (pcRet == PC[i]) begin
-                    VALID[i]    = 0;
-                    PC[i]       = 0;
-                    OP[i]       = 0;
-                    ADDRESS[i]  = 32'b0;
-                    LSQ_DATA[i] = 32'b0;
-                    ISSUED[i]   = 0;
-                    i = 16;
-                end
-            end
-        end
     end
 
 endmodule

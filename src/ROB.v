@@ -57,7 +57,10 @@ module ROB(
     output reg [5:0]    reg_bc_2,
     output reg          bc_2,
     output reg [31:0]   value_bc_1,
-    output reg [31:0]   value_bc_2
+    output reg [31:0]   value_bc_2,
+
+    output reg [31:0]   pc_retire_1,
+    output reg [31:0]   pc_retire_2
 );
 
     // 1. multiple entries per cycle
@@ -121,6 +124,9 @@ module ROB(
             reg_bc_2            = 6'b0;
             value_bc_1          = 32'b0;
             value_bc_2          = 32'b0;
+
+            pc_retire_1         = 32'b0;
+            pc_retire_2         = 32'b0;
         end            
         else begin
             stall = 1'b0;
@@ -195,7 +201,7 @@ module ROB(
                     //retire in ROB and retire buffer
                     R_ready[ROB[retire_pointer][1]]=1'b1;    //set reg as ready
                     R_retire[ROB[retire_pointer][2]]=1'b1;   //retire old dr
-                        
+
                     ROB[retire_pointer][0] = 1'b0;           //set as invalid
                             
                     max_retire = 1;
@@ -216,7 +222,7 @@ module ROB(
                     //retire in ROB and retire buffer
                     R_ready[ROB[retire_pointer][1]]=1'b1;    //set reg as ready
                     R_retire[ROB[retire_pointer][2]]=1'b1;     //retire old dr
-                        
+
                     ROB[retire_pointer][0] = 1'b0;           //set as invalid
                             
                     max_retire = 0;
