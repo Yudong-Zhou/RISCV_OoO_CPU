@@ -218,6 +218,19 @@ module CPU #(
     wire [31 : 0]   data_check;
     wire            FU_read_flag_MEM_com;
 
+    // Cache
+    wire            cache_miss;
+    wire [31:0]     adr_from_cache_to_mem;
+    wire [3:0]      op_from_cache_to_mem;
+    wire [31:0]     store_data_from_cache_to_mem;
+
+    wire [31:0]     inst_pc_from_cache;
+    wire [5:0]      regout_from_cache;
+    wire [31:0]     lwData_from_cache;
+    wire            data_vaild_from_cache;
+    wire            has_stored1;
+    wire [31:0]     data_check1;
+
 ///////////////////////////////////////////////////////////////////////
 //  Fetch Stage
     always @(posedge clk or negedge rstn) begin
@@ -637,18 +650,6 @@ module CPU #(
         .op_out                     (op_from_LSU),
         .from_lsq                   (load_data_from_lsq)
     );
-
-    wire            cache_miss;
-    wire [31:0]     adr_from_cache_to_mem;
-    wire [3:0]      op_from_cache_to_mem;
-    wire [31:0]     store_data_from_cache_to_mem;
-
-    wire [31:0]     inst_pc_from_cache;
-    wire [5:0]      regout_from_cache;
-    wire [31:0]     lwData_from_cache;
-    wire            data_vaild_from_cache;
-    wire            has_stored1;
-    wire [31:0]     data_check1;
 
     Cache Cache (
         .clk            (clk),
