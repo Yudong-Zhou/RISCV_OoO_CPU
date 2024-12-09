@@ -31,16 +31,19 @@ module Cache(
     reg [31:0]      CACHE [0:8096]; 
     reg [18:0]      TAG [0:8096];
     wire [31:0]     address;
-
-    assign address = address_in << 19;
-    assign address = address    >> 21;
+    wire [31:0]     address1;
+    assign address1 = address_in << 19;
+    assign address  = address1   >> 21;
 
     integer i;
 
+    always @(*) begin
+        cache_miss = 1'b1;
+    end
+    
     always @(posedge clk) begin
         inst_pc_out <= inst_pc;
         address_out <= address_in;
-        reg_out     <= reg_in;
         datasw_out  <= dataSw;
     end
 
@@ -66,6 +69,7 @@ module Cache(
                 if ((optype == LB) && (address_in[31:13] == TAG[address])) begin
                     lwData_out      = {24'b0, CACHE[address][7:0]};
                     data_vaild_out  = 1'b1;
+                    reg_out         = reg_in;
                 end
                 else begin
                     cache_miss = 1'b1;
@@ -75,6 +79,7 @@ module Cache(
                 if ((optype == LW) && (address_in[31:13] == TAG[address])) begin
                     lwData_out      = CACHE[address];
                     data_vaild_out  = 1'b1;
+                    reg_out         = reg_in;
                 end
                 else begin
                     cache_miss = 1'b1;

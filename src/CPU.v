@@ -638,6 +638,41 @@ module CPU #(
         .from_lsq                   (load_data_from_lsq)
     );
 
+    wire            cache_miss;
+    wire [31:0]     adr_from_cache_to_mem;
+    wire [3:0]      op_from_cache_to_mem;
+    wire [31:0]     store_data_from_cache_to_mem;
+
+    wire [31:0]     inst_pc_from_cache;
+    wire [5:0]      regout_from_cache;
+    wire [31:0]     lwData_from_cache;
+    wire            data_vaild_from_cache;
+    wire            has_stored1;
+    wire [31:0]     data_check1;
+
+    Cache Cache (
+        .clk            (clk),
+        .rstn           (rstn),
+        .inst_pc        (inst_pc_from_LSU),
+        .address_in     (mem_addr_from_LSU),
+        .reg_in         (regout_from_lsu2),
+        .optype         (op_from_LSU),
+        .dataSw         (store_data_to_mem_from_LSU),
+        .read_en        (1'b1),
+        .write_en       (1'b1),
+
+        .inst_pc_out    (inst_pc_from_cache),
+        .reg_out        (regout_from_cache),
+        .lwData_out     (lwData_from_cache),
+        .data_vaild_out (data_vaild_from_cache),
+        .has_stored     (has_stored1),
+        .data_check     (data_check1),
+        .cache_miss     (cache_miss),
+        .optype_out     (op_from_cache_to_mem),
+        .address_out    (adr_from_cache_to_mem),
+        .datasw_out     (store_data_from_cache_to_mem)
+    );
+
     DataMemory DataMem (
         .clk            (clk),
         .rstn           (rstn),
@@ -648,7 +683,7 @@ module CPU #(
         .dataSw_in      (store_data_to_mem_from_LSU),
         .read_en        (1'b1),
         .write_en_in    (1'b1),
-        .cacheMiss      (1'b1),
+        .cacheMiss      (cache_miss),
 
         .inst_pc_out    (inst_pc_from_mem),
         .reg_out        (regout_from_dm),
