@@ -55,13 +55,6 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	ROB
 
-} {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Cache.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/Cache.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module Cache
-
-Top level modules:
-	Cache
-
 } {} {}} E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSU.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/RISCV_OoO_CPU/src/LSU.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module LSU

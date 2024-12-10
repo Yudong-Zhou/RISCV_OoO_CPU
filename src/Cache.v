@@ -36,10 +36,6 @@ module Cache(
     assign address  = address1   >> 21;
 
     integer i;
-
-    always @(*) begin
-        cache_miss = 1'b1;
-    end
     
     always @(posedge clk) begin
         inst_pc_out <= inst_pc;
@@ -100,6 +96,10 @@ module Cache(
                 end
             end
         end
+    end
+
+    always @(*) begin
+        cache_miss = 1'b1;
     end
 
 endmodule
