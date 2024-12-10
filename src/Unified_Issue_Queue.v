@@ -360,7 +360,6 @@ module Unified_Issue_Queue #(
                 end
                 else if ((src_reg1[k] == reg_from_ROB_in2) && ROB_bc2) begin
                     src1_ready[k] = 1'b1;
-                    if(src_reg1[k] == 'd36) $display("de");
                     src1_data[k]  = value_from_ROB_in2;
                 end
 
