@@ -81,7 +81,7 @@ module CPU #(
     wire            FU_read_flag;
     wire            already_found_from_LSQ;
     wire            no_issue_from_LSQ;
-    wire [5 : 0]      regout_from_lsq;
+    wire [5 : 0]    regout_from_lsq;
 
     // ALU output signals
     wire [31 : 0]   data_out_dr_alu0;
